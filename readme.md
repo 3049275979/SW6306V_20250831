@@ -1,5 +1,5 @@
 # SW6306移动电源程序
-基于各种开源项目改的，硬件已经在嘉立创开源了，审核通过就能看见了 https://oshwhub.com/343224507v/sw6306v-dan-pian-ji-kong-zhi-ban
+代码基于“TKWTL”大佬开源改的，SW6306V底板直接用的立创硬件开源平台“qwer123258”的工程，单片机控制板我也已经在立创开源了，审核通过就能看见 https://oshwhub.com/343224507v/sw6306v-dan-pian-ji-kong-zhi-ban
 ## 功能说明：
 5S1P 21700移动电源的主要源程序
 
