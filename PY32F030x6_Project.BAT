@@ -1,0 +1,32 @@
+SET PATH=C:\Keil_v5\ARM\ARMCC\Bin;C:\Keil_v5\ARM\ARMCLANG\Bin;D:\VM\bin\;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;C:\Program Files (x86)\STMicroelectronics\STM32 ST-LINK Utility\ST-LINK Utility;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Users\LUO\AppData\Local\Programs\Microsoft VS Code\bin;C:\mingw64\bin;
+SET CPU_TYPE=PY32F030x6
+SET CPU_VENDOR=Puya
+SET UV2_TARGET=PY32F030x6_Project
+SET CPU_CLOCK=0x00B71B00
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmAsm" --Via ".\objects\startup_py32f030xx._ia"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\system_py32f0xx.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_it.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\bsp_py32f030x6.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\main.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\debounce_key.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_ll_adc.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_ll_dma.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_ll_exti.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_ll_gpio.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_ll_i2c.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_ll_lptim.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_ll_pwr.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_ll_rcc.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_ll_tim.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_ll_utils.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_bsp_exti.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_bsp_gpio.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_bsp_i2c.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_bsp_pwr.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_bsp_rcc.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_bsp_tim.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\py32f0xx_bsp_usart.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\coroos.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmClang.exe" @".\objects\sw6306.__i"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\ArmLink" --Via ".\Objects\Target.lnp"
+"C:\Keil_v5\ARM\ARMCLANG\Bin\fromelf.exe" ".\Objects\Target.axf" --i32combined --output ".\Objects\Target.hex"
