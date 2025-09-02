@@ -1213,6 +1213,25 @@ uint8_t SW6306_IsPortC1ON(void);                //读取C1口通路是否打开
 uint8_t SW6306_IsPortC2ON(void);                //读取C2口通路是否打开
 uint8_t SW6306_IsPortA1ON(void);                //读取A1口通路是否打开
 uint8_t SW6306_IsPortA2ON(void);                //读取A2口通路是否打开
+uint8_t SW6306_IsQCStatQC(void);//读充放电快充指示寄存器
+uint8_t SW6306_IsQCStatVQC(void);//处于快充电压
+uint8_t SW6306_IsQCStatPQC(void);//处于快充协议
+uint8_t SW6306_IsQCStatUFCS(void);//UFCS协议
+uint8_t SW6306_IsQCStatAFC(void);//AFC协议
+uint8_t SW6306_IsQCStatSFCP(void);//SFCP协议
+uint8_t SW6306_IsQCStatSVOOC(void);//Super VOOC协议
+uint8_t SW6306_IsQCStatVOOC4(void);//VOOC 4.0协议
+uint8_t SW6306_IsQCStatVOOC1(void);//VOOC 1.0协议
+uint8_t SW6306_IsQCStatPE20(void);//MTK PE2.0协议
+uint8_t SW6306_IsQCStatPE11(void);//MTK PE1.1协议
+uint8_t SW6306_IsQCStatPDPPS(void);//PD协议，PPS电压
+uint8_t SW6306_IsQCStatPDFIX(void);//PD协议，FIX电压
+uint8_t SW6306_IsQCStatSCP(void);//SCP协议
+uint8_t SW6306_IsQCStatFCP(void);//FCP协议
+uint8_t SW6306_IsQCStatQC3P(void);//QC3+协议
+uint8_t SW6306_IsQCStatQC3(void);//QC3协议
+uint8_t SW6306_IsQCStatQC2(void);//QC2协议
+uint8_t SW6306_IsQCStatNONE(void);//无协议
 //功率与协议相关操作
 uint8_t SW6306_PowerLoad(void);                 //更新功率状态镜像寄存器(0x0E,0x0F,0x10,0x11,0x1C,0x45,0x4F,0x51,0x52)
 uint16_t SW6306_ReadIPortLimit(void);           //读取充电时端口限流实时值（单位：mA）

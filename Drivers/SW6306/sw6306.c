@@ -282,7 +282,82 @@ uint8_t SW6306_IsPortA2ON(void)
 {
     return SW6306_Status.sys_stat & SW6306_SYS_STAT_A2ON;
 }
-
+uint8_t SW6306_IsQCStatQC(void)//读充放电快充指示寄存器
+{
+    return SW6306_Status.qcstat;
+}
+uint8_t SW6306_IsQCStatVQC(void)//处于快充电压
+{
+	return (SW6306_Status.qcstat & SW6306_QCSTAT_VQC) == SW6306_QCSTAT_VQC;
+}
+uint8_t SW6306_IsQCStatPQC(void)//处于快充协议
+{
+	return (SW6306_Status.qcstat & SW6306_QCSTAT_PQC) == SW6306_QCSTAT_PQC;
+}
+uint8_t SW6306_IsQCStatUFCS(void)//UFCS协议
+{
+	return (SW6306_Status.qcstat & 0x0F) == SW6306_QCSTAT_UFCS;
+}
+uint8_t SW6306_IsQCStatAFC(void)//AFC协议
+{
+	return (SW6306_Status.qcstat & 0x0F) == SW6306_QCSTAT_AFC;
+}
+uint8_t SW6306_IsQCStatSFCP(void)//SFCP协议
+{
+	return (SW6306_Status.qcstat & 0x0F) == SW6306_QCSTAT_SFCP;
+}
+uint8_t SW6306_IsQCStatSVOOC(void)//Super VOOC协议
+{
+	return (SW6306_Status.qcstat & 0x0F) == SW6306_QCSTAT_SVOOC;
+}
+uint8_t SW6306_IsQCStatVOOC4(void)//VOOC 4.0协议
+{
+	return (SW6306_Status.qcstat & 0x0F) == SW6306_QCSTAT_VOOC4;
+}
+uint8_t SW6306_IsQCStatVOOC1(void)//VOOC 1.0协议
+{
+	return (SW6306_Status.qcstat & 0x0F) == SW6306_QCSTAT_VOOC1;
+}
+uint8_t SW6306_IsQCStatPE20(void)//MTK PE2.0协议
+{
+	return (SW6306_Status.qcstat & 0x0F) == SW6306_QCSTAT_PE20;
+}
+uint8_t SW6306_IsQCStatPE11(void)//MTK PE1.1协议
+{
+	return (SW6306_Status.qcstat & 0x0F) == SW6306_QCSTAT_PE11;
+}
+uint8_t SW6306_IsQCStatPDPPS(void)//PD协议，PPS电压
+{
+	return (SW6306_Status.qcstat & 0x0F) == SW6306_QCSTAT_PDPPS;
+}
+uint8_t SW6306_IsQCStatPDFIX(void)//PD协议，FIX电压
+{
+	return (SW6306_Status.qcstat & 0x0F) == SW6306_QCSTAT_PDFIX;
+}
+uint8_t SW6306_IsQCStatSCP(void)//SCP协议
+{
+	return (SW6306_Status.qcstat & 0x0F) == SW6306_QCSTAT_SCP;
+}
+uint8_t SW6306_IsQCStatFCP(void)//FCP协议
+{
+	return (SW6306_Status.qcstat & 0x0F) == SW6306_QCSTAT_FCP;
+}
+uint8_t SW6306_IsQCStatQC3P(void)//QC3+协议
+{
+	return (SW6306_Status.qcstat & 0x0F) == SW6306_QCSTAT_QC3P;
+}
+uint8_t SW6306_IsQCStatQC3(void)//QC3协议
+{
+	return (SW6306_Status.qcstat & 0x0F) == SW6306_QCSTAT_QC3;
+}
+uint8_t SW6306_IsQCStatQC2(void)//QC2协议
+{
+	return (SW6306_Status.qcstat & 0x0F) == SW6306_QCSTAT_QC2;
+}
+uint8_t SW6306_IsQCStatNONE(void)//无协议
+{
+	return (SW6306_Status.qcstat & 0x0F) == SW6306_QCSTAT_NONE;
+}
 
 uint8_t SW6306_PowerLoad(void)//更新功率状态镜像寄存器(0x0E,0x0F,0x10,0x11,0x1C,0x45,0x4F,0x51,0x52)
 {

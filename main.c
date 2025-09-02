@@ -131,6 +131,26 @@ THRD_DECLARE(thread_app)
         if(SW6306_IsPortC2ON()) uprintf("\nC2 端口以启用");
         if(SW6306_IsPortA1ON()) uprintf("\nA1 端口以启用");
         if(SW6306_IsPortA2ON()) uprintf("\nA2 端口以启用");
+		uprintf("\n库仑计最大容量:%f",SW6306_ReadMaxGuageCap());
+		uprintf("\n库仑计当前容量%f",SW6306_ReadPresentGuageCap());
+		if(SW6306_IsQCStatVQC()) uprintf("\n处于快充电压");
+		if(SW6306_IsQCStatPQC()) uprintf("，处于快充协议");
+		if(SW6306_IsQCStatUFCS()) uprintf("，UFCS协议");
+		if(SW6306_IsQCStatAFC()) uprintf("，AFC协议");
+		if(SW6306_IsQCStatSFCP()) uprintf("，SFCP协议");
+		if(SW6306_IsQCStatSVOOC()) uprintf("，Super VOOC协议");
+		if(SW6306_IsQCStatVOOC4()) uprintf("，VOOC 4.0协议");
+		if(SW6306_IsQCStatVOOC1()) uprintf("，VOOC 1.0协议");
+		if(SW6306_IsQCStatPE20()) uprintf("，MTK PE2.0协议");
+		if(SW6306_IsQCStatPE11()) uprintf("，MTK PE1.1协议");
+		if(SW6306_IsQCStatPDPPS()) uprintf("，PD PPS电压");
+		if(SW6306_IsQCStatPDFIX()) uprintf("，PD FIX电压");
+		if(SW6306_IsQCStatSCP()) uprintf("，SCP协议");
+		if(SW6306_IsQCStatFCP()) uprintf("，FCP协议");
+		if(SW6306_IsQCStatQC3P()) uprintf("，QC3+协议");
+		if(SW6306_IsQCStatQC3()) uprintf("，QC3协议");
+		if(SW6306_IsQCStatQC2()) uprintf("，QC2协议");
+		if(SW6306_IsQCStatNONE()) uprintf("\n无协议");
         //电气数据显示
         uprintf("\n电量:%d%%,LED亮度:%d",SW6306_ReadCapacity(),TIM1->CCR4);//定时器1通道4，LED亮度
         uprintf("\n接口电压:%dmV,风扇转速%d",SW6306_ReadVBUS(),TIM1->CCR2);//定时器1通道2，散热风扇 
@@ -624,12 +644,22 @@ void Home1(void)
 	OLED_Print(0,0,16,ch,1);
 	sprintf((char*)ch,"%.02fV %.03fA",(float)SW6306_ReadVBUS()/1000.0f,(float)SW6306_ReadIBUS()/1000.0f);
 	OLED_Print(0,16,16,ch,1);
-	//端口状态显示
-	if(SW6306_IsPortC1ON()) sprintf((char*)ch,"%.02fW %d%% C1",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
-	else if(SW6306_IsPortC2ON()) sprintf((char*)ch,"%.02fW %d%% C2",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
-	else if(SW6306_IsPortA1ON()) sprintf((char*)ch,"%.02fW %d%% A1",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
-	else if(SW6306_IsPortA2ON()) sprintf((char*)ch,"%.02fW %d%% A2",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
-	else sprintf((char*)ch,"%.02fW %d%%",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
+	if(SW6306_IsQCStatUFCS()) sprintf((char*)ch,"%.02fW %d%% UFCS",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
+	if(SW6306_IsQCStatAFC()) sprintf((char*)ch,"%.02fW %d%% AFC",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
+	if(SW6306_IsQCStatSFCP()) sprintf((char*)ch,"%.02fW %d%% SFCP",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
+	if(SW6306_IsQCStatSVOOC()) sprintf((char*)ch,"%.02fW %d%% SVOOC",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
+	if(SW6306_IsQCStatVOOC4()) sprintf((char*)ch,"%.02fW %d%% VOOC4",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
+	if(SW6306_IsQCStatVOOC1()) sprintf((char*)ch,"%.02fW %d%% VOOC1",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
+	if(SW6306_IsQCStatPE20()) sprintf((char*)ch,"%.02fW %d%% PE2.0",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
+	if(SW6306_IsQCStatPE11()) sprintf((char*)ch,"%.02fW %d%% PE1.1",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
+	if(SW6306_IsQCStatPDPPS()) sprintf((char*)ch,"%.02fW %d%% PDPPS",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
+	if(SW6306_IsQCStatPDFIX()) sprintf((char*)ch,"%.02fW %d%% PDFIX",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
+	if(SW6306_IsQCStatSCP()) sprintf((char*)ch,"%.02fW %d%% SCP",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
+	if(SW6306_IsQCStatFCP()) sprintf((char*)ch,"%.02fW %d%% FCP",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
+	if(SW6306_IsQCStatQC3P()) sprintf((char*)ch,"%.02fW %d%% QC3+",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
+	if(SW6306_IsQCStatQC3()) sprintf((char*)ch,"%.02fW %d%% QC3",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
+	if(SW6306_IsQCStatQC2()) sprintf((char*)ch,"%.02fW %d%% QC2",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
+	if(SW6306_IsQCStatNONE()) sprintf((char*)ch,"%.02fW %d%%",(float)SW6306_ReadVBUS()*SW6306_ReadIBUS()/1000000.0f,SW6306_ReadCapacity());
 	OLED_Print(0,32,16,ch,1);
 	sprintf((char*)ch,"%.02f℃ %d℃ %d",SW6306_ReadTCHIP(),SW6306_ReadTNTC(),(time*LCD_DELAY*10)/1000);
 	OLED_Print(0,48,16,ch,1);
@@ -645,8 +675,15 @@ void Home2(void)
 	OLED_Print(0,16,16,ch,1);
 	sprintf((char*)ch,"%.02f℃ %.02f%%",GetShtc3Data(0),GetShtc3Data(1));
 	OLED_Print(0,32,16,ch,1);
-	sprintf((char*)ch,"FAN:%d%% %02d.%d",TIM1->CCR2/10,Getds3231Time.second,Getds3231Time.dayOfWeek);
+	//端口状态显示
+	if(SW6306_IsPortC1ON()) sprintf((char*)ch,"FAN:%d%% %02d.%d C1",TIM1->CCR2/10,Getds3231Time.second,Getds3231Time.dayOfWeek);
+	else if(SW6306_IsPortC2ON()) sprintf((char*)ch,"FAN:%d%% %02d.%d C2",TIM1->CCR2/10,Getds3231Time.second,Getds3231Time.dayOfWeek);
+	else if(SW6306_IsPortA1ON()) sprintf((char*)ch,"FAN:%d%% %02d.%d A1",TIM1->CCR2/10,Getds3231Time.second,Getds3231Time.dayOfWeek);
+	else if(SW6306_IsPortA2ON()) sprintf((char*)ch,"FAN:%d%% %02d.%d A2",TIM1->CCR2/10,Getds3231Time.second,Getds3231Time.dayOfWeek);
+	else sprintf((char*)ch,"FAN:%d%% %02d.%d",TIM1->CCR2/10,Getds3231Time.second,Getds3231Time.dayOfWeek);
 	OLED_Print(0,48,16,ch,1);
+//	sprintf((char*)ch,"FAN:%d%% %02d.%d",TIM1->CCR2/10,Getds3231Time.second,Getds3231Time.dayOfWeek);
+//	OLED_Print(0,48,16,ch,1);
 }
 //二级菜单1显示内容
 void Home1_2(void)

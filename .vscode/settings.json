@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "defines.h": "c",
+        "hardware_config.h": "c",
+        "py32f0xx_ll_bus.h": "c"
+    }
+}
