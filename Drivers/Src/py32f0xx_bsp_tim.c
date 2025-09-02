@@ -51,7 +51,7 @@ void BSP_PWMChannelConfig(void)
 	TIM_OC_Initstruct.CompareValue = 100;//LCD背光亮度
 	LL_TIM_OC_Init(TIM16, LL_TIM_CHANNEL_CH1, &TIM_OC_Initstruct);
 
-	TIM_OC_Initstruct.CompareValue = 0;//电弧
+	TIM_OC_Initstruct.CompareValue = 0;//PA8引脚PWM
 	LL_TIM_OC_Init(TIM1, LL_TIM_CHANNEL_CH1, &TIM_OC_Initstruct);
 	
 	TIM_OC_Initstruct.CompareValue = 0;//风扇转速

@@ -45,8 +45,8 @@ static Menu_table  table[100]=
 	{2,6,3,7,0,(&Home1_2)},		//二级菜单，2， LED亮度
 	{3,2,4,8,0,(&Home1_2)},		//二级菜单，3，时间设置
 	{4,3,5,4,0,(&Home1_2)},		//二级菜单，4，NDP2450供电开关
-	{5,4,6,15,0,(&Home1_2)},		//二级菜单，5，LED最大亮度
-	{6,5,2,6,0,(&Home1_2)},		//二级菜单，6，蜂鸣器开关
+	{5,4,6,15,0,(&Home1_2)},		//二级菜单，5，PA8引脚PWM
+	{6,5,2,16,0,(&Home1_2)},		//二级菜单，6，温控设定值
 //	
 	{7,7,7,7,2,(&MCU1LEDSet)},					//三级菜单，7，LED亮度设置
 	{8,8,8,9,3,(&Ds3231SetHome)},				//三级菜单，8，时间设置，年
@@ -56,7 +56,8 @@ static Menu_table  table[100]=
 	{12,12,12,13,3,(&Ds3231SetHome)},		//三级菜单，12，时间设置，分
 	{13,13,13,14,3,(&Ds3231SetHome)},		//三级菜单，13，时间设置，秒
 	{14,14,14,8,3,(&Ds3231SetHome)},		//三级菜单，14，时间设置，周
-	{15,15,15,15,5,(&ElectricArc)},				//三级菜单，15，电弧开关
+	{15,15,15,15,5,(&ElectricArc)},				//三级菜单，15，PA8引脚PWM
+	{16,16,16,16,6,(&SetTempControl)},				//三级菜单，16，温控设定值
 };
 
 extern uint8_t inttrig,keytrig;//bsp_exti.c文件定义的指示变量
@@ -272,6 +273,16 @@ THRD_DECLARE(thread_key)
 					if(Setds3231Time.dayOfWeek>7){
 						Setds3231Time.dayOfWeek=1;
 					}
+				}else if(func_index==15){//PA8PWM
+					TIM1->CCR1++;
+					if(TIM1->CCR1>=1000){
+						TIM1->CCR1=0;
+					}
+				}else if(func_index==16){//温控设定值
+					Temp1_pid.Target++;
+					if(Temp1_pid.Target>=70){
+						Temp1_pid.Target=0;
+					}
 				}
 				uprintf("键值:%d\n",key_data);
 			break;
@@ -319,6 +330,16 @@ THRD_DECLARE(thread_key)
 					if(Setds3231Time.dayOfWeek==0){
 						Setds3231Time.dayOfWeek=7;
 					}
+				}else if(func_index==15){//PA8PWM
+					if(TIM1->CCR1==0){
+						TIM1->CCR1=1000;
+					}
+					TIM1->CCR1--;
+				}else if(func_index==16){//温控设定值
+					Temp1_pid.Target--;
+					if(Temp1_pid.Target<=-70){
+						Temp1_pid.Target=70;
+					}
 				}
 				uprintf("键值:%d\n",key_data);
 			break;
@@ -327,7 +348,6 @@ THRD_DECLARE(thread_key)
 				uprintf("键值:%d\n",key_data);
 			break;
 			case 5://按键1长按
-				TIM1->CCR1=50;
 				uprintf("键值:%d\n",key_data);			
 			break;
 			case 6://按键2长按//一直加
@@ -372,6 +392,16 @@ THRD_DECLARE(thread_key)
 					Setds3231Time.dayOfWeek++;
 					if(Setds3231Time.dayOfWeek>7){
 						Setds3231Time.dayOfWeek=7;
+					}
+				}else if(func_index==15){//PA8PWM
+					TIM1->CCR1++;
+					if(TIM1->CCR1>=1000){
+						TIM1->CCR1=0;
+					}
+				}else if(func_index==16){//温控设定值
+					Temp1_pid.Target++;
+					if(Temp1_pid.Target>=70){
+						Temp1_pid.Target=0;
 					}
 				}
 				uprintf("键值:%d\n",key_data);
@@ -418,6 +448,16 @@ THRD_DECLARE(thread_key)
 					Setds3231Time.dayOfWeek--;
 					if(Setds3231Time.dayOfWeek==0){
 						Setds3231Time.dayOfWeek=7;
+					}
+				}else if(func_index==15){//PA8PWM
+					if(TIM1->CCR1==0){
+						TIM1->CCR1=1000;
+					}
+					TIM1->CCR1--;
+				}else if(func_index==16){//温控设定值
+					Temp1_pid.Target--;
+					if(Temp1_pid.Target<=-70){
+						Temp1_pid.Target=70;
 					}
 				}
 				uprintf("键值:%d\n",key_data);
@@ -712,10 +752,10 @@ void Home1_2(void)
 	}
 	
 	DisplayBuf[3].current=5;//索引号
-	sprintf((char*)DisplayBuf[3].displaysrt,"电弧开关");//功能名
+	sprintf((char*)DisplayBuf[3].displaysrt,"PA8引脚PWM");//功能名
 	
 	DisplayBuf[4].current=6;//索引号
-	sprintf((char*)DisplayBuf[4].displaysrt,"待设置...");//功能名
+	sprintf((char*)DisplayBuf[4].displaysrt,"温控设定值%.0f",Temp1_pid.Target);//功能名
 	
 	DisplayBuf[5].current=16;//索引号
 	sprintf((char*)DisplayBuf[5].displaysrt,"待设置...");//功能名
@@ -825,10 +865,13 @@ void Ds3231SetHome(void)
 		OLED_Print(80,48,16,(uint8_t*)"以保存",1);
 	}
 }
-void ElectricArc(void)
+void ElectricArc(void)//PA8PWM占空比
 {
-	OLED_Print(0,0,16,(uint8_t*)"长按确认键开电弧",1);
-	OLED_Print(0,16,16,(uint8_t*)"松开后关电弧",1);
-	sprintf((char*)ch,"电弧占空比%d",TIM1->CCR1);
-	OLED_Print(0,32,16,ch,1);
+	sprintf((char*)ch,"PA8PWM占空比%d",TIM1->CCR1);
+	OLED_Print(0,0,16,ch,1);
+}
+void SetTempControl(void)//温控设定值
+{
+	sprintf((char*)ch,"设定值%.02f",Temp1_pid.Target);
+	OLED_Print(0,0,16,ch,1);
 }

@@ -44,7 +44,8 @@ void Mcu1DataUP(void);//数据上传任务
 void Home1(void);//主界面1,0，遥控器数据
 void Home2(void);//主界面2，1，探照灯数据
 void MCU1LEDSet(void);//三级菜单，7，LED亮度设置
-void ElectricArc(void);////三级菜单，15，电弧开关
+void ElectricArc(void);////三级菜单，15，PA8PWM
+void SetTempControl(void);//三级菜单，16，温控设定值
 //void MCU1LP2221Set(void);//三级菜单，8，LP2221开关设置，5VUSB电压输出
 //void Mcu1BuzzSet(void);//三级菜单，9，蜂鸣器音量设置
 //void MCU1LEDMAXSet(void);//三级菜单，10，LED最大亮度设置
