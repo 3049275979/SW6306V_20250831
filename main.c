@@ -792,6 +792,7 @@ void Menu_AppInit(void)
 	if (Mcu1Setdat.Sw6306InputPower == 0xFF) {  // 比较二进制位
 		Mcu1Setdat.Sw6306InputPower=50;
     }
+	SetSw6306VInputPowMax(Mcu1Setdat.Sw6306InputPower);
 }
 
 //主界面1,0，遥控器数据
