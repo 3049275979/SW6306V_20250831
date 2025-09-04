@@ -28,6 +28,10 @@
 ".\objects\myspi_drv.o"
 ".\objects\shtc3_drv.o"
 ".\objects\ds3231_drv.o"
+".\objects\flash_drv.o"
+".\objects\py32f0xx_hal_flash.o"
+".\objects\py32f0xx_hal.o"
+".\objects\py32f0xx_hal_cortex.o"
 ".\objects\menu.o"
 --library_type=microlib --strict --scatter ".\Objects\Target.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

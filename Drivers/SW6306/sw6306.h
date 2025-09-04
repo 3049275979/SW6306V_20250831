@@ -34,8 +34,8 @@ extern C {
 #define SW6306_NTC_B                    3435
 
 //输入输出最大功率设定，最大100W
-#define SW6306_INPUT_POWER_MAX          90U        //输入/充电功率
-#define SW6306_OUTPUT_POWER_MAX         90U        //输出/放电功率
+//#define SW6306_INPUT_POWER_MAX          100U        //输入/充电功率
+//#define SW6306_OUTPUT_POWER_MAX         100U        //输出/放电功率
 
 #define SW6306_PD_5V_FIX_CURR           5000U       //PD 5V Fix电流（必须是10的倍数）（单位：mA）（最大5000）
 #define SW6306_PD_9V_FIX_CURR           5000U       //PD 9V Fix电流（必须是10的倍数）
@@ -1277,7 +1277,7 @@ uint8_t SW6306_IbatForceCtrlSet(uint8_t status);        //设置是否强制控�
 //初始化
 uint8_t SW6306_Init(void);                      //初始化，最好系统上电后立刻执行
 uint8_t SW6306_IsInitialized(void);             //检测SW6306是否已初始化过，须在SW6306_PowerLoad()后执行
-
+void SetSw6306VInputPowMax(uint8_t pow);//设置输入/充电功率
 
 #ifdef __cplusplus
 }

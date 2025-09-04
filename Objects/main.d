@@ -30,4 +30,4 @@
   Drivers\SW6306\sw6306.h Applications\debounce_key.h \
   Applications\bsp_py32f030x6.h Menu\menu.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h Drivers\shtc3_drv.h \
-  Drivers\ds3231_drv.h
+  Drivers\ds3231_drv.h Drivers\flash_drv.h

@@ -553,6 +553,26 @@
               <FileType>1</FileType>
               <FilePath>.\Drivers\ds3231_drv.c</FilePath>
             </File>
+            <File>
+              <FileName>flash_drv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\flash_drv.c</FilePath>
+            </File>
+            <File>
+              <FileName>py32f0xx_hal_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\py32f0xx_hal_flash.c</FilePath>
+            </File>
+            <File>
+              <FileName>py32f0xx_hal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\py32f0xx_hal.c</FilePath>
+            </File>
+            <File>
+              <FileName>py32f0xx_hal_cortex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\py32f0xx_hal_cortex.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1187,6 +1207,26 @@
               <FileType>1</FileType>
               <FilePath>.\Drivers\ds3231_drv.c</FilePath>
             </File>
+            <File>
+              <FileName>flash_drv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\flash_drv.c</FilePath>
+            </File>
+            <File>
+              <FileName>py32f0xx_hal_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\py32f0xx_hal_flash.c</FilePath>
+            </File>
+            <File>
+              <FileName>py32f0xx_hal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\py32f0xx_hal.c</FilePath>
+            </File>
+            <File>
+              <FileName>py32f0xx_hal_cortex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\py32f0xx_hal_cortex.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1820,6 +1860,26 @@
               <FileType>1</FileType>
               <FilePath>.\Drivers\ds3231_drv.c</FilePath>
             </File>
+            <File>
+              <FileName>flash_drv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\flash_drv.c</FilePath>
+            </File>
+            <File>
+              <FileName>py32f0xx_hal_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\py32f0xx_hal_flash.c</FilePath>
+            </File>
+            <File>
+              <FileName>py32f0xx_hal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\py32f0xx_hal.c</FilePath>
+            </File>
+            <File>
+              <FileName>py32f0xx_hal_cortex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\py32f0xx_hal_cortex.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2452,6 +2512,26 @@
               <FileName>ds3231_drv.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Drivers\ds3231_drv.c</FilePath>
+            </File>
+            <File>
+              <FileName>flash_drv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\flash_drv.c</FilePath>
+            </File>
+            <File>
+              <FileName>py32f0xx_hal_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\py32f0xx_hal_flash.c</FilePath>
+            </File>
+            <File>
+              <FileName>py32f0xx_hal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\py32f0xx_hal.c</FilePath>
+            </File>
+            <File>
+              <FileName>py32f0xx_hal_cortex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\py32f0xx_hal_cortex.c</FilePath>
             </File>
           </Files>
         </Group>

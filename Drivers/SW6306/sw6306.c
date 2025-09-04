@@ -1,6 +1,7 @@
 #include "sw6306.h"
 
-
+static uint8_t SW6306_INPUT_POWER_MAX=100;//输入/充电功率
+static uint8_t SW6306_OUTPUT_POWER_MAX=100;//输出/放电功率
 volatile static struct SW6306_StatusTypedef SW6306_Status;//SW6306状态全局变量
 
 /*******************************基本操作区*************************************/
@@ -579,11 +580,11 @@ uint8_t SW6306_ReadCapacity(void)//读取SW6306显示电量
 {
     return SW6306_Status.capacity;
 }
-float SW6306_ReadMaxGuageCap(void)//读取库仑计最大容量（单位：mAh）
+float SW6306_ReadMaxGuageCap(void)//读取库仑计最大容量（单位：mWh）
 {
     return SW6306_Status.maxcap*326.2236;
 }
-float SW6306_ReadPresentGuageCap(void)//读取库仑计当前容量（单位：mAh）
+float SW6306_ReadPresentGuageCap(void)//读取库仑计当前容量（单位：mWh）
 {
     return SW6306_Status.presentcap*0.07964;
 }
@@ -1478,4 +1479,9 @@ uint8_t SW6306_IsInitialized(void)//检测SW6306是否已初始化过，须在SW6306_PowerLo
         }
     }
     else return 0;
+}
+//设置输入/充电功率
+void SetSw6306VInputPowMax(uint8_t pow)
+{
+	SW6306_INPUT_POWER_MAX=pow;
 }

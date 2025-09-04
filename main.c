@@ -8,6 +8,7 @@
 #include "menu.h"
 #include "shtc3_drv.h"
 #include "ds3231_drv.h" 
+#include "flash_drv.h"
 
 static uint8_t ledsta=0;//LED状态全局变量
 static uint8_t timeusart=1;//
@@ -16,6 +17,14 @@ static uint8_t keytrig1=0;
 static uint8_t key_data=0;
 static uint8_t TimeSaveTrig=0;//时间设置保存状态标志位
 static uint8_t TimeSaveTrig2=0;//时间设置保存状态标志位
+
+static Mcu1SaveData Mcu1Setdat;
+static uint8_t Mcu1SaveSign=0;//保存标志位
+static uint8_t Mcu1ResetSign=0;//参数重置标志位
+
+static uint8_t Sw6306InputPowerMAX=0;//充电实际最大功率
+static uint8_t Sw6306InputPowerMaxSign=0;//加载标志位
+
 uint16_t cd_sleep;//睡眠倒计时
 static float V1,V2,R2,Temp2;
 int16_t Tim1Ch4Pwm=0;
@@ -42,11 +51,11 @@ static Menu_table  table[100]=
     {0,1,1,2,0,(&Home1)},//一级菜单，开始菜单（主页面） 索引，向上一个，向下一个，确定，退出
 	{1,0,0,2,0,(&Home2)},//一级菜单，开始菜单（主页面） 索引，向上一个，向下一个，确定，退出
 	
-	{2,3,6,7,0,(&Home1_2)},		//二级菜单，2， LED亮度
+	{2,3,21,7,0,(&Home1_2)},		//二级菜单，2， LED亮度
 	{3,4,2,8,0,(&Home1_2)},		//二级菜单，3，时间设置
 	{4,5,3,4,0,(&Home1_2)},		//二级菜单，4，NDP2450供电开关
 	{5,6,4,15,0,(&Home1_2)},		//二级菜单，5，PA8引脚PWM
-	{6,2,5,16,0,(&Home1_2)},		//二级菜单，6，温控设定值
+	{6,17,5,16,0,(&Home1_2)},		//二级菜单，6，温控设定值
 //	
 	{7,7,7,7,2,(&MCU1LEDSet)},					//三级菜单，7，LED亮度设置
 	{8,8,8,9,3,(&Ds3231SetHome)},				//三级菜单，8，时间设置，年
@@ -58,6 +67,15 @@ static Menu_table  table[100]=
 	{14,14,14,8,3,(&Ds3231SetHome)},		//三级菜单，14，时间设置，周
 	{15,15,15,15,5,(&ElectricArc)},				//三级菜单，15，PA8引脚PWM
 	{16,16,16,16,6,(&SetTempControl)},				//三级菜单，16，温控设定值
+	
+	{17,19,6,18,0,(&Home1_2)},		//二级菜单，17，保存参数
+	{18,18,18,18,17,(&Mcu1SaveSet)},		//三级菜单，18，保存数据
+	
+	{19,21,17,20,0,(&Home1_2)},		//二级菜单，19，保存参数
+	{20,20,20,20,19,(&MCU1LCDbacSet)},		//三级菜单，18，保存数据
+	
+	{21,2,19,22,0,(&Home1_2)},		//二级菜单，21，充电功率设置
+	{22,22,22,22,21,(&MCU1Sw6306InputPowerSet)},		//三级菜单，22，充电功率设置
 };
 
 extern uint8_t inttrig,keytrig;//bsp_exti.c文件定义的指示变量
@@ -82,7 +100,7 @@ THRD_DECLARE(thread_app)
 		V2 = 3.32-V1;
 		R2 = 100000.0f*(V1/V2);
 		Temp2 = 1.0f/(1.0f/(273.15f+25.0f)+log(R2/100000.0f)/3950.0f)-273.15f;//热敏电阻温度值
-		
+		Mcu1Setdat.Temp1Target=Temp1_pid.Target;
 		Temp1_pid.Error =  SW6306_ReadTCHIP()-Temp1_pid.Target ;//实际值- 目标值 
 		Temp1_pid.Error=Temp1_pid.Error>50?50:(Temp1_pid.Error<0.001f?0.001f:Temp1_pid.Error);//限幅输出实际值
 		Temp1_pid.Out=Temp1_pid.Error*10+800;//误差值乘10加基础值800
@@ -99,6 +117,12 @@ THRD_DECLARE(thread_app)
 			DS3231_getdate(&Getds3231Time);
 		}
 		Shtc3_Read_Result();
+		
+		if(Sw6306InputPowerMaxSign==1)
+		{//最大输入功率设置/充电功率保存标志位
+			Sw6306InputPowerMaxSign=0;
+			SetSw6306VInputPowMax(Mcu1Setdat.Sw6306InputPower);
+		}
 		
         uprintf("\n休眠倒计时:%d0ms",cd_sleep);                
         
@@ -132,8 +156,11 @@ THRD_DECLARE(thread_app)
         if(SW6306_IsPortC2ON()) uprintf("\nC2 端口以启用");
         if(SW6306_IsPortA1ON()) uprintf("\nA1 端口以启用");
         if(SW6306_IsPortA2ON()) uprintf("\nA2 端口以启用");
-		uprintf("\n库仑计最大容量:%f",SW6306_ReadMaxGuageCap());
-		uprintf("\n库仑计当前容量%f",SW6306_ReadPresentGuageCap());
+		uprintf("\n实际输出最大功率:%dW",SW6306_ReadMaxOutputPower());
+		Sw6306InputPowerMAX=SW6306_ReadMaxInputPower();
+		uprintf("\n实际输入最大功率%dW",Sw6306InputPowerMAX);
+		uprintf("\n库仑计最大容量:%fWh",SW6306_ReadMaxGuageCap()/1000.0f);
+		uprintf("\n库仑计当前容量%fWh",SW6306_ReadPresentGuageCap()/1000.0f);
 		if(SW6306_IsQCStatVQC()) uprintf("\n处于快充电压");
 		if(SW6306_IsQCStatPQC()) uprintf("，处于快充协议");
 		if(SW6306_IsQCStatUFCS()) uprintf("，UFCS协议");
@@ -240,6 +267,9 @@ THRD_DECLARE(thread_key)
 					}
 				}else if(func_index==8){//年
 					Setds3231Time.year++;
+					if(Setds3231Time.year<2025){
+						Setds3231Time.year=2025;
+					}
 					if(Setds3231Time.year>2099){
 						Setds3231Time.year=2025;
 					}
@@ -282,6 +312,23 @@ THRD_DECLARE(thread_key)
 					Temp1_pid.Target++;
 					if(Temp1_pid.Target>=70){
 						Temp1_pid.Target=0;
+					}
+				}else if(func_index==18){//保存参数
+					FlashProgramTest(MCU1_FLASH_START_ADDR,(uint8_t*)(&Mcu1Setdat),sizeof(Mcu1Setdat));
+					Mcu1SaveSign=1;
+				}else if(func_index==20)
+				{
+					Mcu1Setdat.Tim16CH1pwm++;
+					if(Mcu1Setdat.Tim16CH1pwm>500)
+					{
+						Mcu1Setdat.Tim16CH1pwm=0;
+					}
+				}else if(func_index==22)
+				{
+					Mcu1Setdat.Sw6306InputPower++;
+					if(Mcu1Setdat.Sw6306InputPower>100)
+					{
+						Mcu1Setdat.Sw6306InputPower=10;
 					}
 				}
 				uprintf("键值:%d\n",key_data);
@@ -340,6 +387,26 @@ THRD_DECLARE(thread_key)
 					if(Temp1_pid.Target<=-70){
 						Temp1_pid.Target=70;
 					}
+				}else if(func_index==18){//重置参数
+					Mcu1Setdat.Tim16CH1pwm=48;//遥控器LCD背光
+					Mcu1Setdat.Temp1Target=35;//温控设定值
+					Mcu1Setdat.Sw6306InputPower=85;//最大输入功率设置/充电功率
+					Mcu1SaveSign=0;
+					Mcu1ResetSign=1;//参数重置标志位
+				}else if(func_index==20)
+				{
+					Mcu1Setdat.Tim16CH1pwm--;
+					if(Mcu1Setdat.Tim16CH1pwm<0)
+					{
+						Mcu1Setdat.Tim16CH1pwm=500;
+					}
+				}else if(func_index==22)
+				{
+					Mcu1Setdat.Sw6306InputPower--;
+					if(Mcu1Setdat.Sw6306InputPower<10)
+					{
+						Mcu1Setdat.Sw6306InputPower=100;
+					}
 				}
 				uprintf("键值:%d\n",key_data);
 			break;
@@ -360,6 +427,9 @@ THRD_DECLARE(thread_key)
 					}
 				}else if(func_index==8){//年
 					Setds3231Time.year++;
+					if(Setds3231Time.year<2025){
+						Setds3231Time.year=2025;
+					}
 					if(Setds3231Time.year>2099){
 						Setds3231Time.year=2099;
 					}
@@ -402,6 +472,20 @@ THRD_DECLARE(thread_key)
 					Temp1_pid.Target++;
 					if(Temp1_pid.Target>=70){
 						Temp1_pid.Target=0;
+					}
+				}else if(func_index==20)
+				{
+					Mcu1Setdat.Tim16CH1pwm++;
+					if(Mcu1Setdat.Tim16CH1pwm>500)
+					{
+						Mcu1Setdat.Tim16CH1pwm=0;
+					}
+				}else if(func_index==22)
+				{
+					Mcu1Setdat.Sw6306InputPower++;
+					if(Mcu1Setdat.Sw6306InputPower>100)
+					{
+						Mcu1Setdat.Sw6306InputPower=10;
 					}
 				}
 				uprintf("键值:%d\n",key_data);
@@ -459,6 +543,20 @@ THRD_DECLARE(thread_key)
 					if(Temp1_pid.Target<=-70){
 						Temp1_pid.Target=70;
 					}
+				}else if(func_index==20)
+				{
+					Mcu1Setdat.Tim16CH1pwm--;
+					if(Mcu1Setdat.Tim16CH1pwm<0)
+					{
+						Mcu1Setdat.Tim16CH1pwm=500;
+					}
+				}else if(func_index==22)
+				{
+					Mcu1Setdat.Sw6306InputPower--;
+					if(Mcu1Setdat.Sw6306InputPower<10)
+					{
+						Mcu1Setdat.Sw6306InputPower=100;
+					}
 				}
 				uprintf("键值:%d\n",key_data);
 			break;
@@ -470,6 +568,8 @@ THRD_DECLARE(thread_key)
 					||(func_index==12)||(func_index==13)||(func_index==14))
 				{
 					TimeSaveTrig=1;
+				}else if(func_index==22){
+					Sw6306InputPowerMaxSign=1;
 				}
 				TIM1->CCR1=0;
 				uprintf("键值:%d\n",key_data);			
@@ -504,8 +604,8 @@ THRD_DECLARE(thread_key)
 		{
 			cd_sleep-=2;
 		}
-		TIM1->CCR4=(uint16_t)Tim1Ch4Pwm;
-		
+		TIM1->CCR4=(uint16_t)Tim1Ch4Pwm;//LED亮度
+		TIM16->CCR1=(uint16_t)Mcu1Setdat.Tim16CH1pwm;//LCD背光亮度
         THRD_DELAY(1);
     }
     THRD_END;
@@ -570,7 +670,7 @@ int main(void)
 	Shtc3Wakeup();
 	BSP_AdcConfig();
     cd_sleep = SLEEP_DELAY;//刷新睡眠倒计时
-//	Menu_AppInit();
+	Menu_AppInit();
     LL_mDelay(50);//等待SW6306上电稳定
     
     uprintf("\n\n5S1P 21700 Power Bank");
@@ -601,7 +701,7 @@ int main(void)
 			(LL_GPIO_IsInputPinSet(GPIOB, LL_GPIO_PIN_2))))
         {
             while(SW6306_LPSet()==0);//while代替THRD_DELAY
-			LL_TIM_OC_SetCompareCH1(TIM16,0);//LCD背光亮度
+			TIM16->CCR1=0;//LCD背光亮度
 			timeusart=0;
 //			LL_TIM_OC_SetCompareCH4(TIM1,0);//LED亮度
 			LL_TIM_OC_SetCompareCH2(TIM1,0);//风扇转速
@@ -617,7 +717,7 @@ int main(void)
             LL_LPM_EnableSleep();
 			MySpiGpioInit();
 			OLED_Init();
-			LL_TIM_OC_SetCompareCH1(TIM16,100);//LCD背光亮度
+			TIM16->CCR1=(uint16_t)Mcu1Setdat.Tim16CH1pwm;//LCD背光亮度
 			keytrig1=1;
 			Shtc3Wakeup();
 //			LL_GPIO_SetOutputPin(GPIOA,LL_GPIO_PIN_12);//12V使能
@@ -662,17 +762,36 @@ void assert_failed(uint8_t *file, uint32_t line)
 #endif /* USE_FULL_ASSERT */
 void Menu_AppInit(void)
 {
-	//设置DS3231年月日星期
-	Setds3231Time.year=2025;
-	Setds3231Time.month=8;
-	Setds3231Time.dayofmonth=28;
-	Setds3231Time.dayOfWeek=4;
-	DS3231_setDate(Setds3231Time.year%100,Setds3231Time.month,Setds3231Time.dayofmonth,Setds3231Time.dayOfWeek);
-	//设置DS3231时分秒
-	Setds3231Time.hour=10;
-	Setds3231Time.minute=18;
-	Setds3231Time.second=0;
-	DS3231_setTime(Setds3231Time.hour,Setds3231Time.minute,Setds3231Time.second);
+	uint32_t bit32=0;
+	uint32_t bit16=0;
+	Mcu1Setdat.Temp1Target=35;//温控设定值
+	Mcu1Setdat.Tim16CH1pwm=48;//遥控器LCD背光
+	Mcu1Setdat.Sw6306InputPower=85;//最大输入功率设置/充电功率
+//	//设置DS3231年月日星期
+//	Setds3231Time.year=2025;
+//	Setds3231Time.month=8;
+//	Setds3231Time.dayofmonth=28;
+//	Setds3231Time.dayOfWeek=4;
+//	DS3231_setDate(Setds3231Time.year%100,Setds3231Time.month,Setds3231Time.dayofmonth,Setds3231Time.dayOfWeek);
+//	//设置DS3231时分秒
+//	Setds3231Time.hour=10;
+//	Setds3231Time.minute=18;
+//	Setds3231Time.second=0;
+//	DS3231_setTime(Setds3231Time.hour,Setds3231Time.minute,Setds3231Time.second);
+	FLASH_BufferRead(MCU1_FLASH_START_ADDR,(uint8_t*)(&Mcu1Setdat),sizeof(Mcu1Setdat));
+	bit32=*(uint32_t*)&Mcu1Setdat.Temp1Target;  // 强制转换指针
+	if (bit32 == 0xFFFFFFFF) {  // 比较二进制位
+		Temp1_pid.Target=36.0f;
+    }else{
+		Temp1_pid.Target=Mcu1Setdat.Temp1Target;
+	}
+	bit16=*(uint16_t*)&Mcu1Setdat.Tim16CH1pwm;  // 强制转换指针
+	if (bit16 == 0xFFFF) {  // 比较二进制位
+		Mcu1Setdat.Tim16CH1pwm=50;
+    }
+	if (Mcu1Setdat.Sw6306InputPower == 0xFF) {  // 比较二进制位
+		Mcu1Setdat.Sw6306InputPower=50;
+    }
 }
 
 //主界面1,0，遥控器数据
@@ -735,6 +854,7 @@ void Home1_2(void)
 //	Mcu1ResetSign=0;//参数重置标志位
 	TimeSaveTrig=0;
 	TimeSaveTrig2=0;
+	Mcu1SaveSign=0;
 	Setds3231Time=Getds3231Time;
 	DisplayBuf[0].current=2;//索引号
 	sprintf((char*)DisplayBuf[0].displaysrt,"LED亮度 %d%%",TIM1->CCR4/10);//功能名
@@ -757,8 +877,14 @@ void Home1_2(void)
 	DisplayBuf[4].current=6;//索引号
 	sprintf((char*)DisplayBuf[4].displaysrt,"温控设定值%.0f",Temp1_pid.Target);//功能名
 	
-	DisplayBuf[5].current=16;//索引号
-	sprintf((char*)DisplayBuf[5].displaysrt,"待设置...");//功能名
+	DisplayBuf[5].current=17;//索引号
+	sprintf((char*)DisplayBuf[5].displaysrt,"保存设置");//功能名
+	
+	DisplayBuf[6].current=19;//索引号
+	sprintf((char*)DisplayBuf[6].displaysrt,"背光亮度设置%d",(uint16_t)Mcu1Setdat.Tim16CH1pwm);//功能名
+	
+	DisplayBuf[7].current=21;//索引号
+	sprintf((char*)DisplayBuf[7].displaysrt,"充电功率设置%d",Mcu1Setdat.Sw6306InputPower);//功能名
 	
 	k=20;//数组长度
 	for(j=0;j<k;j++)//计算菜单列表个数
@@ -874,4 +1000,41 @@ void SetTempControl(void)//温控设定值
 {
 	sprintf((char*)ch,"设定值%.02f",Temp1_pid.Target);
 	OLED_Print(0,0,16,ch,1);
+}
+//三级菜单，18，保存设置
+void Mcu1SaveSet(void)
+{
+	OLED_Print(0,0,16,(uint8_t*)"按下加号键保存设",1);//LCD显示字符串
+	OLED_Print(0,16,16,(uint8_t*)"置,按下减号键重",1);//LCD显示字符串
+	OLED_Print(0,32,16,(uint8_t*)"置设置",1);//LCD显示字符串
+	if(Mcu1SaveSign)
+	{
+		OLED_Print(0,48,16,(uint8_t*)"已保存",0);//LCD显示字符串
+	}else
+	{
+		OLED_Print(0,48,16,(uint8_t*)"未保存",0);//LCD显示字符串
+	}
+	if(Mcu1ResetSign)
+	{
+		OLED_Print(64,48,16,(uint8_t*)"已重置",0);//LCD显示字符串
+	}
+}
+//三级菜单，20，LCD背光亮度设置
+void MCU1LCDbacSet(void)
+{
+	OLED_Print(0,0,16,(uint8_t*)"按加号键加亮度值",1);//LCD显示字符串
+	OLED_Print(0,16,16,(uint8_t*)"按减号键减亮度值",1);//LCD显示字符串
+	OLED_Print(0,32,16,(uint8_t*)"长按加或减一直加",1);//LCD显示字符串
+	sprintf((char*)ch,"或减 亮度值:%d",(uint16_t)Mcu1Setdat.Tim16CH1pwm);//转换为字符串
+	OLED_Print(0,48,16,ch,1);//LCD显示字符串
+}
+//三级菜单，22，充电最大功率设置
+void MCU1Sw6306InputPowerSet(void)
+{
+	sprintf((char*)ch,"设置功率:%dW",Mcu1Setdat.Sw6306InputPower);//转换为字符串
+	OLED_Print(0,0,16,ch,1);//LCD显示字符串
+	sprintf((char*)ch,"实际功率:%dW",Sw6306InputPowerMAX);//转换为字符串
+	OLED_Print(0,16,16,ch,1);//LCD显示字符串
+	OLED_Print(0,32,16,(uint8_t*)"长按确认键1秒以",1);
+	OLED_Print(0,48,16,(uint8_t*)"上松开后保存",1);
 }

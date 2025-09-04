@@ -13,13 +13,13 @@ void BSP_TIM_config(void)
     /* PWM period = 1000 */
     TIMCountInit.Autoreload          = 1000-1;
     TIMCountInit.RepetitionCounter   = 0;
+	
     LL_TIM_Init(TIM16,&TIMCountInit);
 	LL_TIM_EnableAllOutputs(TIM16);
     LL_TIM_EnableCounter(TIM16);
 	
 	LL_TIM_Init(TIM1,&TIMCountInit);
-	LL_TIM_EnableAllOutputs(TIM1);
-    LL_TIM_EnableCounter(TIM1);
+	
 }
     
 void BSP_PWMChannelConfig(void)
@@ -48,7 +48,7 @@ void BSP_PWMChannelConfig(void)
 	TIM_OC_Initstruct.OCPolarity = LL_TIM_OCPOLARITY_HIGH;
 	TIM_OC_Initstruct.OCIdleState = LL_TIM_OCIDLESTATE_LOW;
 	/* Set channel compare values */
-	TIM_OC_Initstruct.CompareValue = 100;//LCD背光亮度
+	TIM_OC_Initstruct.CompareValue = 0;//LCD背光亮度
 	LL_TIM_OC_Init(TIM16, LL_TIM_CHANNEL_CH1, &TIM_OC_Initstruct);
 
 	TIM_OC_Initstruct.CompareValue = 0;//PA8引脚PWM
@@ -63,4 +63,7 @@ void BSP_PWMChannelConfig(void)
 	TIM_OC_Initstruct.OCIdleState = LL_TIM_OCIDLESTATE_HIGH;
 	TIM_OC_Initstruct.CompareValue = 0;//LED亮度
 	LL_TIM_OC_Init(TIM1, LL_TIM_CHANNEL_CH4, &TIM_OC_Initstruct);
+	
+	LL_TIM_EnableAllOutputs(TIM1);
+    LL_TIM_EnableCounter(TIM1);
 }

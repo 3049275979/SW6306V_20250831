@@ -18,7 +18,10 @@ extern "C" {
 /* Private defines -----------------------------------------------------------*/
 /* Exported variables prototypes ---------------------------------------------*/
 /* Exported functions prototypes ---------------------------------------------*/
-
+typedef union {
+    float f;
+    uint32_t u;
+} FloatBits;//联合体
 typedef struct pid_parameter
 {
 	float Target;		//目标值
@@ -31,6 +34,23 @@ typedef struct pid_parameter
 	float Kd;
 	float Out;			//输出值
 }pid;
+typedef struct
+{
+	int16_t Tim16CH1pwm;//遥控器LCD背光
+	float Temp1Target;	//温控设定值
+	uint8_t Sw6306InputPower;//最大输入功率设置/充电功率
+}Mcu1SaveData;
+typedef struct
+{
+	float FanPwm;		//风扇
+	float LedPwm;		//LED
+	float Temp1;		//LED温度
+	float Temp2;		//单片机箱温度
+	float Current;		//LED电流
+	float Temp1Target;	//LED温度设定值
+	float TempLOW;		//LED温度误差值
+	float BatteryVol;	//电池电压
+}Mcu2SaveData;
 
 void APP_ErrorHandler(void);
 
@@ -46,6 +66,9 @@ void Home2(void);//主界面2，1，探照灯数据
 void MCU1LEDSet(void);//三级菜单，7，LED亮度设置
 void ElectricArc(void);////三级菜单，15，PA8PWM
 void SetTempControl(void);//三级菜单，16，温控设定值
+void Mcu1SaveSet(void);//三级菜单，13，保存设置
+void MCU1LCDbacSet(void);//三级菜单，20，LCD背光亮度设置
+void MCU1Sw6306InputPowerSet(void);//三级菜单，22，LCD背光亮度设置
 //void MCU1LP2221Set(void);//三级菜单，8，LP2221开关设置，5VUSB电压输出
 //void Mcu1BuzzSet(void);//三级菜单，9，蜂鸣器音量设置
 //void MCU1LEDMAXSet(void);//三级菜单，10，LED最大亮度设置
