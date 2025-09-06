@@ -164,7 +164,7 @@ uint8_t SW6306_ADCLoad(void)
             {
                 swld_steps++;
 				if(SW6306_IsCharging()){
-					SW6306_Status.ibus = SW6306_Status.ibus*2.3;      //转换BUS电流
+					SW6306_Status.ibus = SW6306_Status.ibus*2.5f;      //转换BUS电流
 				}else{
 					SW6306_Status.ibus = SW6306_Status.ibus*4;          //转换BUS电流
 				}
