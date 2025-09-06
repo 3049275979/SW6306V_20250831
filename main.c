@@ -149,8 +149,8 @@ THRD_DECLARE(thread_app)
         if(SW6306_IsErrorinCharging()) uprintf("\n充电发生错误");
         if(SW6306_IsErrorinDischarging()) uprintf("\n放电发生错误");
         if(SW6306_IsCharging()) uprintf("\n在充电");
-        if(SW6306_IsDischarging()) uprintf("\n正在放电");
-        if(SW6306_IsFullCharged()) uprintf("\n正在充电");
+        if(SW6306_IsDischarging()) uprintf("\n放电中");
+        if(SW6306_IsFullCharged()) uprintf("\n已充满");
         //端口状态显示
         if(SW6306_IsPortC1ON()) uprintf("\nC1 端口以启用");
         if(SW6306_IsPortC2ON()) uprintf("\nC2 端口以启用");

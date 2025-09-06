@@ -156,14 +156,18 @@ uint8_t SW6306_ADCLoad(void)
             if(SW6306_ADCRead(SW6306_ADC_SET_VBUS, (uint16_t*)&SW6306_Status.vbus))
             {
                 swld_steps++;
-                SW6306_Status.vbus = SW6306_Status.vbus<<3;                     //转换BUS电压
+                SW6306_Status.vbus = SW6306_Status.vbus*8;                     //转换BUS电压
             }
             else return 0;
         case 2:
             if(SW6306_ADCRead(SW6306_ADC_SET_IBUS, (uint16_t*)&SW6306_Status.ibus))
             {
                 swld_steps++;
-                SW6306_Status.ibus = SW6306_Status.ibus<<2;                     //转换BUS电流
+				if(SW6306_IsCharging()){
+					SW6306_Status.ibus = SW6306_Status.ibus*2.3;      //转换BUS电流
+				}else{
+					SW6306_Status.ibus = SW6306_Status.ibus*4;          //转换BUS电流
+				}
             }
             else return 0;
         case 3:
