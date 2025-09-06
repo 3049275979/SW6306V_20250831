@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Target.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Target.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6140002: Last Updated: Sat Sep  6 13:23:53 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6140002: Last Updated: Sat Sep  6 14:28:02 2025
 <BR><P>
 <H3>Maximum Stack Usage =        488 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -578,8 +578,8 @@ Global Symbols
 <LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_I2C_DisableBitPOS
 </UL>
 <BR>[Called By]<UL><LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_CapacityLoad
-<LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ADCRead
 <LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ByteRead
+<LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ADCRead
 </UL>
 
 <P><STRONG><a name="[63]"></a>ASYNC_I2C_Transmit</STRONG> (Thumb, 96 bytes, Stack size 24 bytes, py32f0xx_bsp_i2c.o(.text.ASYNC_I2C_Transmit))
@@ -697,8 +697,7 @@ Global Symbols
 <P><STRONG><a name="[9a]"></a>BSP_SystemClockConfig</STRONG> (Thumb, 104 bytes, Stack size 8 bytes, py32f0xx_bsp_rcc.o(.text.BSP_SystemClockConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = BSP_SystemClockConfig &rArr; LL_APB1_GRP2_EnableClock
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_RCC_GetSysClkSource
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_InitTick
+<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_InitTick
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FLASH_SetLatency
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_APB1_GRP2_EnableClock
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_APB1_GRP1_EnableClock
@@ -713,6 +712,7 @@ Global Symbols
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_RCC_HSI_IsReady
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_RCC_HSI_Enable
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_RCC_HSE_Disable
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_RCC_GetSysClkSource
 </UL>
 <BR>[Called By]<UL><LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysInit
 </UL>
@@ -1242,8 +1242,8 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.rodata.table)
 </UL>
-<P><STRONG><a name="[138]"></a>Menu_AppInit</STRONG> (Thumb, 204 bytes, Stack size 24 bytes, main.o(.text.Menu_AppInit))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Menu_AppInit &rArr; FLASH_BufferRead
+<P><STRONG><a name="[138]"></a>Menu_AppInit</STRONG> (Thumb, 204 bytes, Stack size 16 bytes, main.o(.text.Menu_AppInit))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Menu_AppInit &rArr; FLASH_BufferRead
 </UL>
 <BR>[Calls]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmplt
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmple
@@ -1398,15 +1398,16 @@ Global Symbols
 <P><STRONG><a name="[3]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, py32f0xx_it.o(.text.SVC_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_py32f030xx.o(RESET)
 </UL>
-<P><STRONG><a name="[154]"></a>SW6306_ADCLoad</STRONG> (Thumb, 304 bytes, Stack size 16 bytes, sw6306.o(.text.SW6306_ADCLoad))
+<P><STRONG><a name="[154]"></a>SW6306_ADCLoad</STRONG> (Thumb, 312 bytes, Stack size 16 bytes, sw6306.o(.text.SW6306_ADCLoad))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = SW6306_ADCLoad &rArr; SW6306_ADCRead &rArr; SW6306_ByteWrite &rArr; ASYNC_I2C_Transmit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
-<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_IsCharging
-<LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ADCRead
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ReadVBUS
+<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ReadVBAT
 <LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_RegsetSwitch
+<LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ADCRead
 </UL>
 <BR>[Called By]<UL><LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;thread_app
 </UL>
@@ -1458,10 +1459,10 @@ Global Symbols
 <LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_Init
 <LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_IextSet
 <LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_Click
-<LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ADCRead
 <LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_RegsetSwitch
 <LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_PDSet
 <LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ByteModify
+<LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ADCRead
 </UL>
 
 <P><STRONG><a name="[15b]"></a>SW6306_CapacityLoad</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, sw6306.o(.text.SW6306_CapacityLoad))
@@ -1530,7 +1531,6 @@ Global Symbols
 
 <P><STRONG><a name="[137]"></a>SW6306_IsCharging</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, sw6306.o(.text.SW6306_IsCharging))
 <BR><BR>[Called By]<UL><LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;thread_app
-<LI><a href="#[154]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ADCLoad
 <LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MCU1INTIbusRatioSet
 </UL>
 
@@ -1784,12 +1784,14 @@ Global Symbols
 
 <P><STRONG><a name="[e5]"></a>SW6306_ReadVBAT</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sw6306.o(.text.SW6306_ReadVBAT))
 <BR><BR>[Called By]<UL><LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;thread_app
+<LI><a href="#[154]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ADCLoad
 <LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MCU1INTIbusRatioSet
 <LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Home1
 </UL>
 
 <P><STRONG><a name="[e8]"></a>SW6306_ReadVBUS</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sw6306.o(.text.SW6306_ReadVBUS))
 <BR><BR>[Called By]<UL><LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;thread_app
+<LI><a href="#[154]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ADCLoad
 <LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Home1
 </UL>
 
