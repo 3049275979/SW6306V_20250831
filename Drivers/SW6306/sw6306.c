@@ -3,7 +3,7 @@
 static uint8_t SW6306_INPUT_POWER_MAX=100;//输入/充电功率
 static uint8_t SW6306_OUTPUT_POWER_MAX=100;//输出/放电功率
 volatile static struct SW6306_StatusTypedef SW6306_Status;//SW6306状态全局变量
-static float INT_IbusRatio=2.7;
+static float INT_IbusRatio=2.75;
 /*******************************基本操作区*************************************/
 uint8_t SW6306_ByteWrite(uint8_t reg, uint8_t data)
 {
