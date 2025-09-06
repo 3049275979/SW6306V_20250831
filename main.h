@@ -39,6 +39,7 @@ typedef struct
 	int16_t Tim16CH1pwm;//遥控器LCD背光
 	float Temp1Target;	//温控设定值
 	uint8_t Sw6306InputPower;//最大输入功率设置/充电功率
+	float INTIbusRatio;	//IBUS输入电流系数
 }Mcu1SaveData;
 typedef struct
 {
@@ -68,7 +69,8 @@ void ElectricArc(void);////三级菜单，15，PA8PWM
 void SetTempControl(void);//三级菜单，16，温控设定值
 void Mcu1SaveSet(void);//三级菜单，13，保存设置
 void MCU1LCDbacSet(void);//三级菜单，20，LCD背光亮度设置
-void MCU1Sw6306InputPowerSet(void);//三级菜单，22，LCD背光亮度设置
+void MCU1Sw6306InputPowerSet(void);//三级菜单，22，充电功率设置
+void MCU1INTIbusRatioSet(void);//三级菜单，24，IBUS输入电流系数
 //void MCU1LP2221Set(void);//三级菜单，8，LP2221开关设置，5VUSB电压输出
 //void Mcu1BuzzSet(void);//三级菜单，9，蜂鸣器音量设置
 //void MCU1LEDMAXSet(void);//三级菜单，10，LED最大亮度设置

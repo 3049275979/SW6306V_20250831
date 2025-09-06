@@ -1278,6 +1278,7 @@ uint8_t SW6306_IbatForceCtrlSet(uint8_t status);        //设置是否强制控�
 uint8_t SW6306_Init(void);                      //初始化，最好系统上电后立刻执行
 uint8_t SW6306_IsInitialized(void);             //检测SW6306是否已初始化过，须在SW6306_PowerLoad()后执行
 void SetSw6306VInputPowMax(uint8_t pow);//设置输入/充电功率
+float SetSw6306VInIbusRatio(float pow);//设置IBUS输入电流系数
 
 #ifdef __cplusplus
 }

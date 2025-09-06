@@ -1153,6 +1153,10 @@ void OLED_Print(uint8_t x, uint8_t y, uint8_t hsize,uint8_t *str,uint8_t mode)
 				{
 					x=0;
 					y+=hsize;
+					if(y>48)
+					{
+						y=0;
+					}
 				}
 			}
 		}else if(*(str+k) > 127)//大于127，为汉字，前后两个组成汉字内码
@@ -1179,6 +1183,10 @@ void OLED_Print(uint8_t x, uint8_t y, uint8_t hsize,uint8_t *str,uint8_t mode)
 			{
 				x=0;
 				y+=hsize;
+				if(y>48)
+				{
+					y=0;
+				}
 			}
 		}
 	}
