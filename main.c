@@ -840,7 +840,7 @@ void Menu_AppInit(void)
     }else{
 		if(Mcu1Setdat.INTIbusRatio<1||Mcu1Setdat.INTIbusRatio>4)
 		{
-			Mcu1Setdat.INTIbusRatio=2.252;
+			Mcu1Setdat.INTIbusRatio=2.7;
 		}
 		SetSw6306VInIbusRatio(Mcu1Setdat.INTIbusRatio);
 	}

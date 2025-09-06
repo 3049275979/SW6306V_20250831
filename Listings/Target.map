@@ -5152,11 +5152,11 @@ Image component sizes
         52          8          0          0          0       6706   py32f0xx_ll_utils.o
        244         36          0          0          9       1519   shtc3_drv.o
         28          8        192          0       1024        576   startup_py32f030xx.o
-      4312        292          0          5         67      18209   sw6306.o
+      4312        292          0          5         67      18212   sw6306.o
         92         24        128        196          0       2293   system_py32f0xx.o
 
     ----------------------------------------------------------------------
-     25316       3402       7600        212       2628     161339   Object Totals
+     25316       3402       7600        212       2628     161342   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         34          0          4          4         21          0   (incl. Padding)
 
@@ -5240,8 +5240,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     31384       3646       7664        220       2628     162847   Grand Totals
-     31384       3646       7664        220       2628     162847   ELF Image Totals
+     31384       3646       7664        220       2628     162850   Grand Totals
+     31384       3646       7664        220       2628     162850   ELF Image Totals
      31384       3646       7664        220          0          0   ROM Totals
 
 ==============================================================================

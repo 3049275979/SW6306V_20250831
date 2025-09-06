@@ -3,7 +3,7 @@
 static uint8_t SW6306_INPUT_POWER_MAX=100;//输入/充电功率
 static uint8_t SW6306_OUTPUT_POWER_MAX=100;//输出/放电功率
 volatile static struct SW6306_StatusTypedef SW6306_Status;//SW6306状态全局变量
-static float INT_IbusRatio=2.252;
+static float INT_IbusRatio=2.7;
 /*******************************基本操作区*************************************/
 uint8_t SW6306_ByteWrite(uint8_t reg, uint8_t data)
 {
@@ -163,7 +163,7 @@ uint8_t SW6306_ADCLoad(void)
             if(SW6306_ADCRead(SW6306_ADC_SET_IBUS, (uint16_t*)&SW6306_Status.ibus))
             {
                 swld_steps++;
-				if(SW6306_ReadVBAT()<SW6306_ReadVBUS()){
+				if(SW6306_ReadVBAT()<(SW6306_ReadVBUS()-50)){
 					SW6306_Status.ibus = SW6306_Status.ibus*INT_IbusRatio;      //转换BUS电流
 				}else{
 					SW6306_Status.ibus = SW6306_Status.ibus*4;          //转换BUS电流
