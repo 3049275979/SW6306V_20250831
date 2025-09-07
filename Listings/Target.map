@@ -3673,16 +3673,15 @@ Image Symbol Table
     __arm_cp.23_5                            0x08003dc4   Number         4  main.o(.text.Mcu1SaveSet)
     __arm_cp.23_6                            0x08003dc8   Number         4  main.o(.text.Mcu1SaveSet)
     [Anonymous Symbol]                       0x08003dd4   Section        0  main.o(.text.Menu_AppInit)
-    __arm_cp.9_0                             0x08003e78   Number         4  main.o(.text.Menu_AppInit)
-    __arm_cp.9_1                             0x08003e7c   Number         4  main.o(.text.Menu_AppInit)
-    __arm_cp.9_2                             0x08003e80   Number         4  main.o(.text.Menu_AppInit)
-    __arm_cp.9_3                             0x08003e84   Number         4  main.o(.text.Menu_AppInit)
-    __arm_cp.9_4                             0x08003e88   Number         4  main.o(.text.Menu_AppInit)
-    __arm_cp.9_5                             0x08003e8c   Number         4  main.o(.text.Menu_AppInit)
-    __arm_cp.9_6                             0x08003e90   Number         4  main.o(.text.Menu_AppInit)
-    __arm_cp.9_7                             0x08003e94   Number         4  main.o(.text.Menu_AppInit)
-    __arm_cp.9_8                             0x08003e98   Number         4  main.o(.text.Menu_AppInit)
-    __arm_cp.9_9                             0x08003e9c   Number         4  main.o(.text.Menu_AppInit)
+    __arm_cp.9_0                             0x08003e7c   Number         4  main.o(.text.Menu_AppInit)
+    __arm_cp.9_1                             0x08003e80   Number         4  main.o(.text.Menu_AppInit)
+    __arm_cp.9_2                             0x08003e84   Number         4  main.o(.text.Menu_AppInit)
+    __arm_cp.9_3                             0x08003e88   Number         4  main.o(.text.Menu_AppInit)
+    __arm_cp.9_4                             0x08003e8c   Number         4  main.o(.text.Menu_AppInit)
+    __arm_cp.9_5                             0x08003e90   Number         4  main.o(.text.Menu_AppInit)
+    __arm_cp.9_6                             0x08003e94   Number         4  main.o(.text.Menu_AppInit)
+    __arm_cp.9_7                             0x08003e98   Number         4  main.o(.text.Menu_AppInit)
+    __arm_cp.9_8                             0x08003e9c   Number         4  main.o(.text.Menu_AppInit)
     [Anonymous Symbol]                       0x08003ea0   Section        0  myspi_drv.o(.text.MySPI_SwapByte)
     __arm_cp.2_0                             0x08003ee0   Number         4  myspi_drv.o(.text.MySPI_SwapByte)
     [Anonymous Symbol]                       0x08003ee4   Section        0  myspi_drv.o(.text.MySpiGpioInit)
@@ -5132,7 +5131,7 @@ Image component sizes
        442          8          0          0         32       3164   debounce_key.o
        458          0          0          0          0       4142   ds3231_drv.o
        200         32          0          0          0       2069   flash_drv.o
-      9458       2426       2008          5        106      12357   main.o
+      9458       2422       2008          5        106      12357   main.o
        180          8          0          0          0       2384   myspi_drv.o
        496         32          0          0          2       4175   py32f0xx_bsp_exti.o
        768         52          0          0          0       6373   py32f0xx_bsp_gpio.o
@@ -5156,7 +5155,7 @@ Image component sizes
         92         24        128        196          0       2293   system_py32f0xx.o
 
     ----------------------------------------------------------------------
-     25316       3402       7600        212       2628     161342   Object Totals
+     25316       3398       7600        212       2628     161342   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         34          0          4          4         21          0   (incl. Padding)
 
@@ -5240,9 +5239,9 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     31384       3646       7664        220       2628     162850   Grand Totals
-     31384       3646       7664        220       2628     162850   ELF Image Totals
-     31384       3646       7664        220          0          0   ROM Totals
+     31384       3642       7664        220       2628     162850   Grand Totals
+     31384       3642       7664        220       2628     162850   ELF Image Totals
+     31384       3642       7664        220          0          0   ROM Totals
 
 ==============================================================================
 

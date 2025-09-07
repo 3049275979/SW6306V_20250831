@@ -836,11 +836,11 @@ void Menu_AppInit(void)
 	SetSw6306VInputPowMax(Mcu1Setdat.Sw6306InputPower);
 	bit32=*(uint32_t*)&Mcu1Setdat.INTIbusRatio;  // 强制转换指针
 	if (bit32 == 0xFFFFFFFF) {  // 比较二进制位
-		Mcu1Setdat.INTIbusRatio=SetSw6306VInIbusRatio(2.5);
+		Mcu1Setdat.INTIbusRatio=SetSw6306VInIbusRatio(4);
     }else{
 		if(Mcu1Setdat.INTIbusRatio<1||Mcu1Setdat.INTIbusRatio>4)
 		{
-			Mcu1Setdat.INTIbusRatio=2.75;
+			Mcu1Setdat.INTIbusRatio=4;
 		}
 		SetSw6306VInIbusRatio(Mcu1Setdat.INTIbusRatio);
 	}
