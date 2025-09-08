@@ -402,7 +402,7 @@ THRD_DECLARE(thread_key)
 					Mcu1Setdat.Tim16CH1pwm=48;//遥控器LCD背光
 					Mcu1Setdat.Temp1Target=35;//温控设定值
 					Mcu1Setdat.Sw6306InputPower=85;//最大输入功率设置/充电功率
-					Mcu1Setdat.INTIbusRatio=2.5;//IBUS输入电流系数
+					Mcu1Setdat.INTIbusRatio=4;//IBUS输入电流系数
 					Mcu1SaveSign=0;
 					Mcu1ResetSign=1;//参数重置标志位
 				}else if(func_index==20)
@@ -803,7 +803,7 @@ void Menu_AppInit(void)
 	Mcu1Setdat.Temp1Target=35;//温控设定值
 	Mcu1Setdat.Tim16CH1pwm=48;//遥控器LCD背光
 	Mcu1Setdat.Sw6306InputPower=85;//最大输入功率设置/充电功率
-	Mcu1Setdat.INTIbusRatio=2.5;//IBUS输入电流系数
+	Mcu1Setdat.INTIbusRatio=2.75;//IBUS输入电流系数
 //	//设置DS3231年月日星期
 //	Setds3231Time.year=2025;
 //	Setds3231Time.month=8;
@@ -836,11 +836,11 @@ void Menu_AppInit(void)
 	SetSw6306VInputPowMax(Mcu1Setdat.Sw6306InputPower);
 	bit32=*(uint32_t*)&Mcu1Setdat.INTIbusRatio;  // 强制转换指针
 	if (bit32 == 0xFFFFFFFF) {  // 比较二进制位
-		Mcu1Setdat.INTIbusRatio=SetSw6306VInIbusRatio(4);
+		Mcu1Setdat.INTIbusRatio=SetSw6306VInIbusRatio(2.75);
     }else{
 		if(Mcu1Setdat.INTIbusRatio<1||Mcu1Setdat.INTIbusRatio>4)
 		{
-			Mcu1Setdat.INTIbusRatio=4;
+			Mcu1Setdat.INTIbusRatio=2.75;
 		}
 		SetSw6306VInIbusRatio(Mcu1Setdat.INTIbusRatio);
 	}

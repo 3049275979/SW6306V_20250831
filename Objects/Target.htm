@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Target.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Target.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6140002: Last Updated: Sun Sep  7 17:34:34 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6140002: Last Updated: Mon Sep  8 17:58:27 2025
 <BR><P>
 <H3>Maximum Stack Usage =        488 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -697,7 +697,8 @@ Global Symbols
 <P><STRONG><a name="[9a]"></a>BSP_SystemClockConfig</STRONG> (Thumb, 104 bytes, Stack size 8 bytes, py32f0xx_bsp_rcc.o(.text.BSP_SystemClockConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = BSP_SystemClockConfig &rArr; LL_APB1_GRP2_EnableClock
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_RCC_GetSysClkSource
+<BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_RCC_HSE_Disable
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_RCC_GetSysClkSource
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_InitTick
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_FLASH_SetLatency
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_APB1_GRP2_EnableClock
@@ -712,7 +713,6 @@ Global Symbols
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_RCC_HSI_SetCalibFreq
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_RCC_HSI_IsReady
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_RCC_HSI_Enable
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_RCC_HSE_Disable
 </UL>
 <BR>[Called By]<UL><LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysInit
 </UL>
@@ -1242,8 +1242,8 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.rodata.table)
 </UL>
-<P><STRONG><a name="[138]"></a>Menu_AppInit</STRONG> (Thumb, 204 bytes, Stack size 16 bytes, main.o(.text.Menu_AppInit))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Menu_AppInit &rArr; FLASH_BufferRead
+<P><STRONG><a name="[138]"></a>Menu_AppInit</STRONG> (Thumb, 204 bytes, Stack size 24 bytes, main.o(.text.Menu_AppInit))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Menu_AppInit &rArr; FLASH_BufferRead
 </UL>
 <BR>[Calls]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmplt
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmple
@@ -1398,7 +1398,7 @@ Global Symbols
 <P><STRONG><a name="[3]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, py32f0xx_it.o(.text.SVC_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_py32f030xx.o(RESET)
 </UL>
-<P><STRONG><a name="[154]"></a>SW6306_ADCLoad</STRONG> (Thumb, 312 bytes, Stack size 16 bytes, sw6306.o(.text.SW6306_ADCLoad))
+<P><STRONG><a name="[154]"></a>SW6306_ADCLoad</STRONG> (Thumb, 320 bytes, Stack size 16 bytes, sw6306.o(.text.SW6306_ADCLoad))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = SW6306_ADCLoad &rArr; SW6306_ADCRead &rArr; SW6306_ByteWrite &rArr; ASYNC_I2C_Transmit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
@@ -1406,6 +1406,7 @@ Global Symbols
 <LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ReadVBUS
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ReadVBAT
+<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_IsCharging
 <LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ADCRead
 <LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_RegsetSwitch
 </UL>
@@ -1443,8 +1444,8 @@ Global Symbols
 <LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_PowerLoad
 <LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_PortStatusLoad
 <LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_CapacityLoad
-<LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_RegsetSwitch
 <LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ByteModify
+<LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_RegsetSwitch
 </UL>
 
 <P><STRONG><a name="[158]"></a>SW6306_ByteWrite</STRONG> (Thumb, 44 bytes, Stack size 24 bytes, sw6306.o(.text.SW6306_ByteWrite))
@@ -1459,10 +1460,10 @@ Global Symbols
 <LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_Init
 <LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_IextSet
 <LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_Click
+<LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ByteModify
 <LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ADCRead
 <LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_RegsetSwitch
 <LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_PDSet
-<LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ByteModify
 </UL>
 
 <P><STRONG><a name="[15b]"></a>SW6306_CapacityLoad</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, sw6306.o(.text.SW6306_CapacityLoad))
@@ -1488,8 +1489,8 @@ Global Symbols
 <P><STRONG><a name="[15d]"></a>SW6306_IextDirSet</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, sw6306.o(.text.SW6306_IextDirSet))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = SW6306_IextDirSet &rArr; SW6306_ByteModify &rArr; SW6306_ByteWrite &rArr; ASYNC_I2C_Transmit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_RegsetSwitch
-<LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ByteModify
+<BR>[Calls]<UL><LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ByteModify
+<LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_RegsetSwitch
 </UL>
 <BR>[Called By]<UL><LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;thread_app
 </UL>
@@ -1497,8 +1498,8 @@ Global Symbols
 <P><STRONG><a name="[15e]"></a>SW6306_IextEnSet</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, sw6306.o(.text.SW6306_IextEnSet))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = SW6306_IextEnSet &rArr; SW6306_ByteModify &rArr; SW6306_ByteWrite &rArr; ASYNC_I2C_Transmit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_RegsetSwitch
-<LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ByteModify
+<BR>[Calls]<UL><LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ByteModify
+<LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_RegsetSwitch
 </UL>
 <BR>[Called By]<UL><LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;thread_app
 </UL>
@@ -1518,9 +1519,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_Unlock
 <LI><a href="#[158]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ByteWrite
+<LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ByteModify
 <LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_RegsetSwitch
 <LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_PDSet
-<LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ByteModify
 </UL>
 <BR>[Called By]<UL><LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;thread_app
 </UL>
@@ -1531,6 +1532,7 @@ Global Symbols
 
 <P><STRONG><a name="[137]"></a>SW6306_IsCharging</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, sw6306.o(.text.SW6306_IsCharging))
 <BR><BR>[Called By]<UL><LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;thread_app
+<LI><a href="#[154]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ADCLoad
 <LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MCU1INTIbusRatioSet
 </UL>
 
@@ -1669,8 +1671,8 @@ Global Symbols
 <P><STRONG><a name="[163]"></a>SW6306_LPSet</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, sw6306.o(.text.SW6306_LPSet))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = SW6306_LPSet &rArr; SW6306_ByteModify &rArr; SW6306_ByteWrite &rArr; ASYNC_I2C_Transmit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_RegsetSwitch
-<LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ByteModify
+<BR>[Calls]<UL><LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ByteModify
+<LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_RegsetSwitch
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
 </UL>
@@ -1679,8 +1681,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = SW6306_PDSet &rArr; SW6306_ByteModify &rArr; SW6306_ByteWrite &rArr; ASYNC_I2C_Transmit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[158]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ByteWrite
-<LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_RegsetSwitch
 <LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_ByteModify
+<LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_RegsetSwitch
 </UL>
 <BR>[Called By]<UL><LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SW6306_Init
 </UL>
@@ -2107,7 +2109,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
 </UL>
 
-<P><STRONG><a name="[184]"></a>thread_key</STRONG> (Thumb, 1648 bytes, Stack size 24 bytes, main.o(.text.thread_key))
+<P><STRONG><a name="[184]"></a>thread_key</STRONG> (Thumb, 1652 bytes, Stack size 24 bytes, main.o(.text.thread_key))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = thread_key &rArr; uprintf &rArr; USART_bufsend
 </UL>
 <BR>[Calls]<UL><LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uprintf
