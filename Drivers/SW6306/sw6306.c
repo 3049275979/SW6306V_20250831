@@ -1337,9 +1337,9 @@ uint8_t SW6306_PDSet(void)
 		case 20://设置充电电池端限流值（单位:mA，范围：100~12000）
             if(SW6306_IbatinChargeSet(12000)) steps++;
 		case 21://设置放电时的端口限流值（单位:mA，范围：200~7000）
-            if(SW6306_IbusinDischargeSet(5000)) steps++;
+            if(SW6306_IbusinDischargeSet(3000)) steps++;
 		case 22://设置充电时的端口限流值（单位:mA，范围：200~7000）
-            if(SW6306_IbusinChargeSet(5000))
+            if(SW6306_IbusinChargeSet(3000))
             {
                 steps = 0;
                 return 1;
