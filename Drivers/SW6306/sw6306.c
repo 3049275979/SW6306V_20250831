@@ -1326,13 +1326,20 @@ uint8_t SW6306_PDSet(void)
             if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PPS3, SW6306_PPS3_ENCP|(SW6306_PD_PPS3_CURR/50U))) steps++;
             else return 0;
 		case 17://设置是否强制控制电池限流
+            if(SW6306_IbatForceCtrlSet(1)) steps++;
+			else return 0;
+		case 18://设置是否强制控制电池限流
             if(SW6306_IbusForceCtrlSet(1)) steps++;
 			else return 0;
-		case 18://设置放电电池端限流值（单位:mA，范围：100~12000）
+		case 19://设置放电电池端限流值（单位:mA，范围：100~12000）
             if(SW6306_IbatinDischargeSet(12000)) steps++;
 			else return 0;
-		case 19://设置充电电池端限流值（单位:mA，范围：100~12000）
-            if(SW6306_IbatinChargeSet(12000)) 
+		case 20://设置充电电池端限流值（单位:mA，范围：100~12000）
+            if(SW6306_IbatinChargeSet(12000)) steps++;
+		case 21://设置放电时的端口限流值（单位:mA，范围：200~7000）
+            if(SW6306_IbusinDischargeSet(5000)) steps++;
+		case 22://设置充电时的端口限流值（单位:mA，范围：200~7000）
+            if(SW6306_IbusinChargeSet(5000))
             {
                 steps = 0;
                 return 1;
