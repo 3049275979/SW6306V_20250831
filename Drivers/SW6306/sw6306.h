@@ -33,7 +33,7 @@ extern C {
 //设置SW6306 NTC引脚上的电阻参数，用于计算温度
 #define SW6306_NTC_B                    3435
 
-//输入输出最大功率设定，最大100W
+////输入输出最大功率设定，最大100W
 //#define SW6306_INPUT_POWER_MAX          100U        //输入/充电功率
 //#define SW6306_OUTPUT_POWER_MAX         100U        //输出/放电功率
 

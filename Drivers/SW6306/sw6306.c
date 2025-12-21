@@ -3,7 +3,7 @@
 static uint8_t SW6306_INPUT_POWER_MAX=100;//输入/充电功率
 static uint8_t SW6306_OUTPUT_POWER_MAX=100;//输出/放电功率
 volatile static struct SW6306_StatusTypedef SW6306_Status;//SW6306状态全局变量
-static float INT_IbusRatio=2.75;
+static float INT_IbusRatio=4;
 /*******************************基本操作区*************************************/
 uint8_t SW6306_ByteWrite(uint8_t reg, uint8_t data)
 {
@@ -1323,12 +1323,21 @@ uint8_t SW6306_PDSet(void)
             if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PPS2, SW6306_PPS2_ENCP|(SW6306_PD_PPS2_CURR/50U))) steps++;
             else return 0;
         case 16://PPS3电流设置
-            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PPS3, SW6306_PPS3_ENCP|(SW6306_PD_PPS3_CURR/50U))) 
+            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PPS3, SW6306_PPS3_ENCP|(SW6306_PD_PPS3_CURR/50U))) steps++;
+            else return 0;
+		case 17://设置是否强制控制电池限流
+            if(SW6306_IbusForceCtrlSet(1)) steps++;
+			else return 0;
+		case 18://设置放电电池端限流值（单位:mA，范围：100~12000）
+            if(SW6306_IbatinDischargeSet(12000)) steps++;
+			else return 0;
+		case 19://设置充电电池端限流值（单位:mA，范围：100~12000）
+            if(SW6306_IbatinChargeSet(12000)) 
             {
                 steps = 0;
                 return 1;
             }
-            else return 0;
+			else return 0;
         default:
             steps = 0;
             return 0;

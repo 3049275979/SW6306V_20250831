@@ -186,7 +186,7 @@ THRD_DECLARE(thread_app)
         uprintf("\n电量:%d%%,LED亮度:%d",SW6306_ReadCapacity(),TIM1->CCR4);//定时器1通道4，LED亮度
         uprintf("\n接口电压:%dmV,风扇转速%d",SW6306_ReadVBUS(),TIM1->CCR2);//定时器1通道2，散热风扇 
         uprintf("\n接口电流:%dmA,%d",SW6306_ReadIBUS(),LL_GPIO_IsInputPinSet(GPIOA,LL_GPIO_PIN_11));
-        uprintf("\n电池电压:%dmV",SW6306_ReadVBAT());
+        uprintf("\n电池电压:%dmV, %d, %d",SW6306_ReadVBAT(),SW6306_ReadIPortLimit(),SW6306_ReadIBattLimit());
         uprintf("\n电池电流:%dmA,SHTC3温度:%.02f°C,SHTC3湿度:%.02f%%",SW6306_ReadIBAT(),GetShtc3Data(0),GetShtc3Data(1));
         uprintf("\nSW6306V板载NTC温度:%d°C,板温1:%.02f°C",SW6306_ReadTNTC(),Temp1_pid.Current);//ADC通道4，SW6306V电路板温度
         uprintf("\nSW6306V内核温度:%.2f°C,板温2:%.02f°C",SW6306_ReadTCHIP(),Temp2);//ADC通道5，箱温
