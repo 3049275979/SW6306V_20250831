@@ -1290,56 +1290,57 @@ uint8_t SW6306_PDSet(void)
             if(SW6306_ByteModify((uint8_t)SW6306_CTRG_PD3, SW6306_PD3_MSK, SW6306_PD3_ENDRSWAP|SW6306_PD3_ENVCONNSWAP)) steps++;
             else return 0;
         case 5://响应所有协议
-            if(SW6306_ByteModify((uint8_t)SW6306_CTRG_PD4, SW6306_PD4_MSK, 0x00)) steps++;
-            else return 0;
-        case 6://5V Fix低8位设置
-            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PD5, (SW6306_PD_5V_FIX_CURR/10U)&0xFFU)) steps++;
-            else return 0;
-        case 7://9V Fix低8位设置
-            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PD6, (SW6306_PD_9V_FIX_CURR/10U)&0xFFU)) steps++;
-            else return 0;
-        case 8://12V Fix低8位设置
-            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PD7, (SW6306_PD_12V_FIX_CURR/10U)&0xFFU)) steps++;
-            else return 0;
-        case 9://15V Fix低8位设置
-            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PD8, (SW6306_PD_15V_FIX_CURR/10U)&0xFFU)) steps++;
-            else return 0;
-        case 10://Fix高8位设置
-            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PD9, (((SW6306_PD_5V_FIX_CURR/5)>>3)&0xC0)|(((SW6306_PD_9V_FIX_CURR/5)>>5)&0x30)|(((SW6306_PD_12V_FIX_CURR/5)>>7)&0x0C)|((SW6306_PD_15V_FIX_CURR/5)>>9))) steps++;
-            else return 0;
-        case 11://20V Fix低8位设置
-            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PD10, (SW6306_PD_20V_FIX_CURR/10U)&0xFFU)) steps++;
-            else return 0;
-        case 12://20V Fix高2位设置，PPS支持恒功率
-            if(SW6306_ByteModify((uint8_t)SW6306_CTRG_PD11, SW6306_PD11_MSK|0x03, SW6306_PD11_CP_PPS0|SW6306_PD11_CP_PPS1|SW6306_PD11_CP_PPS2|SW6306_PD11_CP_PPS3|((SW6306_PD_20V_FIX_CURR/5)>>9))) steps++;
-            else return 0;
-        case 13://PPS0电流设置
-            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PPS0, SW6306_PPS0_ENCP|(SW6306_PD_PPS0_CURR/50U))) steps++;
-            else return 0;
-        case 14://PPS1电流设置
-            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PPS1, SW6306_PPS1_ENCP|(SW6306_PD_PPS1_CURR/50U))) steps++;
-            else return 0;
-        case 15://PPS2电流设置
-            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PPS2, SW6306_PPS2_ENCP|(SW6306_PD_PPS2_CURR/50U))) steps++;
-            else return 0;
-        case 16://PPS3电流设置
-            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PPS3, SW6306_PPS3_ENCP|(SW6306_PD_PPS3_CURR/50U))) steps++;
-            else return 0;
-		case 17://设置是否强制控制电池限流
-            if(SW6306_IbatForceCtrlSet(1)) steps++;
-			else return 0;
-		case 18://设置是否强制控制电池限流
-            if(SW6306_IbusForceCtrlSet(1)) steps++;
-			else return 0;
-		case 19://设置放电电池端限流值（单位:mA，范围：100~12000）
-            if(SW6306_IbatinDischargeSet(12000)) steps++;
-			else return 0;
-		case 20://设置充电电池端限流值（单位:mA，范围：100~12000）
-            if(SW6306_IbatinChargeSet(12000)) steps++;
-		case 21://设置放电时的端口限流值（单位:mA，范围：200~7000）
-            if(SW6306_IbusinDischargeSet(3000)) steps++;
-		case 22://设置充电时的端口限流值（单位:mA，范围：200~7000）
-            if(SW6306_IbusinChargeSet(3000))
+            if(SW6306_ByteModify((uint8_t)SW6306_CTRG_PD4, SW6306_PD4_MSK, 0x00)) 
+//				steps++;
+//            else return 0;
+//        case 6://5V Fix低8位设置
+//            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PD5, (SW6306_PD_5V_FIX_CURR/10U)&0xFFU)) steps++;
+//            else return 0;
+//        case 7://9V Fix低8位设置
+//            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PD6, (SW6306_PD_9V_FIX_CURR/10U)&0xFFU)) steps++;
+//            else return 0;
+//        case 8://12V Fix低8位设置
+//            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PD7, (SW6306_PD_12V_FIX_CURR/10U)&0xFFU)) steps++;
+//            else return 0;
+//        case 9://15V Fix低8位设置
+//            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PD8, (SW6306_PD_15V_FIX_CURR/10U)&0xFFU)) steps++;
+//            else return 0;
+//        case 10://Fix高8位设置
+//            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PD9, (((SW6306_PD_5V_FIX_CURR/5)>>3)&0xC0)|(((SW6306_PD_9V_FIX_CURR/5)>>5)&0x30)|(((SW6306_PD_12V_FIX_CURR/5)>>7)&0x0C)|((SW6306_PD_15V_FIX_CURR/5)>>9))) steps++;
+//            else return 0;
+//        case 11://20V Fix低8位设置
+//            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PD10, (SW6306_PD_20V_FIX_CURR/10U)&0xFFU)) steps++;
+//            else return 0;
+//        case 12://20V Fix高2位设置，PPS支持恒功率
+//            if(SW6306_ByteModify((uint8_t)SW6306_CTRG_PD11, SW6306_PD11_MSK|0x03, SW6306_PD11_CP_PPS0|SW6306_PD11_CP_PPS1|SW6306_PD11_CP_PPS2|SW6306_PD11_CP_PPS3|((SW6306_PD_20V_FIX_CURR/5)>>9))) steps++;
+//            else return 0;
+//        case 13://PPS0电流设置
+//            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PPS0, SW6306_PPS0_ENCP|(SW6306_PD_PPS0_CURR/50U))) steps++;
+//            else return 0;
+//        case 14://PPS1电流设置
+//            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PPS1, SW6306_PPS1_ENCP|(SW6306_PD_PPS1_CURR/50U))) steps++;
+//            else return 0;
+//        case 15://PPS2电流设置
+//            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PPS2, SW6306_PPS2_ENCP|(SW6306_PD_PPS2_CURR/50U))) steps++;
+//            else return 0;
+//        case 16://PPS3电流设置
+//            if(SW6306_ByteWrite((uint8_t)SW6306_CTRG_PPS3, SW6306_PPS3_ENCP|(SW6306_PD_PPS3_CURR/50U))) steps++;
+//            else return 0;
+//		case 17://设置是否强制控制电池限流
+//            if(SW6306_IbatForceCtrlSet(1)) steps++;
+//			else return 0;
+//		case 18://设置是否强制控制电池限流
+//            if(SW6306_IbusForceCtrlSet(1)) steps++;
+//			else return 0;
+//		case 19://设置放电电池端限流值（单位:mA，范围：100~12000）
+//            if(SW6306_IbatinDischargeSet(12000)) steps++;
+//			else return 0;
+//		case 20://设置充电电池端限流值（单位:mA，范围：100~12000）
+//            if(SW6306_IbatinChargeSet(12000)) steps++;
+//		case 21://设置放电时的端口限流值（单位:mA，范围：200~7000）
+//            if(SW6306_IbusinDischargeSet(5000)) steps++;
+//		case 22://设置充电时的端口限流值（单位:mA，范围：200~7000）
+//            if(SW6306_IbusinChargeSet(5000))
             {
                 steps = 0;
                 return 1;

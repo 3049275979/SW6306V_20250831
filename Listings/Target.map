@@ -1404,12 +1404,6 @@ Section Cross References
     sw6306.o(.text.SW6306_PDSet) refers to sw6306.o(.text.SW6306_RegsetSwitch) for SW6306_RegsetSwitch
     sw6306.o(.text.SW6306_PDSet) refers to sw6306.o(.text.SW6306_ByteModify) for SW6306_ByteModify
     sw6306.o(.text.SW6306_PDSet) refers to sw6306.o(.text.SW6306_ByteWrite) for SW6306_ByteWrite
-    sw6306.o(.text.SW6306_PDSet) refers to sw6306.o(.text.SW6306_IbatForceCtrlSet) for SW6306_IbatForceCtrlSet
-    sw6306.o(.text.SW6306_PDSet) refers to sw6306.o(.text.SW6306_IbusForceCtrlSet) for SW6306_IbusForceCtrlSet
-    sw6306.o(.text.SW6306_PDSet) refers to sw6306.o(.text.SW6306_IbatinDischargeSet) for SW6306_IbatinDischargeSet
-    sw6306.o(.text.SW6306_PDSet) refers to sw6306.o(.text.SW6306_IbatinChargeSet) for SW6306_IbatinChargeSet
-    sw6306.o(.text.SW6306_PDSet) refers to sw6306.o(.text.SW6306_IbusinDischargeSet) for SW6306_IbusinDischargeSet
-    sw6306.o(.text.SW6306_PDSet) refers to sw6306.o(.text.SW6306_IbusinChargeSet) for SW6306_IbusinChargeSet
     sw6306.o(.text.SW6306_PDSet) refers to sw6306.o(.bss.SW6306_PDSet.steps) for [Anonymous Symbol]
     sw6306.o(.ARM.exidx.text.SW6306_PDSet) refers to sw6306.o(.text.SW6306_PDSet) for [Anonymous Symbol]
     sw6306.o(.text.SW6306_Init) refers to sw6306.o(.text.SW6306_RegsetSwitch) for SW6306_RegsetSwitch
@@ -2681,11 +2675,17 @@ Removing Unused input sections from the image.
     Removing sw6306.o(.ARM.exidx.text.SW6306_VbatSet), (8 bytes).
     Removing sw6306.o(.text.SW6306_VbatForceCtrlSet), (100 bytes).
     Removing sw6306.o(.ARM.exidx.text.SW6306_VbatForceCtrlSet), (8 bytes).
+    Removing sw6306.o(.text.SW6306_IbusinDischargeSet), (76 bytes).
     Removing sw6306.o(.ARM.exidx.text.SW6306_IbusinDischargeSet), (8 bytes).
+    Removing sw6306.o(.text.SW6306_IbusinChargeSet), (76 bytes).
     Removing sw6306.o(.ARM.exidx.text.SW6306_IbusinChargeSet), (8 bytes).
+    Removing sw6306.o(.text.SW6306_IbusForceCtrlSet), (88 bytes).
     Removing sw6306.o(.ARM.exidx.text.SW6306_IbusForceCtrlSet), (8 bytes).
+    Removing sw6306.o(.text.SW6306_IbatinDischargeSet), (76 bytes).
     Removing sw6306.o(.ARM.exidx.text.SW6306_IbatinDischargeSet), (8 bytes).
+    Removing sw6306.o(.text.SW6306_IbatinChargeSet), (76 bytes).
     Removing sw6306.o(.ARM.exidx.text.SW6306_IbatinChargeSet), (8 bytes).
+    Removing sw6306.o(.text.SW6306_IbatForceCtrlSet), (88 bytes).
     Removing sw6306.o(.ARM.exidx.text.SW6306_IbatForceCtrlSet), (8 bytes).
     Removing sw6306.o(.ARM.exidx.text.SW6306_PDSet), (8 bytes).
     Removing sw6306.o(.ARM.exidx.text.SW6306_Init), (8 bytes).
@@ -2705,6 +2705,12 @@ Removing Unused input sections from the image.
     Removing sw6306.o(.bss.SW6306_VbusForceCtrlSet.steps), (1 bytes).
     Removing sw6306.o(.bss.SW6306_VbatSet.steps), (1 bytes).
     Removing sw6306.o(.bss.SW6306_VbatForceCtrlSet.steps), (1 bytes).
+    Removing sw6306.o(.bss.SW6306_IbusinDischargeSet.steps), (1 bytes).
+    Removing sw6306.o(.bss.SW6306_IbusinChargeSet.steps), (1 bytes).
+    Removing sw6306.o(.bss.SW6306_IbusForceCtrlSet.steps), (1 bytes).
+    Removing sw6306.o(.bss.SW6306_IbatinDischargeSet.steps), (1 bytes).
+    Removing sw6306.o(.bss.SW6306_IbatinChargeSet.steps), (1 bytes).
+    Removing sw6306.o(.bss.SW6306_IbatForceCtrlSet.steps), (1 bytes).
     Removing 12864oled_drv.o(.text), (0 bytes).
     Removing 12864oled_drv.o(.ARM.exidx.text.Write_IIC_Command), (8 bytes).
     Removing 12864oled_drv.o(.ARM.exidx.text.Write_IIC_Data), (8 bytes).
@@ -2920,7 +2926,7 @@ Removing Unused input sections from the image.
     Removing py32f0xx_hal_cortex.o(.ARM.exidx.text.HAL_SYSTICK_Callback), (8 bytes).
     Removing menu.o(.text), (0 bytes).
 
-852 unused section(s) (total 14926 bytes) removed from the image.
+864 unused section(s) (total 15412 bytes) removed from the image.
 
 ==============================================================================
 
@@ -3732,360 +3738,355 @@ Image Symbol Table
     __arm_cp.58_1                            0x080047fc   Number         4  sw6306.o(.text.SW6306_CapacityLoad)
     [Anonymous Symbol]                       0x08004800   Section        0  sw6306.o(.text.SW6306_Click)
     __arm_cp.62_0                            0x08004840   Number         4  sw6306.o(.text.SW6306_Click)
-    [Anonymous Symbol]                       0x08004844   Section        0  sw6306.o(.text.SW6306_IbatForceCtrlSet)
-    __arm_cp.88_0                            0x08004898   Number         4  sw6306.o(.text.SW6306_IbatForceCtrlSet)
-    [Anonymous Symbol]                       0x0800489c   Section        0  sw6306.o(.text.SW6306_IbatinChargeSet)
-    __arm_cp.87_0                            0x080048e4   Number         4  sw6306.o(.text.SW6306_IbatinChargeSet)
-    [Anonymous Symbol]                       0x080048e8   Section        0  sw6306.o(.text.SW6306_IbatinDischargeSet)
-    __arm_cp.86_0                            0x08004930   Number         4  sw6306.o(.text.SW6306_IbatinDischargeSet)
-    [Anonymous Symbol]                       0x08004934   Section        0  sw6306.o(.text.SW6306_IbusForceCtrlSet)
-    __arm_cp.85_0                            0x08004988   Number         4  sw6306.o(.text.SW6306_IbusForceCtrlSet)
-    [Anonymous Symbol]                       0x0800498c   Section        0  sw6306.o(.text.SW6306_IbusinChargeSet)
-    __arm_cp.84_0                            0x080049d4   Number         4  sw6306.o(.text.SW6306_IbusinChargeSet)
-    [Anonymous Symbol]                       0x080049d8   Section        0  sw6306.o(.text.SW6306_IbusinDischargeSet)
-    __arm_cp.83_0                            0x08004a20   Number         4  sw6306.o(.text.SW6306_IbusinDischargeSet)
-    [Anonymous Symbol]                       0x08004a24   Section        0  sw6306.o(.text.SW6306_IextDirSet)
-    __arm_cp.77_0                            0x08004a78   Number         4  sw6306.o(.text.SW6306_IextDirSet)
-    [Anonymous Symbol]                       0x08004a7c   Section        0  sw6306.o(.text.SW6306_IextEnSet)
-    __arm_cp.76_0                            0x08004ad0   Number         4  sw6306.o(.text.SW6306_IextEnSet)
-    [Anonymous Symbol]                       0x08004ad4   Section        0  sw6306.o(.text.SW6306_IextSet)
-    __arm_cp.78_0                            0x08004b38   Number         4  sw6306.o(.text.SW6306_IextSet)
-    [Anonymous Symbol]                       0x08004b3c   Section        0  sw6306.o(.text.SW6306_Init)
-    __arm_cp.90_0                            0x08004ee8   Number         4  sw6306.o(.text.SW6306_Init)
-    [Anonymous Symbol]                       0x08004eec   Section        0  sw6306.o(.text.SW6306_IsBatteryDepleted)
-    [Anonymous Symbol]                       0x08004ef8   Section        0  sw6306.o(.text.SW6306_IsCharging)
-    [Anonymous Symbol]                       0x08004f04   Section        0  sw6306.o(.text.SW6306_IsDischarging)
-    [Anonymous Symbol]                       0x08004f10   Section        0  sw6306.o(.text.SW6306_IsErrorinCharging)
-    [Anonymous Symbol]                       0x08004f1c   Section        0  sw6306.o(.text.SW6306_IsErrorinDischarging)
-    [Anonymous Symbol]                       0x08004f28   Section        0  sw6306.o(.text.SW6306_IsFullCharged)
-    [Anonymous Symbol]                       0x08004f34   Section        0  sw6306.o(.text.SW6306_IsInitialized)
-    __arm_cp.91_1                            0x08004f60   Number         4  sw6306.o(.text.SW6306_IsInitialized)
-    [Anonymous Symbol]                       0x08004f64   Section        0  sw6306.o(.text.SW6306_IsOverHeated)
-    [Anonymous Symbol]                       0x08004f7c   Section        0  sw6306.o(.text.SW6306_IsPortA1ON)
-    [Anonymous Symbol]                       0x08004f88   Section        0  sw6306.o(.text.SW6306_IsPortA2ON)
-    [Anonymous Symbol]                       0x08004f94   Section        0  sw6306.o(.text.SW6306_IsPortC1ON)
-    [Anonymous Symbol]                       0x08004fa0   Section        0  sw6306.o(.text.SW6306_IsPortC2ON)
-    [Anonymous Symbol]                       0x08004fac   Section        0  sw6306.o(.text.SW6306_IsQCStatAFC)
-    [Anonymous Symbol]                       0x08004fbc   Section        0  sw6306.o(.text.SW6306_IsQCStatFCP)
-    [Anonymous Symbol]                       0x08004fcc   Section        0  sw6306.o(.text.SW6306_IsQCStatNONE)
-    [Anonymous Symbol]                       0x08004fdc   Section        0  sw6306.o(.text.SW6306_IsQCStatPDFIX)
-    [Anonymous Symbol]                       0x08004fec   Section        0  sw6306.o(.text.SW6306_IsQCStatPDPPS)
-    [Anonymous Symbol]                       0x08004ffc   Section        0  sw6306.o(.text.SW6306_IsQCStatPE11)
-    [Anonymous Symbol]                       0x0800500c   Section        0  sw6306.o(.text.SW6306_IsQCStatPE20)
-    [Anonymous Symbol]                       0x0800501c   Section        0  sw6306.o(.text.SW6306_IsQCStatPQC)
-    [Anonymous Symbol]                       0x08005028   Section        0  sw6306.o(.text.SW6306_IsQCStatQC2)
-    [Anonymous Symbol]                       0x08005038   Section        0  sw6306.o(.text.SW6306_IsQCStatQC3)
-    [Anonymous Symbol]                       0x08005048   Section        0  sw6306.o(.text.SW6306_IsQCStatQC3P)
-    [Anonymous Symbol]                       0x08005058   Section        0  sw6306.o(.text.SW6306_IsQCStatSCP)
-    [Anonymous Symbol]                       0x08005068   Section        0  sw6306.o(.text.SW6306_IsQCStatSFCP)
-    [Anonymous Symbol]                       0x08005078   Section        0  sw6306.o(.text.SW6306_IsQCStatSVOOC)
-    [Anonymous Symbol]                       0x08005088   Section        0  sw6306.o(.text.SW6306_IsQCStatUFCS)
-    [Anonymous Symbol]                       0x08005098   Section        0  sw6306.o(.text.SW6306_IsQCStatVOOC1)
-    [Anonymous Symbol]                       0x080050a8   Section        0  sw6306.o(.text.SW6306_IsQCStatVOOC4)
-    [Anonymous Symbol]                       0x080050b8   Section        0  sw6306.o(.text.SW6306_IsQCStatVQC)
-    __arm_cp.20_0                            0x080050c4   Number         4  sw6306.o(.text.SW6306_IsQCStatVQC)
-    [Anonymous Symbol]                       0x080050c8   Section        0  sw6306.o(.text.SW6306_LPSet)
-    __arm_cp.65_0                            0x0800510c   Number         4  sw6306.o(.text.SW6306_LPSet)
-    [Anonymous Symbol]                       0x08005110   Section        0  sw6306.o(.text.SW6306_PDSet)
-    __arm_cp.89_0                            0x080052fc   Number         4  sw6306.o(.text.SW6306_PDSet)
-    __arm_cp.89_1                            0x08005300   Number         4  sw6306.o(.text.SW6306_PDSet)
-    __arm_cp.89_2                            0x08005304   Number         4  sw6306.o(.text.SW6306_PDSet)
-    [Anonymous Symbol]                       0x08005308   Section        0  sw6306.o(.text.SW6306_PortA1Remove)
-    __arm_cp.70_0                            0x08005344   Number         4  sw6306.o(.text.SW6306_PortA1Remove)
-    [Anonymous Symbol]                       0x08005348   Section        0  sw6306.o(.text.SW6306_PortA2Remove)
-    __arm_cp.72_0                            0x08005384   Number         4  sw6306.o(.text.SW6306_PortA2Remove)
-    [Anonymous Symbol]                       0x08005388   Section        0  sw6306.o(.text.SW6306_PortStatusLoad)
-    __arm_cp.14_0                            0x08005424   Number         4  sw6306.o(.text.SW6306_PortStatusLoad)
-    __arm_cp.14_1                            0x08005428   Number         4  sw6306.o(.text.SW6306_PortStatusLoad)
-    [Anonymous Symbol]                       0x0800542c   Section        0  sw6306.o(.text.SW6306_PowerLoad)
-    __arm_cp.38_0                            0x0800551c   Number         4  sw6306.o(.text.SW6306_PowerLoad)
-    [Anonymous Symbol]                       0x08005520   Section        0  sw6306.o(.text.SW6306_ReadCapacity)
-    [Anonymous Symbol]                       0x08005528   Section        0  sw6306.o(.text.SW6306_ReadIBAT)
-    [Anonymous Symbol]                       0x08005530   Section        0  sw6306.o(.text.SW6306_ReadIBUS)
-    [Anonymous Symbol]                       0x08005538   Section        0  sw6306.o(.text.SW6306_ReadIBattLimit)
-    [Anonymous Symbol]                       0x08005544   Section        0  sw6306.o(.text.SW6306_ReadIPortLimit)
-    [Anonymous Symbol]                       0x08005550   Section        0  sw6306.o(.text.SW6306_ReadMaxGuageCap)
-    __arm_cp.60_1                            0x08005568   Number         4  sw6306.o(.text.SW6306_ReadMaxGuageCap)
-    __arm_cp.60_2                            0x0800556c   Number         4  sw6306.o(.text.SW6306_ReadMaxGuageCap)
-    [Anonymous Symbol]                       0x08005570   Section        0  sw6306.o(.text.SW6306_ReadMaxInputPower)
-    [Anonymous Symbol]                       0x08005578   Section        0  sw6306.o(.text.SW6306_ReadMaxOutputPower)
-    [Anonymous Symbol]                       0x08005580   Section        0  sw6306.o(.text.SW6306_ReadPresentGuageCap)
-    __arm_cp.61_1                            0x08005598   Number         4  sw6306.o(.text.SW6306_ReadPresentGuageCap)
-    __arm_cp.61_2                            0x0800559c   Number         4  sw6306.o(.text.SW6306_ReadPresentGuageCap)
-    [Anonymous Symbol]                       0x080055a0   Section        0  sw6306.o(.text.SW6306_ReadTCHIP)
-    __arm_cp.12_1                            0x080055c0   Number         4  sw6306.o(.text.SW6306_ReadTCHIP)
-    __arm_cp.12_2                            0x080055c4   Number         4  sw6306.o(.text.SW6306_ReadTCHIP)
-    __arm_cp.12_3                            0x080055c8   Number         4  sw6306.o(.text.SW6306_ReadTCHIP)
-    [Anonymous Symbol]                       0x080055cc   Section        0  sw6306.o(.text.SW6306_ReadTNTC)
-    [Anonymous Symbol]                       0x080055dc   Section        0  sw6306.o(.text.SW6306_ReadVBAT)
-    [Anonymous Symbol]                       0x080055e4   Section        0  sw6306.o(.text.SW6306_ReadVBUS)
-    [Anonymous Symbol]                       0x080055ec   Section        0  sw6306.o(.text.SW6306_RegsetSwitch)
-    __arm_cp.2_0                             0x08005650   Number         4  sw6306.o(.text.SW6306_RegsetSwitch)
-    [Anonymous Symbol]                       0x08005654   Section        0  sw6306.o(.text.SW6306_StatusLoad)
-    __arm_cp.43_0                            0x08005750   Number         4  sw6306.o(.text.SW6306_StatusLoad)
-    __arm_cp.43_1                            0x08005754   Number         4  sw6306.o(.text.SW6306_StatusLoad)
-    [Anonymous Symbol]                       0x08005758   Section        0  sw6306.o(.text.SW6306_Unlock)
-    __arm_cp.64_0                            0x080057e8   Number         4  sw6306.o(.text.SW6306_Unlock)
-    [Anonymous Symbol]                       0x080057ec   Section        0  sw6306.o(.text.SetSw6306VInIbusRatio)
-    __arm_cp.93_0                            0x080057f4   Number         4  sw6306.o(.text.SetSw6306VInIbusRatio)
-    [Anonymous Symbol]                       0x080057f8   Section        0  sw6306.o(.text.SetSw6306VInputPowMax)
-    __arm_cp.92_0                            0x08005800   Number         4  sw6306.o(.text.SetSw6306VInputPowMax)
-    [Anonymous Symbol]                       0x08005804   Section        0  main.o(.text.SetTempControl)
-    __arm_cp.22_0                            0x08005834   Number         4  main.o(.text.SetTempControl)
-    __arm_cp.22_1                            0x08005838   Number         4  main.o(.text.SetTempControl)
-    [Anonymous Symbol]                       0x08005848   Section        0  shtc3_drv.o(.text.Shtc3Hibernate)
-    [Anonymous Symbol]                       0x08005864   Section        0  shtc3_drv.o(.text.Shtc3Wakeup)
-    [Anonymous Symbol]                       0x08005880   Section        0  shtc3_drv.o(.text.Shtc3_Read_Result)
-    __arm_cp.0_0                             0x08005900   Number         4  shtc3_drv.o(.text.Shtc3_Read_Result)
-    __arm_cp.0_1                             0x08005904   Number         4  shtc3_drv.o(.text.Shtc3_Read_Result)
-    __arm_cp.0_2                             0x08005908   Number         4  shtc3_drv.o(.text.Shtc3_Read_Result)
-    __arm_cp.0_3                             0x0800590c   Number         4  shtc3_drv.o(.text.Shtc3_Read_Result)
-    __arm_cp.0_4                             0x08005910   Number         4  shtc3_drv.o(.text.Shtc3_Read_Result)
-    __arm_cp.0_5                             0x08005914   Number         4  shtc3_drv.o(.text.Shtc3_Read_Result)
-    __arm_cp.0_6                             0x08005918   Number         4  shtc3_drv.o(.text.Shtc3_Read_Result)
-    [Anonymous Symbol]                       0x0800591c   Section        0  bsp_py32f030x6.o(.text.SysInit)
-    [Anonymous Symbol]                       0x08005944   Section        0  py32f0xx_it.o(.text.SysTick_Handler)
-    __arm_cp.4_0                             0x08005950   Number         4  py32f0xx_it.o(.text.SysTick_Handler)
-    [Anonymous Symbol]                       0x08005954   Section        0  system_py32f0xx.o(.text.SystemInit)
-    __arm_cp.1_0                             0x08005974   Number         4  system_py32f0xx.o(.text.SystemInit)
-    __arm_cp.1_1                             0x08005978   Number         4  system_py32f0xx.o(.text.SystemInit)
-    __arm_cp.1_2                             0x0800597c   Number         4  system_py32f0xx.o(.text.SystemInit)
-    __arm_cp.1_3                             0x08005980   Number         4  system_py32f0xx.o(.text.SystemInit)
-    [Anonymous Symbol]                       0x08005984   Section        0  py32f0xx_bsp_usart.o(.text.USART1_IRQHandler)
-    __arm_cp.30_6                            0x08005a28   Number         4  py32f0xx_bsp_usart.o(.text.USART1_IRQHandler)
-    [Anonymous Symbol]                       0x08005a2c   Section        0  py32f0xx_bsp_usart.o(.text.USART_IsBusy)
-    [Anonymous Symbol]                       0x08005a48   Section        0  py32f0xx_bsp_usart.o(.text.USART_bufread)
-    __arm_cp.29_2                            0x08005a90   Number         4  py32f0xx_bsp_usart.o(.text.USART_bufread)
-    [Anonymous Symbol]                       0x08005a94   Section        0  py32f0xx_bsp_usart.o(.text.USART_bufsend)
-    __arm_cp.23_0                            0x08005b08   Number         4  py32f0xx_bsp_usart.o(.text.USART_bufsend)
-    __arm_cp.23_1                            0x08005b0c   Number         4  py32f0xx_bsp_usart.o(.text.USART_bufsend)
-    __arm_cp.23_2                            0x08005b10   Number         4  py32f0xx_bsp_usart.o(.text.USART_bufsend)
-    [Anonymous Symbol]                       0x08005b14   Section        0  py32f0xx_bsp_usart.o(.text.USART_getvalidnum)
-    __arm_cp.27_0                            0x08005b30   Number         4  py32f0xx_bsp_usart.o(.text.USART_getvalidnum)
-    __arm_cp.27_1                            0x08005b34   Number         4  py32f0xx_bsp_usart.o(.text.USART_getvalidnum)
-    [Anonymous Symbol]                       0x08005b38   Section        0  12864oled_drv.o(.text.Write_IIC_Command)
-    [Anonymous Symbol]                       0x08005b58   Section        0  12864oled_drv.o(.text.Write_IIC_Data)
-    __arm_cp.1_0                             0x08005b78   Number         4  12864oled_drv.o(.text.Write_IIC_Data)
-    __arm_cp.1_1                             0x08005b7c   Number         4  12864oled_drv.o(.text.Write_IIC_Data)
-    __NVIC_EnableIRQ                         0x08005b81   Thumb Code    20  py32f0xx_bsp_exti.o(.text.__NVIC_EnableIRQ)
-    [Anonymous Symbol]                       0x08005b80   Section        0  py32f0xx_bsp_exti.o(.text.__NVIC_EnableIRQ)
-    __NVIC_EnableIRQ                         0x08005b95   Thumb Code    12  py32f0xx_bsp_i2c.o(.text.__NVIC_EnableIRQ)
-    [Anonymous Symbol]                       0x08005b94   Section        0  py32f0xx_bsp_i2c.o(.text.__NVIC_EnableIRQ)
-    __NVIC_EnableIRQ                         0x08005ba1   Thumb Code    16  py32f0xx_bsp_usart.o(.text.__NVIC_EnableIRQ)
-    [Anonymous Symbol]                       0x08005ba0   Section        0  py32f0xx_bsp_usart.o(.text.__NVIC_EnableIRQ)
-    __arm_cp.19_0                            0x08005bac   Number         4  py32f0xx_bsp_usart.o(.text.__NVIC_EnableIRQ)
-    __NVIC_SetPriority                       0x08005bb1   Thumb Code    60  py32f0xx_bsp_exti.o(.text.__NVIC_SetPriority)
-    [Anonymous Symbol]                       0x08005bb0   Section        0  py32f0xx_bsp_exti.o(.text.__NVIC_SetPriority)
-    __arm_cp.2_0                             0x08005be4   Number         4  py32f0xx_bsp_exti.o(.text.__NVIC_SetPriority)
-    __arm_cp.2_1                             0x08005be8   Number         4  py32f0xx_bsp_exti.o(.text.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x08005bed   Thumb Code    20  py32f0xx_bsp_i2c.o(.text.__NVIC_SetPriority)
-    [Anonymous Symbol]                       0x08005bec   Section        0  py32f0xx_bsp_i2c.o(.text.__NVIC_SetPriority)
-    __arm_cp.7_0                             0x08005bfc   Number         4  py32f0xx_bsp_i2c.o(.text.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x08005c01   Thumb Code    24  py32f0xx_bsp_usart.o(.text.__NVIC_SetPriority)
-    [Anonymous Symbol]                       0x08005c00   Section        0  py32f0xx_bsp_usart.o(.text.__NVIC_SetPriority)
-    __arm_cp.18_0                            0x08005c14   Number         4  py32f0xx_bsp_usart.o(.text.__NVIC_SetPriority)
-    [Anonymous Symbol]                       0x08005c18   Section        0  ds3231_drv.o(.text.bcdToDec)
-    [Anonymous Symbol]                       0x08005c28   Section        0  main.o(.text.main)
-    __arm_cp.8_0                             0x08005d4c   Number         4  main.o(.text.main)
-    __arm_cp.8_4                             0x08005d9c   Number         4  main.o(.text.main)
-    __arm_cp.8_5                             0x08005da0   Number         4  main.o(.text.main)
-    __arm_cp.8_6                             0x08005da4   Number         4  main.o(.text.main)
-    __arm_cp.8_7                             0x08005da8   Number         4  main.o(.text.main)
-    __arm_cp.8_8                             0x08005dac   Number         4  main.o(.text.main)
-    __arm_cp.8_9                             0x08005db0   Number         4  main.o(.text.main)
-    __arm_cp.8_10                            0x08005db4   Number         4  main.o(.text.main)
-    __arm_cp.8_11                            0x08005db8   Number         4  main.o(.text.main)
-    __arm_cp.8_12                            0x08005dbc   Number         4  main.o(.text.main)
-    __arm_cp.8_13                            0x08005dc0   Number         4  main.o(.text.main)
-    [Anonymous Symbol]                       0x08005dc4   Section        0  main.o(.text.thread_app)
-    __arm_cp.0_77                            0x080061b4   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_78                            0x080061b8   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_79                            0x080061bc   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_80                            0x080061c0   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_81                            0x080061c4   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_82                            0x080061c8   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_83                            0x080061cc   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_84                            0x080061d0   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_85                            0x080061d4   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_86                            0x080061d8   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_88                            0x080061e0   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_90                            0x080061e8   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_92                            0x080061f0   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_93                            0x080061f4   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_94                            0x080061f8   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_95                            0x080061fc   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_96                            0x08006200   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_99                            0x0800620c   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_100                           0x08006210   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_101                           0x08006214   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_102                           0x08006218   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_104                           0x08006220   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_11                            0x08006670   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_13                            0x08006674   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_15                            0x08006678   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_21                            0x0800667c   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_24                            0x08006680   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_28                            0x08006684   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_30                            0x08006688   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_31                            0x0800668c   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_41                            0x08006708   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_42                            0x0800670c   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_43                            0x08006710   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_44                            0x08006714   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_46                            0x0800672c   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_47                            0x08006730   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_49                            0x08006740   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_50                            0x08006744   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_51                            0x08006748   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_52                            0x0800674c   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_53                            0x08006750   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_54                            0x08006754   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_55                            0x08006758   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_56                            0x0800675c   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_57                            0x08006760   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_58                            0x08006764   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_59                            0x08006768   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_60                            0x0800676c   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_61                            0x08006770   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_62                            0x08006774   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_63                            0x08006778   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_64                            0x0800677c   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_65                            0x08006780   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_66                            0x08006784   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_67                            0x08006788   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_68                            0x0800678c   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_69                            0x08006790   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_70                            0x08006794   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_71                            0x08006798   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_72                            0x0800679c   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_73                            0x080067a0   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_74                            0x080067a4   Number         4  main.o(.text.thread_app)
-    __arm_cp.0_75                            0x080067a8   Number         4  main.o(.text.thread_app)
-    [Anonymous Symbol]                       0x080067ac   Section        0  main.o(.text.thread_echo)
-    [Anonymous Symbol]                       0x080067f4   Section        0  main.o(.text.thread_key)
-    __arm_cp.5_36                            0x080069d4   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_37                            0x080069d8   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_38                            0x080069dc   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_40                            0x080069e4   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_42                            0x080069ec   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_4                             0x08006df4   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_7                             0x08006df8   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_8                             0x08006dfc   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_9                             0x08006e00   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_10                            0x08006e04   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_11                            0x08006e08   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_12                            0x08006e0c   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_13                            0x08006e10   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_14                            0x08006e14   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_15                            0x08006e18   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_16                            0x08006e1c   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_17                            0x08006e20   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_18                            0x08006e24   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_20                            0x08006e28   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_21                            0x08006e2c   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_22                            0x08006e30   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_23                            0x08006e34   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_27                            0x08006e5c   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_28                            0x08006e60   Number         4  main.o(.text.thread_key)
-    __arm_cp.5_30                            0x08006e64   Number         4  main.o(.text.thread_key)
-    [Anonymous Symbol]                       0x08006e68   Section        0  main.o(.text.thread_lcdprintf)
-    __arm_cp.7_0                             0x08006ecc   Number         4  main.o(.text.thread_lcdprintf)
-    __arm_cp.7_1                             0x08006ed0   Number         4  main.o(.text.thread_lcdprintf)
-    __arm_cp.7_2                             0x08006ed4   Number         4  main.o(.text.thread_lcdprintf)
-    __arm_cp.7_3                             0x08006ed8   Number         4  main.o(.text.thread_lcdprintf)
-    __arm_cp.7_4                             0x08006edc   Number         4  main.o(.text.thread_lcdprintf)
-    __arm_cp.7_5                             0x08006ee0   Number         4  main.o(.text.thread_lcdprintf)
-    __arm_cp.7_6                             0x08006ee4   Number         4  main.o(.text.thread_lcdprintf)
-    [Anonymous Symbol]                       0x08006ee8   Section        0  main.o(.text.thread_trig)
-    __arm_cp.6_0                             0x08006f90   Number         4  main.o(.text.thread_trig)
-    __arm_cp.6_1                             0x08006f94   Number         4  main.o(.text.thread_trig)
-    __arm_cp.6_3                             0x08006fb0   Number         4  main.o(.text.thread_trig)
-    __arm_cp.6_4                             0x08006fb4   Number         4  main.o(.text.thread_trig)
-    __arm_cp.6_6                             0x08006fcc   Number         4  main.o(.text.thread_trig)
-    [Anonymous Symbol]                       0x08006fd0   Section        0  py32f0xx_bsp_usart.o(.text.uprintf)
-    i.__0printf                              0x08006ffc   Section        0  printfa.o(i.__0printf)
-    i.__0sprintf                             0x0800701c   Section        0  printfa.o(i.__0sprintf)
-    i.__0vsprintf                            0x08007044   Section        0  printfa.o(i.__0vsprintf)
-    i.__ARM_clz                              0x08007068   Section        0  depilogue.o(i.__ARM_clz)
-    i.__kernel_poly                          0x08007096   Section        0  poly.o(i.__kernel_poly)
-    i.__mathlib_dbl_divzero                  0x08007144   Section        0  dunder.o(i.__mathlib_dbl_divzero)
-    i.__mathlib_dbl_infnan                   0x08007158   Section        0  dunder.o(i.__mathlib_dbl_infnan)
-    i.__mathlib_dbl_invalid                  0x08007162   Section        0  dunder.o(i.__mathlib_dbl_invalid)
-    i.__scatterload_copy                     0x08007172   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08007180   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08007182   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i.__set_errno                            0x08007190   Section        0  errno.o(i.__set_errno)
-    _fp_digits                               0x0800719d   Thumb Code   344  printfa.o(i._fp_digits)
-    i._fp_digits                             0x0800719c   Section        0  printfa.o(i._fp_digits)
-    _printf_core                             0x08007311   Thumb Code  1754  printfa.o(i._printf_core)
-    i._printf_core                           0x08007310   Section        0  printfa.o(i._printf_core)
-    _printf_post_padding                     0x080079fd   Thumb Code    32  printfa.o(i._printf_post_padding)
-    i._printf_post_padding                   0x080079fc   Section        0  printfa.o(i._printf_post_padding)
-    _printf_pre_padding                      0x08007a1d   Thumb Code    44  printfa.o(i._printf_pre_padding)
-    i._printf_pre_padding                    0x08007a1c   Section        0  printfa.o(i._printf_pre_padding)
-    _sputc                                   0x08007a49   Thumb Code    10  printfa.o(i._sputc)
-    i._sputc                                 0x08007a48   Section        0  printfa.o(i._sputc)
-    i.fminf                                  0x08007a52   Section        0  fminf.o(i.fminf)
-    i.fputc                                  0x08007a78   Section        0  fputc.o(i.fputc)
-    i.log                                    0x08007a8c   Section        0  log.o(i.log)
-    Lg2                                      0x08007de0   Data          24  log.o(.constdata)
-    .constdata                               0x08007de0   Section       56  log.o(.constdata)
-    Lg                                       0x08007df8   Data          32  log.o(.constdata)
-    .constdata                               0x08007e18   Section        8  qnan.o(.constdata)
-    .L.str.40                                0x08009314   Data          35  main.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08009314   Section        0  main.o(.rodata.str1.1)
-    .L.str.65                                0x08009337   Data          12  main.o(.rodata.str1.1)
-    .L.str.37                                0x08009343   Data          52  main.o(.rodata.str1.1)
-    .L.str.62                                0x08009377   Data          17  main.o(.rodata.str1.1)
-    .L.str.90                                0x08009388   Data           2  main.o(.rodata.str1.1)
-    .L.str.1                                 0x0800938a   Data          23  main.o(.rodata.str1.1)
-    .L.str.64                                0x080093a1   Data          16  main.o(.rodata.str1.1)
-    .L.str.63                                0x080093b1   Data          16  main.o(.rodata.str1.1)
-    .L.str.93                                0x080093c1   Data           2  main.o(.rodata.str1.1)
-    .L.str.49                                0x080093c3   Data          14  main.o(.rodata.str1.1)
-    .L.str.38                                0x080093d1   Data          41  main.o(.rodata.str1.1)
-    .L.str.39                                0x080093fa   Data          40  main.o(.rodata.str1.1)
-    .L.str.61                                0x08009422   Data          16  main.o(.rodata.str1.1)
-    .L.str.60                                0x08009432   Data          16  main.o(.rodata.str1.1)
-    .L.str.58                                0x08009442   Data          18  main.o(.rodata.str1.1)
-    .L.str.11                                0x08009454   Data          22  main.o(.rodata.str1.1)
-    .L.str.12                                0x0800946a   Data          21  main.o(.rodata.str1.1)
-    .L.str.59                                0x0800947f   Data          18  main.o(.rodata.str1.1)
-    .L.str.36                                0x08009491   Data          23  main.o(.rodata.str1.1)
-    .L.str.66                                0x080094a8   Data          16  main.o(.rodata.str1.1)
-    .L.str.35                                0x080094b8   Data          18  main.o(.rodata.str1.1)
-    .L.str.74                                0x080094ca   Data          17  main.o(.rodata.str1.1)
-    .L.str.33                                0x080094db   Data          22  main.o(.rodata.str1.1)
-    .L.str.34                                0x080094f1   Data          26  main.o(.rodata.str1.1)
-    .L.str.91                                0x0800950b   Data           5  main.o(.rodata.str1.1)
-    .L.str.13                                0x08009510   Data          21  main.o(.rodata.str1.1)
-    .L.str.25                                0x08009525   Data          13  main.o(.rodata.str1.1)
-    .L.str.26                                0x08009532   Data          13  main.o(.rodata.str1.1)
-    .L.str.15                                0x0800953f   Data          14  main.o(.rodata.str1.1)
-    .L.str.106                               0x0800954d   Data           7  main.o(.rodata.str1.1)
-    .L.str.105                               0x08009554   Data           7  main.o(.rodata.str1.1)
-    .L.str.29                                0x0800955b   Data          11  main.o(.rodata.str1.1)
-    .L.str.22                                0x08009566   Data          15  main.o(.rodata.str1.1)
-    .L.str.23                                0x08009575   Data          16  main.o(.rodata.str1.1)
-    .L.str.21                                0x08009585   Data          15  main.o(.rodata.str1.1)
-    .L.str.24                                0x08009594   Data          16  main.o(.rodata.str1.1)
-    .L.str.31                                0x080095a4   Data          10  main.o(.rodata.str1.1)
-    .L.str.30                                0x080095ae   Data          10  main.o(.rodata.str1.1)
-    .L.str.18                                0x080095b8   Data          10  main.o(.rodata.str1.1)
-    .L.str.20                                0x080095c2   Data          17  main.o(.rodata.str1.1)
-    .L.str.19                                0x080095d3   Data          11  main.o(.rodata.str1.1)
-    .L.str.28                                0x080095de   Data          10  main.o(.rodata.str1.1)
-    .L.str.27                                0x080095e8   Data          10  main.o(.rodata.str1.1)
-    .L.str.32                                0x080095f2   Data           8  main.o(.rodata.str1.1)
-    .L.str.16                                0x080095fa   Data          15  main.o(.rodata.str1.1)
-    .L.str.79                                0x0800960c   Data          11  main.o(.rodata.str1.4)
-    [Anonymous Symbol]                       0x0800960c   Section        0  main.o(.rodata.str1.4)
-    .L.str.77                                0x08009618   Data          11  main.o(.rodata.str1.4)
-    .L.str.76                                0x08009624   Data           9  main.o(.rodata.str1.4)
-    .L.str.81                                0x08009630   Data           9  main.o(.rodata.str1.4)
-    .L.str.78                                0x0800963c   Data          11  main.o(.rodata.str1.4)
-    table                                    0x08009648   Data        1200  main.o(.rodata.table)
-    [Anonymous Symbol]                       0x08009648   Section        0  main.o(.rodata.table)
+    [Anonymous Symbol]                       0x08004844   Section        0  sw6306.o(.text.SW6306_IextDirSet)
+    __arm_cp.77_0                            0x08004898   Number         4  sw6306.o(.text.SW6306_IextDirSet)
+    [Anonymous Symbol]                       0x0800489c   Section        0  sw6306.o(.text.SW6306_IextEnSet)
+    __arm_cp.76_0                            0x080048f0   Number         4  sw6306.o(.text.SW6306_IextEnSet)
+    [Anonymous Symbol]                       0x080048f4   Section        0  sw6306.o(.text.SW6306_IextSet)
+    __arm_cp.78_0                            0x08004958   Number         4  sw6306.o(.text.SW6306_IextSet)
+    [Anonymous Symbol]                       0x0800495c   Section        0  sw6306.o(.text.SW6306_Init)
+    __arm_cp.90_0                            0x08004d08   Number         4  sw6306.o(.text.SW6306_Init)
+    [Anonymous Symbol]                       0x08004d0c   Section        0  sw6306.o(.text.SW6306_IsBatteryDepleted)
+    [Anonymous Symbol]                       0x08004d18   Section        0  sw6306.o(.text.SW6306_IsCharging)
+    [Anonymous Symbol]                       0x08004d24   Section        0  sw6306.o(.text.SW6306_IsDischarging)
+    [Anonymous Symbol]                       0x08004d30   Section        0  sw6306.o(.text.SW6306_IsErrorinCharging)
+    [Anonymous Symbol]                       0x08004d3c   Section        0  sw6306.o(.text.SW6306_IsErrorinDischarging)
+    [Anonymous Symbol]                       0x08004d48   Section        0  sw6306.o(.text.SW6306_IsFullCharged)
+    [Anonymous Symbol]                       0x08004d54   Section        0  sw6306.o(.text.SW6306_IsInitialized)
+    __arm_cp.91_1                            0x08004d80   Number         4  sw6306.o(.text.SW6306_IsInitialized)
+    [Anonymous Symbol]                       0x08004d84   Section        0  sw6306.o(.text.SW6306_IsOverHeated)
+    [Anonymous Symbol]                       0x08004d9c   Section        0  sw6306.o(.text.SW6306_IsPortA1ON)
+    [Anonymous Symbol]                       0x08004da8   Section        0  sw6306.o(.text.SW6306_IsPortA2ON)
+    [Anonymous Symbol]                       0x08004db4   Section        0  sw6306.o(.text.SW6306_IsPortC1ON)
+    [Anonymous Symbol]                       0x08004dc0   Section        0  sw6306.o(.text.SW6306_IsPortC2ON)
+    [Anonymous Symbol]                       0x08004dcc   Section        0  sw6306.o(.text.SW6306_IsQCStatAFC)
+    [Anonymous Symbol]                       0x08004ddc   Section        0  sw6306.o(.text.SW6306_IsQCStatFCP)
+    [Anonymous Symbol]                       0x08004dec   Section        0  sw6306.o(.text.SW6306_IsQCStatNONE)
+    [Anonymous Symbol]                       0x08004dfc   Section        0  sw6306.o(.text.SW6306_IsQCStatPDFIX)
+    [Anonymous Symbol]                       0x08004e0c   Section        0  sw6306.o(.text.SW6306_IsQCStatPDPPS)
+    [Anonymous Symbol]                       0x08004e1c   Section        0  sw6306.o(.text.SW6306_IsQCStatPE11)
+    [Anonymous Symbol]                       0x08004e2c   Section        0  sw6306.o(.text.SW6306_IsQCStatPE20)
+    [Anonymous Symbol]                       0x08004e3c   Section        0  sw6306.o(.text.SW6306_IsQCStatPQC)
+    [Anonymous Symbol]                       0x08004e48   Section        0  sw6306.o(.text.SW6306_IsQCStatQC2)
+    [Anonymous Symbol]                       0x08004e58   Section        0  sw6306.o(.text.SW6306_IsQCStatQC3)
+    [Anonymous Symbol]                       0x08004e68   Section        0  sw6306.o(.text.SW6306_IsQCStatQC3P)
+    [Anonymous Symbol]                       0x08004e78   Section        0  sw6306.o(.text.SW6306_IsQCStatSCP)
+    [Anonymous Symbol]                       0x08004e88   Section        0  sw6306.o(.text.SW6306_IsQCStatSFCP)
+    [Anonymous Symbol]                       0x08004e98   Section        0  sw6306.o(.text.SW6306_IsQCStatSVOOC)
+    [Anonymous Symbol]                       0x08004ea8   Section        0  sw6306.o(.text.SW6306_IsQCStatUFCS)
+    [Anonymous Symbol]                       0x08004eb8   Section        0  sw6306.o(.text.SW6306_IsQCStatVOOC1)
+    [Anonymous Symbol]                       0x08004ec8   Section        0  sw6306.o(.text.SW6306_IsQCStatVOOC4)
+    [Anonymous Symbol]                       0x08004ed8   Section        0  sw6306.o(.text.SW6306_IsQCStatVQC)
+    __arm_cp.20_0                            0x08004ee4   Number         4  sw6306.o(.text.SW6306_IsQCStatVQC)
+    [Anonymous Symbol]                       0x08004ee8   Section        0  sw6306.o(.text.SW6306_LPSet)
+    __arm_cp.65_0                            0x08004f2c   Number         4  sw6306.o(.text.SW6306_LPSet)
+    [Anonymous Symbol]                       0x08004f30   Section        0  sw6306.o(.text.SW6306_PDSet)
+    __arm_cp.89_0                            0x08004fd0   Number         4  sw6306.o(.text.SW6306_PDSet)
+    [Anonymous Symbol]                       0x08004fd4   Section        0  sw6306.o(.text.SW6306_PortA1Remove)
+    __arm_cp.70_0                            0x08005010   Number         4  sw6306.o(.text.SW6306_PortA1Remove)
+    [Anonymous Symbol]                       0x08005014   Section        0  sw6306.o(.text.SW6306_PortA2Remove)
+    __arm_cp.72_0                            0x08005050   Number         4  sw6306.o(.text.SW6306_PortA2Remove)
+    [Anonymous Symbol]                       0x08005054   Section        0  sw6306.o(.text.SW6306_PortStatusLoad)
+    __arm_cp.14_0                            0x080050f0   Number         4  sw6306.o(.text.SW6306_PortStatusLoad)
+    __arm_cp.14_1                            0x080050f4   Number         4  sw6306.o(.text.SW6306_PortStatusLoad)
+    [Anonymous Symbol]                       0x080050f8   Section        0  sw6306.o(.text.SW6306_PowerLoad)
+    __arm_cp.38_0                            0x080051e8   Number         4  sw6306.o(.text.SW6306_PowerLoad)
+    [Anonymous Symbol]                       0x080051ec   Section        0  sw6306.o(.text.SW6306_ReadCapacity)
+    __arm_cp.59_0                            0x080051f4   Number         4  sw6306.o(.text.SW6306_ReadCapacity)
+    [Anonymous Symbol]                       0x080051f8   Section        0  sw6306.o(.text.SW6306_ReadIBAT)
+    [Anonymous Symbol]                       0x08005200   Section        0  sw6306.o(.text.SW6306_ReadIBUS)
+    __arm_cp.9_0                             0x08005208   Number         4  sw6306.o(.text.SW6306_ReadIBUS)
+    [Anonymous Symbol]                       0x0800520c   Section        0  sw6306.o(.text.SW6306_ReadIBattLimit)
+    __arm_cp.40_0                            0x08005218   Number         4  sw6306.o(.text.SW6306_ReadIBattLimit)
+    [Anonymous Symbol]                       0x0800521c   Section        0  sw6306.o(.text.SW6306_ReadIPortLimit)
+    __arm_cp.39_0                            0x08005228   Number         4  sw6306.o(.text.SW6306_ReadIPortLimit)
+    [Anonymous Symbol]                       0x0800522c   Section        0  sw6306.o(.text.SW6306_ReadMaxGuageCap)
+    __arm_cp.60_0                            0x08005244   Number         4  sw6306.o(.text.SW6306_ReadMaxGuageCap)
+    __arm_cp.60_1                            0x08005248   Number         4  sw6306.o(.text.SW6306_ReadMaxGuageCap)
+    __arm_cp.60_2                            0x0800524c   Number         4  sw6306.o(.text.SW6306_ReadMaxGuageCap)
+    [Anonymous Symbol]                       0x08005250   Section        0  sw6306.o(.text.SW6306_ReadMaxInputPower)
+    [Anonymous Symbol]                       0x08005258   Section        0  sw6306.o(.text.SW6306_ReadMaxOutputPower)
+    __arm_cp.41_0                            0x08005260   Number         4  sw6306.o(.text.SW6306_ReadMaxOutputPower)
+    [Anonymous Symbol]                       0x08005264   Section        0  sw6306.o(.text.SW6306_ReadPresentGuageCap)
+    __arm_cp.61_0                            0x0800527c   Number         4  sw6306.o(.text.SW6306_ReadPresentGuageCap)
+    __arm_cp.61_1                            0x08005280   Number         4  sw6306.o(.text.SW6306_ReadPresentGuageCap)
+    __arm_cp.61_2                            0x08005284   Number         4  sw6306.o(.text.SW6306_ReadPresentGuageCap)
+    [Anonymous Symbol]                       0x08005288   Section        0  sw6306.o(.text.SW6306_ReadTCHIP)
+    __arm_cp.12_0                            0x080052a8   Number         4  sw6306.o(.text.SW6306_ReadTCHIP)
+    __arm_cp.12_1                            0x080052ac   Number         4  sw6306.o(.text.SW6306_ReadTCHIP)
+    __arm_cp.12_2                            0x080052b0   Number         4  sw6306.o(.text.SW6306_ReadTCHIP)
+    __arm_cp.12_3                            0x080052b4   Number         4  sw6306.o(.text.SW6306_ReadTCHIP)
+    [Anonymous Symbol]                       0x080052b8   Section        0  sw6306.o(.text.SW6306_ReadTNTC)
+    __arm_cp.11_0                            0x080052c8   Number         4  sw6306.o(.text.SW6306_ReadTNTC)
+    [Anonymous Symbol]                       0x080052cc   Section        0  sw6306.o(.text.SW6306_ReadVBAT)
+    [Anonymous Symbol]                       0x080052d4   Section        0  sw6306.o(.text.SW6306_ReadVBUS)
+    [Anonymous Symbol]                       0x080052dc   Section        0  sw6306.o(.text.SW6306_RegsetSwitch)
+    __arm_cp.2_0                             0x08005340   Number         4  sw6306.o(.text.SW6306_RegsetSwitch)
+    [Anonymous Symbol]                       0x08005344   Section        0  sw6306.o(.text.SW6306_StatusLoad)
+    __arm_cp.43_0                            0x08005440   Number         4  sw6306.o(.text.SW6306_StatusLoad)
+    __arm_cp.43_1                            0x08005444   Number         4  sw6306.o(.text.SW6306_StatusLoad)
+    [Anonymous Symbol]                       0x08005448   Section        0  sw6306.o(.text.SW6306_Unlock)
+    __arm_cp.64_0                            0x080054d8   Number         4  sw6306.o(.text.SW6306_Unlock)
+    [Anonymous Symbol]                       0x080054dc   Section        0  sw6306.o(.text.SetSw6306VInIbusRatio)
+    __arm_cp.93_0                            0x080054e4   Number         4  sw6306.o(.text.SetSw6306VInIbusRatio)
+    [Anonymous Symbol]                       0x080054e8   Section        0  sw6306.o(.text.SetSw6306VInputPowMax)
+    __arm_cp.92_0                            0x080054f0   Number         4  sw6306.o(.text.SetSw6306VInputPowMax)
+    [Anonymous Symbol]                       0x080054f4   Section        0  main.o(.text.SetTempControl)
+    __arm_cp.22_0                            0x08005524   Number         4  main.o(.text.SetTempControl)
+    __arm_cp.22_1                            0x08005528   Number         4  main.o(.text.SetTempControl)
+    [Anonymous Symbol]                       0x08005538   Section        0  shtc3_drv.o(.text.Shtc3Hibernate)
+    [Anonymous Symbol]                       0x08005554   Section        0  shtc3_drv.o(.text.Shtc3Wakeup)
+    [Anonymous Symbol]                       0x08005570   Section        0  shtc3_drv.o(.text.Shtc3_Read_Result)
+    __arm_cp.0_0                             0x080055f0   Number         4  shtc3_drv.o(.text.Shtc3_Read_Result)
+    __arm_cp.0_1                             0x080055f4   Number         4  shtc3_drv.o(.text.Shtc3_Read_Result)
+    __arm_cp.0_2                             0x080055f8   Number         4  shtc3_drv.o(.text.Shtc3_Read_Result)
+    __arm_cp.0_3                             0x080055fc   Number         4  shtc3_drv.o(.text.Shtc3_Read_Result)
+    __arm_cp.0_4                             0x08005600   Number         4  shtc3_drv.o(.text.Shtc3_Read_Result)
+    __arm_cp.0_5                             0x08005604   Number         4  shtc3_drv.o(.text.Shtc3_Read_Result)
+    __arm_cp.0_6                             0x08005608   Number         4  shtc3_drv.o(.text.Shtc3_Read_Result)
+    [Anonymous Symbol]                       0x0800560c   Section        0  bsp_py32f030x6.o(.text.SysInit)
+    [Anonymous Symbol]                       0x08005634   Section        0  py32f0xx_it.o(.text.SysTick_Handler)
+    __arm_cp.4_0                             0x08005640   Number         4  py32f0xx_it.o(.text.SysTick_Handler)
+    [Anonymous Symbol]                       0x08005644   Section        0  system_py32f0xx.o(.text.SystemInit)
+    __arm_cp.1_0                             0x08005664   Number         4  system_py32f0xx.o(.text.SystemInit)
+    __arm_cp.1_1                             0x08005668   Number         4  system_py32f0xx.o(.text.SystemInit)
+    __arm_cp.1_2                             0x0800566c   Number         4  system_py32f0xx.o(.text.SystemInit)
+    __arm_cp.1_3                             0x08005670   Number         4  system_py32f0xx.o(.text.SystemInit)
+    [Anonymous Symbol]                       0x08005674   Section        0  py32f0xx_bsp_usart.o(.text.USART1_IRQHandler)
+    __arm_cp.30_6                            0x08005718   Number         4  py32f0xx_bsp_usart.o(.text.USART1_IRQHandler)
+    [Anonymous Symbol]                       0x0800571c   Section        0  py32f0xx_bsp_usart.o(.text.USART_IsBusy)
+    [Anonymous Symbol]                       0x08005738   Section        0  py32f0xx_bsp_usart.o(.text.USART_bufread)
+    __arm_cp.29_2                            0x08005780   Number         4  py32f0xx_bsp_usart.o(.text.USART_bufread)
+    [Anonymous Symbol]                       0x08005784   Section        0  py32f0xx_bsp_usart.o(.text.USART_bufsend)
+    __arm_cp.23_0                            0x080057f8   Number         4  py32f0xx_bsp_usart.o(.text.USART_bufsend)
+    __arm_cp.23_1                            0x080057fc   Number         4  py32f0xx_bsp_usart.o(.text.USART_bufsend)
+    __arm_cp.23_2                            0x08005800   Number         4  py32f0xx_bsp_usart.o(.text.USART_bufsend)
+    [Anonymous Symbol]                       0x08005804   Section        0  py32f0xx_bsp_usart.o(.text.USART_getvalidnum)
+    __arm_cp.27_0                            0x08005820   Number         4  py32f0xx_bsp_usart.o(.text.USART_getvalidnum)
+    __arm_cp.27_1                            0x08005824   Number         4  py32f0xx_bsp_usart.o(.text.USART_getvalidnum)
+    [Anonymous Symbol]                       0x08005828   Section        0  12864oled_drv.o(.text.Write_IIC_Command)
+    [Anonymous Symbol]                       0x08005848   Section        0  12864oled_drv.o(.text.Write_IIC_Data)
+    __arm_cp.1_0                             0x08005868   Number         4  12864oled_drv.o(.text.Write_IIC_Data)
+    __arm_cp.1_1                             0x0800586c   Number         4  12864oled_drv.o(.text.Write_IIC_Data)
+    __NVIC_EnableIRQ                         0x08005871   Thumb Code    20  py32f0xx_bsp_exti.o(.text.__NVIC_EnableIRQ)
+    [Anonymous Symbol]                       0x08005870   Section        0  py32f0xx_bsp_exti.o(.text.__NVIC_EnableIRQ)
+    __NVIC_EnableIRQ                         0x08005885   Thumb Code    12  py32f0xx_bsp_i2c.o(.text.__NVIC_EnableIRQ)
+    [Anonymous Symbol]                       0x08005884   Section        0  py32f0xx_bsp_i2c.o(.text.__NVIC_EnableIRQ)
+    __NVIC_EnableIRQ                         0x08005891   Thumb Code    16  py32f0xx_bsp_usart.o(.text.__NVIC_EnableIRQ)
+    [Anonymous Symbol]                       0x08005890   Section        0  py32f0xx_bsp_usart.o(.text.__NVIC_EnableIRQ)
+    __arm_cp.19_0                            0x0800589c   Number         4  py32f0xx_bsp_usart.o(.text.__NVIC_EnableIRQ)
+    __NVIC_SetPriority                       0x080058a1   Thumb Code    60  py32f0xx_bsp_exti.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x080058a0   Section        0  py32f0xx_bsp_exti.o(.text.__NVIC_SetPriority)
+    __arm_cp.2_0                             0x080058d4   Number         4  py32f0xx_bsp_exti.o(.text.__NVIC_SetPriority)
+    __arm_cp.2_1                             0x080058d8   Number         4  py32f0xx_bsp_exti.o(.text.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x080058dd   Thumb Code    20  py32f0xx_bsp_i2c.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x080058dc   Section        0  py32f0xx_bsp_i2c.o(.text.__NVIC_SetPriority)
+    __arm_cp.7_0                             0x080058ec   Number         4  py32f0xx_bsp_i2c.o(.text.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x080058f1   Thumb Code    24  py32f0xx_bsp_usart.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x080058f0   Section        0  py32f0xx_bsp_usart.o(.text.__NVIC_SetPriority)
+    __arm_cp.18_0                            0x08005904   Number         4  py32f0xx_bsp_usart.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x08005908   Section        0  ds3231_drv.o(.text.bcdToDec)
+    [Anonymous Symbol]                       0x08005918   Section        0  main.o(.text.main)
+    __arm_cp.8_0                             0x08005a3c   Number         4  main.o(.text.main)
+    __arm_cp.8_4                             0x08005a8c   Number         4  main.o(.text.main)
+    __arm_cp.8_5                             0x08005a90   Number         4  main.o(.text.main)
+    __arm_cp.8_6                             0x08005a94   Number         4  main.o(.text.main)
+    __arm_cp.8_7                             0x08005a98   Number         4  main.o(.text.main)
+    __arm_cp.8_8                             0x08005a9c   Number         4  main.o(.text.main)
+    __arm_cp.8_9                             0x08005aa0   Number         4  main.o(.text.main)
+    __arm_cp.8_10                            0x08005aa4   Number         4  main.o(.text.main)
+    __arm_cp.8_11                            0x08005aa8   Number         4  main.o(.text.main)
+    __arm_cp.8_12                            0x08005aac   Number         4  main.o(.text.main)
+    __arm_cp.8_13                            0x08005ab0   Number         4  main.o(.text.main)
+    [Anonymous Symbol]                       0x08005ab4   Section        0  main.o(.text.thread_app)
+    __arm_cp.0_77                            0x08005ea4   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_78                            0x08005ea8   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_79                            0x08005eac   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_80                            0x08005eb0   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_81                            0x08005eb4   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_82                            0x08005eb8   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_83                            0x08005ebc   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_84                            0x08005ec0   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_85                            0x08005ec4   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_86                            0x08005ec8   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_88                            0x08005ed0   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_90                            0x08005ed8   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_92                            0x08005ee0   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_93                            0x08005ee4   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_94                            0x08005ee8   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_95                            0x08005eec   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_96                            0x08005ef0   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_99                            0x08005efc   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_100                           0x08005f00   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_101                           0x08005f04   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_102                           0x08005f08   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_104                           0x08005f10   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_11                            0x08006360   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_13                            0x08006364   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_15                            0x08006368   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_21                            0x0800636c   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_24                            0x08006370   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_28                            0x08006374   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_30                            0x08006378   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_31                            0x0800637c   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_41                            0x080063f8   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_42                            0x080063fc   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_43                            0x08006400   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_44                            0x08006404   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_46                            0x0800641c   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_47                            0x08006420   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_49                            0x08006430   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_50                            0x08006434   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_51                            0x08006438   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_52                            0x0800643c   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_53                            0x08006440   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_54                            0x08006444   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_55                            0x08006448   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_56                            0x0800644c   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_57                            0x08006450   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_58                            0x08006454   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_59                            0x08006458   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_60                            0x0800645c   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_61                            0x08006460   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_62                            0x08006464   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_63                            0x08006468   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_64                            0x0800646c   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_65                            0x08006470   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_66                            0x08006474   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_67                            0x08006478   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_68                            0x0800647c   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_69                            0x08006480   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_70                            0x08006484   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_71                            0x08006488   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_72                            0x0800648c   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_73                            0x08006490   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_74                            0x08006494   Number         4  main.o(.text.thread_app)
+    __arm_cp.0_75                            0x08006498   Number         4  main.o(.text.thread_app)
+    [Anonymous Symbol]                       0x0800649c   Section        0  main.o(.text.thread_echo)
+    [Anonymous Symbol]                       0x080064e4   Section        0  main.o(.text.thread_key)
+    __arm_cp.5_36                            0x080066c4   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_37                            0x080066c8   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_38                            0x080066cc   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_40                            0x080066d4   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_42                            0x080066dc   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_4                             0x08006ae4   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_7                             0x08006ae8   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_8                             0x08006aec   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_9                             0x08006af0   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_10                            0x08006af4   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_11                            0x08006af8   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_12                            0x08006afc   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_13                            0x08006b00   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_14                            0x08006b04   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_15                            0x08006b08   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_16                            0x08006b0c   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_17                            0x08006b10   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_18                            0x08006b14   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_20                            0x08006b18   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_21                            0x08006b1c   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_22                            0x08006b20   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_23                            0x08006b24   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_27                            0x08006b4c   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_28                            0x08006b50   Number         4  main.o(.text.thread_key)
+    __arm_cp.5_30                            0x08006b54   Number         4  main.o(.text.thread_key)
+    [Anonymous Symbol]                       0x08006b58   Section        0  main.o(.text.thread_lcdprintf)
+    __arm_cp.7_0                             0x08006bbc   Number         4  main.o(.text.thread_lcdprintf)
+    __arm_cp.7_1                             0x08006bc0   Number         4  main.o(.text.thread_lcdprintf)
+    __arm_cp.7_2                             0x08006bc4   Number         4  main.o(.text.thread_lcdprintf)
+    __arm_cp.7_3                             0x08006bc8   Number         4  main.o(.text.thread_lcdprintf)
+    __arm_cp.7_4                             0x08006bcc   Number         4  main.o(.text.thread_lcdprintf)
+    __arm_cp.7_5                             0x08006bd0   Number         4  main.o(.text.thread_lcdprintf)
+    __arm_cp.7_6                             0x08006bd4   Number         4  main.o(.text.thread_lcdprintf)
+    [Anonymous Symbol]                       0x08006bd8   Section        0  main.o(.text.thread_trig)
+    __arm_cp.6_0                             0x08006c80   Number         4  main.o(.text.thread_trig)
+    __arm_cp.6_1                             0x08006c84   Number         4  main.o(.text.thread_trig)
+    __arm_cp.6_3                             0x08006ca0   Number         4  main.o(.text.thread_trig)
+    __arm_cp.6_4                             0x08006ca4   Number         4  main.o(.text.thread_trig)
+    __arm_cp.6_6                             0x08006cbc   Number         4  main.o(.text.thread_trig)
+    [Anonymous Symbol]                       0x08006cc0   Section        0  py32f0xx_bsp_usart.o(.text.uprintf)
+    i.__0printf                              0x08006cec   Section        0  printfa.o(i.__0printf)
+    i.__0sprintf                             0x08006d0c   Section        0  printfa.o(i.__0sprintf)
+    i.__0vsprintf                            0x08006d34   Section        0  printfa.o(i.__0vsprintf)
+    i.__ARM_clz                              0x08006d58   Section        0  depilogue.o(i.__ARM_clz)
+    i.__kernel_poly                          0x08006d86   Section        0  poly.o(i.__kernel_poly)
+    i.__mathlib_dbl_divzero                  0x08006e34   Section        0  dunder.o(i.__mathlib_dbl_divzero)
+    i.__mathlib_dbl_infnan                   0x08006e48   Section        0  dunder.o(i.__mathlib_dbl_infnan)
+    i.__mathlib_dbl_invalid                  0x08006e52   Section        0  dunder.o(i.__mathlib_dbl_invalid)
+    i.__scatterload_copy                     0x08006e62   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08006e70   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08006e72   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.__set_errno                            0x08006e80   Section        0  errno.o(i.__set_errno)
+    _fp_digits                               0x08006e8d   Thumb Code   344  printfa.o(i._fp_digits)
+    i._fp_digits                             0x08006e8c   Section        0  printfa.o(i._fp_digits)
+    _printf_core                             0x08007001   Thumb Code  1754  printfa.o(i._printf_core)
+    i._printf_core                           0x08007000   Section        0  printfa.o(i._printf_core)
+    _printf_post_padding                     0x080076ed   Thumb Code    32  printfa.o(i._printf_post_padding)
+    i._printf_post_padding                   0x080076ec   Section        0  printfa.o(i._printf_post_padding)
+    _printf_pre_padding                      0x0800770d   Thumb Code    44  printfa.o(i._printf_pre_padding)
+    i._printf_pre_padding                    0x0800770c   Section        0  printfa.o(i._printf_pre_padding)
+    _sputc                                   0x08007739   Thumb Code    10  printfa.o(i._sputc)
+    i._sputc                                 0x08007738   Section        0  printfa.o(i._sputc)
+    i.fminf                                  0x08007742   Section        0  fminf.o(i.fminf)
+    i.fputc                                  0x08007768   Section        0  fputc.o(i.fputc)
+    i.log                                    0x0800777c   Section        0  log.o(i.log)
+    Lg2                                      0x08007ad0   Data          24  log.o(.constdata)
+    .constdata                               0x08007ad0   Section       56  log.o(.constdata)
+    Lg                                       0x08007ae8   Data          32  log.o(.constdata)
+    .constdata                               0x08007b08   Section        8  qnan.o(.constdata)
+    .L.str.40                                0x08009004   Data          35  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08009004   Section        0  main.o(.rodata.str1.1)
+    .L.str.65                                0x08009027   Data          12  main.o(.rodata.str1.1)
+    .L.str.37                                0x08009033   Data          52  main.o(.rodata.str1.1)
+    .L.str.62                                0x08009067   Data          17  main.o(.rodata.str1.1)
+    .L.str.90                                0x08009078   Data           2  main.o(.rodata.str1.1)
+    .L.str.1                                 0x0800907a   Data          23  main.o(.rodata.str1.1)
+    .L.str.64                                0x08009091   Data          16  main.o(.rodata.str1.1)
+    .L.str.63                                0x080090a1   Data          16  main.o(.rodata.str1.1)
+    .L.str.93                                0x080090b1   Data           2  main.o(.rodata.str1.1)
+    .L.str.49                                0x080090b3   Data          14  main.o(.rodata.str1.1)
+    .L.str.38                                0x080090c1   Data          41  main.o(.rodata.str1.1)
+    .L.str.39                                0x080090ea   Data          40  main.o(.rodata.str1.1)
+    .L.str.61                                0x08009112   Data          16  main.o(.rodata.str1.1)
+    .L.str.60                                0x08009122   Data          16  main.o(.rodata.str1.1)
+    .L.str.58                                0x08009132   Data          18  main.o(.rodata.str1.1)
+    .L.str.11                                0x08009144   Data          22  main.o(.rodata.str1.1)
+    .L.str.12                                0x0800915a   Data          21  main.o(.rodata.str1.1)
+    .L.str.59                                0x0800916f   Data          18  main.o(.rodata.str1.1)
+    .L.str.36                                0x08009181   Data          23  main.o(.rodata.str1.1)
+    .L.str.66                                0x08009198   Data          16  main.o(.rodata.str1.1)
+    .L.str.35                                0x080091a8   Data          18  main.o(.rodata.str1.1)
+    .L.str.74                                0x080091ba   Data          17  main.o(.rodata.str1.1)
+    .L.str.33                                0x080091cb   Data          22  main.o(.rodata.str1.1)
+    .L.str.34                                0x080091e1   Data          26  main.o(.rodata.str1.1)
+    .L.str.91                                0x080091fb   Data           5  main.o(.rodata.str1.1)
+    .L.str.13                                0x08009200   Data          21  main.o(.rodata.str1.1)
+    .L.str.25                                0x08009215   Data          13  main.o(.rodata.str1.1)
+    .L.str.26                                0x08009222   Data          13  main.o(.rodata.str1.1)
+    .L.str.15                                0x0800922f   Data          14  main.o(.rodata.str1.1)
+    .L.str.106                               0x0800923d   Data           7  main.o(.rodata.str1.1)
+    .L.str.105                               0x08009244   Data           7  main.o(.rodata.str1.1)
+    .L.str.29                                0x0800924b   Data          11  main.o(.rodata.str1.1)
+    .L.str.22                                0x08009256   Data          15  main.o(.rodata.str1.1)
+    .L.str.23                                0x08009265   Data          16  main.o(.rodata.str1.1)
+    .L.str.21                                0x08009275   Data          15  main.o(.rodata.str1.1)
+    .L.str.24                                0x08009284   Data          16  main.o(.rodata.str1.1)
+    .L.str.31                                0x08009294   Data          10  main.o(.rodata.str1.1)
+    .L.str.30                                0x0800929e   Data          10  main.o(.rodata.str1.1)
+    .L.str.18                                0x080092a8   Data          10  main.o(.rodata.str1.1)
+    .L.str.20                                0x080092b2   Data          17  main.o(.rodata.str1.1)
+    .L.str.19                                0x080092c3   Data          11  main.o(.rodata.str1.1)
+    .L.str.28                                0x080092ce   Data          10  main.o(.rodata.str1.1)
+    .L.str.27                                0x080092d8   Data          10  main.o(.rodata.str1.1)
+    .L.str.32                                0x080092e2   Data           8  main.o(.rodata.str1.1)
+    .L.str.16                                0x080092ea   Data          15  main.o(.rodata.str1.1)
+    .L.str.79                                0x080092fc   Data          11  main.o(.rodata.str1.4)
+    [Anonymous Symbol]                       0x080092fc   Section        0  main.o(.rodata.str1.4)
+    .L.str.77                                0x08009308   Data          11  main.o(.rodata.str1.4)
+    .L.str.76                                0x08009314   Data           9  main.o(.rodata.str1.4)
+    .L.str.81                                0x08009320   Data           9  main.o(.rodata.str1.4)
+    .L.str.78                                0x0800932c   Data          11  main.o(.rodata.str1.4)
+    table                                    0x08009338   Data        1200  main.o(.rodata.table)
+    [Anonymous Symbol]                       0x08009338   Section        0  main.o(.rodata.table)
     .data                                    0x200000c0   Section        4  stdout.o(.data)
     _errno                                   0x200000c4   Data           4  errno.o(.data)
     .data                                    0x200000c4   Section        4  errno.o(.data)
@@ -4125,95 +4126,83 @@ Image Symbol Table
     [Anonymous Symbol]                       0x20000518   Section        0  sw6306.o(.bss.SW6306_CapacityLoad.steps)
     SW6306_Click.steps                       0x20000519   Data           1  sw6306.o(.bss.SW6306_Click.steps)
     [Anonymous Symbol]                       0x20000519   Section        0  sw6306.o(.bss.SW6306_Click.steps)
-    SW6306_IbatForceCtrlSet.steps            0x2000051a   Data           1  sw6306.o(.bss.SW6306_IbatForceCtrlSet.steps)
-    [Anonymous Symbol]                       0x2000051a   Section        0  sw6306.o(.bss.SW6306_IbatForceCtrlSet.steps)
-    SW6306_IbatinChargeSet.steps             0x2000051b   Data           1  sw6306.o(.bss.SW6306_IbatinChargeSet.steps)
-    [Anonymous Symbol]                       0x2000051b   Section        0  sw6306.o(.bss.SW6306_IbatinChargeSet.steps)
-    SW6306_IbatinDischargeSet.steps          0x2000051c   Data           1  sw6306.o(.bss.SW6306_IbatinDischargeSet.steps)
-    [Anonymous Symbol]                       0x2000051c   Section        0  sw6306.o(.bss.SW6306_IbatinDischargeSet.steps)
-    SW6306_IbusForceCtrlSet.steps            0x2000051d   Data           1  sw6306.o(.bss.SW6306_IbusForceCtrlSet.steps)
-    [Anonymous Symbol]                       0x2000051d   Section        0  sw6306.o(.bss.SW6306_IbusForceCtrlSet.steps)
-    SW6306_IbusinChargeSet.steps             0x2000051e   Data           1  sw6306.o(.bss.SW6306_IbusinChargeSet.steps)
-    [Anonymous Symbol]                       0x2000051e   Section        0  sw6306.o(.bss.SW6306_IbusinChargeSet.steps)
-    SW6306_IbusinDischargeSet.steps          0x2000051f   Data           1  sw6306.o(.bss.SW6306_IbusinDischargeSet.steps)
-    [Anonymous Symbol]                       0x2000051f   Section        0  sw6306.o(.bss.SW6306_IbusinDischargeSet.steps)
-    SW6306_IextDirSet.steps                  0x20000520   Data           1  sw6306.o(.bss.SW6306_IextDirSet.steps)
-    [Anonymous Symbol]                       0x20000520   Section        0  sw6306.o(.bss.SW6306_IextDirSet.steps)
-    SW6306_IextEnSet.steps                   0x20000521   Data           1  sw6306.o(.bss.SW6306_IextEnSet.steps)
-    [Anonymous Symbol]                       0x20000521   Section        0  sw6306.o(.bss.SW6306_IextEnSet.steps)
-    SW6306_IextSet.steps                     0x20000522   Data           1  sw6306.o(.bss.SW6306_IextSet.steps)
-    [Anonymous Symbol]                       0x20000522   Section        0  sw6306.o(.bss.SW6306_IextSet.steps)
-    SW6306_Init.steps                        0x20000523   Data           1  sw6306.o(.bss.SW6306_Init.steps)
-    [Anonymous Symbol]                       0x20000523   Section        0  sw6306.o(.bss.SW6306_Init.steps)
-    SW6306_LPSet.steps                       0x20000524   Data           1  sw6306.o(.bss.SW6306_LPSet.steps)
-    [Anonymous Symbol]                       0x20000524   Section        0  sw6306.o(.bss.SW6306_LPSet.steps)
-    SW6306_PDSet.steps                       0x20000525   Data           1  sw6306.o(.bss.SW6306_PDSet.steps)
-    [Anonymous Symbol]                       0x20000525   Section        0  sw6306.o(.bss.SW6306_PDSet.steps)
-    SW6306_PortA1Remove.steps                0x20000526   Data           1  sw6306.o(.bss.SW6306_PortA1Remove.steps)
-    [Anonymous Symbol]                       0x20000526   Section        0  sw6306.o(.bss.SW6306_PortA1Remove.steps)
-    SW6306_PortA2Remove.steps                0x20000527   Data           1  sw6306.o(.bss.SW6306_PortA2Remove.steps)
-    [Anonymous Symbol]                       0x20000527   Section        0  sw6306.o(.bss.SW6306_PortA2Remove.steps)
-    SW6306_PortStatusLoad.steps              0x20000528   Data           1  sw6306.o(.bss.SW6306_PortStatusLoad.steps)
-    [Anonymous Symbol]                       0x20000528   Section        0  sw6306.o(.bss.SW6306_PortStatusLoad.steps)
-    SW6306_PowerLoad.steps                   0x20000529   Data           1  sw6306.o(.bss.SW6306_PowerLoad.steps)
-    [Anonymous Symbol]                       0x20000529   Section        0  sw6306.o(.bss.SW6306_PowerLoad.steps)
-    SW6306_RegsetSwitch.steps                0x2000052a   Data           1  sw6306.o(.bss.SW6306_RegsetSwitch.steps)
-    [Anonymous Symbol]                       0x2000052a   Section        0  sw6306.o(.bss.SW6306_RegsetSwitch.steps)
-    SW6306_Status                            0x2000052c   Data          48  sw6306.o(.bss.SW6306_Status)
-    [Anonymous Symbol]                       0x2000052c   Section        0  sw6306.o(.bss.SW6306_Status)
-    SW6306_StatusLoad.steps                  0x2000055c   Data           1  sw6306.o(.bss.SW6306_StatusLoad.steps)
-    [Anonymous Symbol]                       0x2000055c   Section        0  sw6306.o(.bss.SW6306_StatusLoad.steps)
-    SW6306_Unlock.steps                      0x2000055d   Data           1  sw6306.o(.bss.SW6306_Unlock.steps)
-    [Anonymous Symbol]                       0x2000055d   Section        0  sw6306.o(.bss.SW6306_Unlock.steps)
-    Setds3231Time                            0x20000560   Data          10  main.o(.bss.Setds3231Time)
-    [Anonymous Symbol]                       0x20000560   Section        0  main.o(.bss.Setds3231Time)
-    Shtc3_Read_Result.state                  0x2000056a   Data           1  shtc3_drv.o(.bss.Shtc3_Read_Result.state)
-    [Anonymous Symbol]                       0x2000056a   Section        0  shtc3_drv.o(.bss.Shtc3_Read_Result.state)
-    Sw6306InputPowerMAX                      0x2000056b   Data           1  main.o(.bss.Sw6306InputPowerMAX)
-    [Anonymous Symbol]                       0x2000056b   Section        0  main.o(.bss.Sw6306InputPowerMAX)
-    Sw6306InputPowerMaxSign                  0x2000056c   Data           1  main.o(.bss.Sw6306InputPowerMaxSign)
-    [Anonymous Symbol]                       0x2000056c   Section        0  main.o(.bss.Sw6306InputPowerMaxSign)
-    Temp1_pid.1                              0x20000570   Data           4  main.o(.bss.Temp1_pid.1)
-    [Anonymous Symbol]                       0x20000570   Section        0  main.o(.bss.Temp1_pid.1)
-    Temp2                                    0x20000574   Data           4  main.o(.bss.Temp2)
-    [Anonymous Symbol]                       0x20000574   Section        0  main.o(.bss.Temp2)
-    Temperature                              0x20000578   Data           4  shtc3_drv.o(.bss.Temperature)
-    [Anonymous Symbol]                       0x20000578   Section        0  shtc3_drv.o(.bss.Temperature)
-    TimeSaveTrig                             0x2000057e   Data           1  main.o(.bss.TimeSaveTrig)
-    [Anonymous Symbol]                       0x2000057e   Section        0  main.o(.bss.TimeSaveTrig)
-    TimeSaveTrig2                            0x2000057f   Data           1  main.o(.bss.TimeSaveTrig2)
-    [Anonymous Symbol]                       0x2000057f   Section        0  main.o(.bss.TimeSaveTrig2)
-    USART_rx_buffer                          0x20000580   Data          32  py32f0xx_bsp_usart.o(.bss.USART_rx_buffer)
-    [Anonymous Symbol]                       0x20000580   Section        0  py32f0xx_bsp_usart.o(.bss.USART_rx_buffer)
-    USART_tx_buffer                          0x200005a0   Data         256  py32f0xx_bsp_usart.o(.bss.USART_tx_buffer)
-    [Anonymous Symbol]                       0x200005a0   Section        0  py32f0xx_bsp_usart.o(.bss.USART_tx_buffer)
-    ch                                       0x200006a2   Data          20  main.o(.bss.ch)
-    [Anonymous Symbol]                       0x200006a2   Section        0  main.o(.bss.ch)
-    current_operation_index                  0x200006b8   Data           4  main.o(.bss.current_operation_index)
-    [Anonymous Symbol]                       0x200006b8   Section        0  main.o(.bss.current_operation_index)
-    deattach_delay                           0x200006bc   Data           2  main.o(.bss.deattach_delay)
-    [Anonymous Symbol]                       0x200006bc   Section        0  main.o(.bss.deattach_delay)
-    func_index                               0x200006be   Data           1  main.o(.bss.func_index)
-    [Anonymous Symbol]                       0x200006be   Section        0  main.o(.bss.func_index)
-    key_data                                 0x200006c5   Data           1  main.o(.bss.key_data)
-    [Anonymous Symbol]                       0x200006c5   Section        0  main.o(.bss.key_data)
-    keys                                     0x200006c6   Data          32  debounce_key.o(.bss.keys)
-    [Anonymous Symbol]                       0x200006c6   Section        0  debounce_key.o(.bss.keys)
-    keytrig1                                 0x200006e7   Data           1  main.o(.bss.keytrig1)
-    [Anonymous Symbol]                       0x200006e7   Section        0  main.o(.bss.keytrig1)
-    rx_wr_index                              0x2000070f   Data           1  py32f0xx_bsp_usart.o(.bss.rx_wr_index)
-    [Anonymous Symbol]                       0x2000070f   Section        0  py32f0xx_bsp_usart.o(.bss.rx_wr_index)
-    thread_app.endmillis                     0x20000710   Data           4  main.o(.bss.thread_app.endmillis)
-    [Anonymous Symbol]                       0x20000710   Section        0  main.o(.bss.thread_app.endmillis)
-    thread_key.endmillis                     0x20000714   Data           4  main.o(.bss.thread_key.endmillis)
-    [Anonymous Symbol]                       0x20000714   Section        0  main.o(.bss.thread_key.endmillis)
-    thread_lcdprintf.endmillis               0x20000718   Data           4  main.o(.bss.thread_lcdprintf.endmillis)
-    [Anonymous Symbol]                       0x20000718   Section        0  main.o(.bss.thread_lcdprintf.endmillis)
-    time                                     0x2000071c   Data           1  main.o(.bss.time)
-    [Anonymous Symbol]                       0x2000071c   Section        0  main.o(.bss.time)
-    tx_wr_index                              0x2000071d   Data           1  py32f0xx_bsp_usart.o(.bss.tx_wr_index)
-    [Anonymous Symbol]                       0x2000071d   Section        0  py32f0xx_bsp_usart.o(.bss.tx_wr_index)
-    STACK                                    0x20000728   Section     1024  startup_py32f030xx.o(STACK)
+    SW6306_IextDirSet.steps                  0x2000051a   Data           1  sw6306.o(.bss.SW6306_IextDirSet.steps)
+    [Anonymous Symbol]                       0x2000051a   Section        0  sw6306.o(.bss.SW6306_IextDirSet.steps)
+    SW6306_IextEnSet.steps                   0x2000051b   Data           1  sw6306.o(.bss.SW6306_IextEnSet.steps)
+    [Anonymous Symbol]                       0x2000051b   Section        0  sw6306.o(.bss.SW6306_IextEnSet.steps)
+    SW6306_IextSet.steps                     0x2000051c   Data           1  sw6306.o(.bss.SW6306_IextSet.steps)
+    [Anonymous Symbol]                       0x2000051c   Section        0  sw6306.o(.bss.SW6306_IextSet.steps)
+    SW6306_Init.steps                        0x2000051d   Data           1  sw6306.o(.bss.SW6306_Init.steps)
+    [Anonymous Symbol]                       0x2000051d   Section        0  sw6306.o(.bss.SW6306_Init.steps)
+    SW6306_LPSet.steps                       0x2000051e   Data           1  sw6306.o(.bss.SW6306_LPSet.steps)
+    [Anonymous Symbol]                       0x2000051e   Section        0  sw6306.o(.bss.SW6306_LPSet.steps)
+    SW6306_PDSet.steps                       0x2000051f   Data           1  sw6306.o(.bss.SW6306_PDSet.steps)
+    [Anonymous Symbol]                       0x2000051f   Section        0  sw6306.o(.bss.SW6306_PDSet.steps)
+    SW6306_PortA1Remove.steps                0x20000520   Data           1  sw6306.o(.bss.SW6306_PortA1Remove.steps)
+    [Anonymous Symbol]                       0x20000520   Section        0  sw6306.o(.bss.SW6306_PortA1Remove.steps)
+    SW6306_PortA2Remove.steps                0x20000521   Data           1  sw6306.o(.bss.SW6306_PortA2Remove.steps)
+    [Anonymous Symbol]                       0x20000521   Section        0  sw6306.o(.bss.SW6306_PortA2Remove.steps)
+    SW6306_PortStatusLoad.steps              0x20000522   Data           1  sw6306.o(.bss.SW6306_PortStatusLoad.steps)
+    [Anonymous Symbol]                       0x20000522   Section        0  sw6306.o(.bss.SW6306_PortStatusLoad.steps)
+    SW6306_PowerLoad.steps                   0x20000523   Data           1  sw6306.o(.bss.SW6306_PowerLoad.steps)
+    [Anonymous Symbol]                       0x20000523   Section        0  sw6306.o(.bss.SW6306_PowerLoad.steps)
+    SW6306_RegsetSwitch.steps                0x20000524   Data           1  sw6306.o(.bss.SW6306_RegsetSwitch.steps)
+    [Anonymous Symbol]                       0x20000524   Section        0  sw6306.o(.bss.SW6306_RegsetSwitch.steps)
+    SW6306_Status                            0x20000528   Data          48  sw6306.o(.bss.SW6306_Status)
+    [Anonymous Symbol]                       0x20000528   Section        0  sw6306.o(.bss.SW6306_Status)
+    SW6306_StatusLoad.steps                  0x20000558   Data           1  sw6306.o(.bss.SW6306_StatusLoad.steps)
+    [Anonymous Symbol]                       0x20000558   Section        0  sw6306.o(.bss.SW6306_StatusLoad.steps)
+    SW6306_Unlock.steps                      0x20000559   Data           1  sw6306.o(.bss.SW6306_Unlock.steps)
+    [Anonymous Symbol]                       0x20000559   Section        0  sw6306.o(.bss.SW6306_Unlock.steps)
+    Setds3231Time                            0x2000055c   Data          10  main.o(.bss.Setds3231Time)
+    [Anonymous Symbol]                       0x2000055c   Section        0  main.o(.bss.Setds3231Time)
+    Shtc3_Read_Result.state                  0x20000566   Data           1  shtc3_drv.o(.bss.Shtc3_Read_Result.state)
+    [Anonymous Symbol]                       0x20000566   Section        0  shtc3_drv.o(.bss.Shtc3_Read_Result.state)
+    Sw6306InputPowerMAX                      0x20000567   Data           1  main.o(.bss.Sw6306InputPowerMAX)
+    [Anonymous Symbol]                       0x20000567   Section        0  main.o(.bss.Sw6306InputPowerMAX)
+    Sw6306InputPowerMaxSign                  0x20000568   Data           1  main.o(.bss.Sw6306InputPowerMaxSign)
+    [Anonymous Symbol]                       0x20000568   Section        0  main.o(.bss.Sw6306InputPowerMaxSign)
+    Temp1_pid.1                              0x2000056c   Data           4  main.o(.bss.Temp1_pid.1)
+    [Anonymous Symbol]                       0x2000056c   Section        0  main.o(.bss.Temp1_pid.1)
+    Temp2                                    0x20000570   Data           4  main.o(.bss.Temp2)
+    [Anonymous Symbol]                       0x20000570   Section        0  main.o(.bss.Temp2)
+    Temperature                              0x20000574   Data           4  shtc3_drv.o(.bss.Temperature)
+    [Anonymous Symbol]                       0x20000574   Section        0  shtc3_drv.o(.bss.Temperature)
+    TimeSaveTrig                             0x2000057a   Data           1  main.o(.bss.TimeSaveTrig)
+    [Anonymous Symbol]                       0x2000057a   Section        0  main.o(.bss.TimeSaveTrig)
+    TimeSaveTrig2                            0x2000057b   Data           1  main.o(.bss.TimeSaveTrig2)
+    [Anonymous Symbol]                       0x2000057b   Section        0  main.o(.bss.TimeSaveTrig2)
+    USART_rx_buffer                          0x2000057c   Data          32  py32f0xx_bsp_usart.o(.bss.USART_rx_buffer)
+    [Anonymous Symbol]                       0x2000057c   Section        0  py32f0xx_bsp_usart.o(.bss.USART_rx_buffer)
+    USART_tx_buffer                          0x2000059c   Data         256  py32f0xx_bsp_usart.o(.bss.USART_tx_buffer)
+    [Anonymous Symbol]                       0x2000059c   Section        0  py32f0xx_bsp_usart.o(.bss.USART_tx_buffer)
+    ch                                       0x2000069e   Data          20  main.o(.bss.ch)
+    [Anonymous Symbol]                       0x2000069e   Section        0  main.o(.bss.ch)
+    current_operation_index                  0x200006b4   Data           4  main.o(.bss.current_operation_index)
+    [Anonymous Symbol]                       0x200006b4   Section        0  main.o(.bss.current_operation_index)
+    deattach_delay                           0x200006b8   Data           2  main.o(.bss.deattach_delay)
+    [Anonymous Symbol]                       0x200006b8   Section        0  main.o(.bss.deattach_delay)
+    func_index                               0x200006ba   Data           1  main.o(.bss.func_index)
+    [Anonymous Symbol]                       0x200006ba   Section        0  main.o(.bss.func_index)
+    key_data                                 0x200006c1   Data           1  main.o(.bss.key_data)
+    [Anonymous Symbol]                       0x200006c1   Section        0  main.o(.bss.key_data)
+    keys                                     0x200006c2   Data          32  debounce_key.o(.bss.keys)
+    [Anonymous Symbol]                       0x200006c2   Section        0  debounce_key.o(.bss.keys)
+    keytrig1                                 0x200006e3   Data           1  main.o(.bss.keytrig1)
+    [Anonymous Symbol]                       0x200006e3   Section        0  main.o(.bss.keytrig1)
+    rx_wr_index                              0x2000070b   Data           1  py32f0xx_bsp_usart.o(.bss.rx_wr_index)
+    [Anonymous Symbol]                       0x2000070b   Section        0  py32f0xx_bsp_usart.o(.bss.rx_wr_index)
+    thread_app.endmillis                     0x2000070c   Data           4  main.o(.bss.thread_app.endmillis)
+    [Anonymous Symbol]                       0x2000070c   Section        0  main.o(.bss.thread_app.endmillis)
+    thread_key.endmillis                     0x20000710   Data           4  main.o(.bss.thread_key.endmillis)
+    [Anonymous Symbol]                       0x20000710   Section        0  main.o(.bss.thread_key.endmillis)
+    thread_lcdprintf.endmillis               0x20000714   Data           4  main.o(.bss.thread_lcdprintf.endmillis)
+    [Anonymous Symbol]                       0x20000714   Section        0  main.o(.bss.thread_lcdprintf.endmillis)
+    time                                     0x20000718   Data           1  main.o(.bss.time)
+    [Anonymous Symbol]                       0x20000718   Section        0  main.o(.bss.time)
+    tx_wr_index                              0x20000719   Data           1  py32f0xx_bsp_usart.o(.bss.tx_wr_index)
+    [Anonymous Symbol]                       0x20000719   Section        0  py32f0xx_bsp_usart.o(.bss.tx_wr_index)
+    STACK                                    0x20000720   Section     1024  startup_py32f030xx.o(STACK)
 
     Global Symbols
 
@@ -4445,150 +4434,144 @@ Image Symbol Table
     SW6306_ByteWrite                         0x08004711   Thumb Code    44  sw6306.o(.text.SW6306_ByteWrite)
     SW6306_CapacityLoad                      0x0800473d   Thumb Code   196  sw6306.o(.text.SW6306_CapacityLoad)
     SW6306_Click                             0x08004801   Thumb Code    68  sw6306.o(.text.SW6306_Click)
-    SW6306_IbatForceCtrlSet                  0x08004845   Thumb Code    88  sw6306.o(.text.SW6306_IbatForceCtrlSet)
-    SW6306_IbatinChargeSet                   0x0800489d   Thumb Code    76  sw6306.o(.text.SW6306_IbatinChargeSet)
-    SW6306_IbatinDischargeSet                0x080048e9   Thumb Code    76  sw6306.o(.text.SW6306_IbatinDischargeSet)
-    SW6306_IbusForceCtrlSet                  0x08004935   Thumb Code    88  sw6306.o(.text.SW6306_IbusForceCtrlSet)
-    SW6306_IbusinChargeSet                   0x0800498d   Thumb Code    76  sw6306.o(.text.SW6306_IbusinChargeSet)
-    SW6306_IbusinDischargeSet                0x080049d9   Thumb Code    76  sw6306.o(.text.SW6306_IbusinDischargeSet)
-    SW6306_IextDirSet                        0x08004a25   Thumb Code    88  sw6306.o(.text.SW6306_IextDirSet)
-    SW6306_IextEnSet                         0x08004a7d   Thumb Code    88  sw6306.o(.text.SW6306_IextEnSet)
-    SW6306_IextSet                           0x08004ad5   Thumb Code   104  sw6306.o(.text.SW6306_IextSet)
-    SW6306_Init                              0x08004b3d   Thumb Code   944  sw6306.o(.text.SW6306_Init)
-    SW6306_IsBatteryDepleted                 0x08004eed   Thumb Code    12  sw6306.o(.text.SW6306_IsBatteryDepleted)
-    SW6306_IsCharging                        0x08004ef9   Thumb Code    12  sw6306.o(.text.SW6306_IsCharging)
-    SW6306_IsDischarging                     0x08004f05   Thumb Code    12  sw6306.o(.text.SW6306_IsDischarging)
-    SW6306_IsErrorinCharging                 0x08004f11   Thumb Code    12  sw6306.o(.text.SW6306_IsErrorinCharging)
-    SW6306_IsErrorinDischarging              0x08004f1d   Thumb Code    12  sw6306.o(.text.SW6306_IsErrorinDischarging)
-    SW6306_IsFullCharged                     0x08004f29   Thumb Code    12  sw6306.o(.text.SW6306_IsFullCharged)
-    SW6306_IsInitialized                     0x08004f35   Thumb Code    48  sw6306.o(.text.SW6306_IsInitialized)
-    SW6306_IsOverHeated                      0x08004f65   Thumb Code    24  sw6306.o(.text.SW6306_IsOverHeated)
-    SW6306_IsPortA1ON                        0x08004f7d   Thumb Code    12  sw6306.o(.text.SW6306_IsPortA1ON)
-    SW6306_IsPortA2ON                        0x08004f89   Thumb Code    12  sw6306.o(.text.SW6306_IsPortA2ON)
-    SW6306_IsPortC1ON                        0x08004f95   Thumb Code    12  sw6306.o(.text.SW6306_IsPortC1ON)
-    SW6306_IsPortC2ON                        0x08004fa1   Thumb Code    12  sw6306.o(.text.SW6306_IsPortC2ON)
-    SW6306_IsQCStatAFC                       0x08004fad   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatAFC)
-    SW6306_IsQCStatFCP                       0x08004fbd   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatFCP)
-    SW6306_IsQCStatNONE                      0x08004fcd   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatNONE)
-    SW6306_IsQCStatPDFIX                     0x08004fdd   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatPDFIX)
-    SW6306_IsQCStatPDPPS                     0x08004fed   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatPDPPS)
-    SW6306_IsQCStatPE11                      0x08004ffd   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatPE11)
-    SW6306_IsQCStatPE20                      0x0800500d   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatPE20)
-    SW6306_IsQCStatPQC                       0x0800501d   Thumb Code    12  sw6306.o(.text.SW6306_IsQCStatPQC)
-    SW6306_IsQCStatQC2                       0x08005029   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatQC2)
-    SW6306_IsQCStatQC3                       0x08005039   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatQC3)
-    SW6306_IsQCStatQC3P                      0x08005049   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatQC3P)
-    SW6306_IsQCStatSCP                       0x08005059   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatSCP)
-    SW6306_IsQCStatSFCP                      0x08005069   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatSFCP)
-    SW6306_IsQCStatSVOOC                     0x08005079   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatSVOOC)
-    SW6306_IsQCStatUFCS                      0x08005089   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatUFCS)
-    SW6306_IsQCStatVOOC1                     0x08005099   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatVOOC1)
-    SW6306_IsQCStatVOOC4                     0x080050a9   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatVOOC4)
-    SW6306_IsQCStatVQC                       0x080050b9   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatVQC)
-    SW6306_LPSet                             0x080050c9   Thumb Code    72  sw6306.o(.text.SW6306_LPSet)
-    SW6306_PDSet                             0x08005111   Thumb Code   504  sw6306.o(.text.SW6306_PDSet)
-    SW6306_PortA1Remove                      0x08005309   Thumb Code    64  sw6306.o(.text.SW6306_PortA1Remove)
-    SW6306_PortA2Remove                      0x08005349   Thumb Code    64  sw6306.o(.text.SW6306_PortA2Remove)
-    SW6306_PortStatusLoad                    0x08005389   Thumb Code   164  sw6306.o(.text.SW6306_PortStatusLoad)
-    SW6306_PowerLoad                         0x0800542d   Thumb Code   244  sw6306.o(.text.SW6306_PowerLoad)
-    SW6306_ReadCapacity                      0x08005521   Thumb Code     8  sw6306.o(.text.SW6306_ReadCapacity)
-    SW6306_ReadIBAT                          0x08005529   Thumb Code     8  sw6306.o(.text.SW6306_ReadIBAT)
-    SW6306_ReadIBUS                          0x08005531   Thumb Code     8  sw6306.o(.text.SW6306_ReadIBUS)
-    SW6306_ReadIBattLimit                    0x08005539   Thumb Code    12  sw6306.o(.text.SW6306_ReadIBattLimit)
-    SW6306_ReadIPortLimit                    0x08005545   Thumb Code    12  sw6306.o(.text.SW6306_ReadIPortLimit)
-    SW6306_ReadMaxGuageCap                   0x08005551   Thumb Code    32  sw6306.o(.text.SW6306_ReadMaxGuageCap)
-    SW6306_ReadMaxInputPower                 0x08005571   Thumb Code     8  sw6306.o(.text.SW6306_ReadMaxInputPower)
-    SW6306_ReadMaxOutputPower                0x08005579   Thumb Code     8  sw6306.o(.text.SW6306_ReadMaxOutputPower)
-    SW6306_ReadPresentGuageCap               0x08005581   Thumb Code    32  sw6306.o(.text.SW6306_ReadPresentGuageCap)
-    SW6306_ReadTCHIP                         0x080055a1   Thumb Code    44  sw6306.o(.text.SW6306_ReadTCHIP)
-    SW6306_ReadTNTC                          0x080055cd   Thumb Code    16  sw6306.o(.text.SW6306_ReadTNTC)
-    SW6306_ReadVBAT                          0x080055dd   Thumb Code     8  sw6306.o(.text.SW6306_ReadVBAT)
-    SW6306_ReadVBUS                          0x080055e5   Thumb Code     8  sw6306.o(.text.SW6306_ReadVBUS)
-    SW6306_RegsetSwitch                      0x080055ed   Thumb Code   104  sw6306.o(.text.SW6306_RegsetSwitch)
-    SW6306_StatusLoad                        0x08005655   Thumb Code   260  sw6306.o(.text.SW6306_StatusLoad)
-    SW6306_Unlock                            0x08005759   Thumb Code   148  sw6306.o(.text.SW6306_Unlock)
-    SetSw6306VInIbusRatio                    0x080057ed   Thumb Code    12  sw6306.o(.text.SetSw6306VInIbusRatio)
-    SetSw6306VInputPowMax                    0x080057f9   Thumb Code    12  sw6306.o(.text.SetSw6306VInputPowMax)
-    SetTempControl                           0x08005805   Thumb Code    68  main.o(.text.SetTempControl)
-    Shtc3Hibernate                           0x08005849   Thumb Code    28  shtc3_drv.o(.text.Shtc3Hibernate)
-    Shtc3Wakeup                              0x08005865   Thumb Code    28  shtc3_drv.o(.text.Shtc3Wakeup)
-    Shtc3_Read_Result                        0x08005881   Thumb Code   156  shtc3_drv.o(.text.Shtc3_Read_Result)
-    SysInit                                  0x0800591d   Thumb Code    40  bsp_py32f030x6.o(.text.SysInit)
-    SysTick_Handler                          0x08005945   Thumb Code    16  py32f0xx_it.o(.text.SysTick_Handler)
-    SystemInit                               0x08005955   Thumb Code    48  system_py32f0xx.o(.text.SystemInit)
-    USART1_IRQHandler                        0x08005985   Thumb Code   168  py32f0xx_bsp_usart.o(.text.USART1_IRQHandler)
-    USART_IsBusy                             0x08005a2d   Thumb Code    26  py32f0xx_bsp_usart.o(.text.USART_IsBusy)
-    USART_bufread                            0x08005a49   Thumb Code    76  py32f0xx_bsp_usart.o(.text.USART_bufread)
-    USART_bufsend                            0x08005a95   Thumb Code   128  py32f0xx_bsp_usart.o(.text.USART_bufsend)
-    USART_getvalidnum                        0x08005b15   Thumb Code    36  py32f0xx_bsp_usart.o(.text.USART_getvalidnum)
-    Write_IIC_Command                        0x08005b39   Thumb Code    32  12864oled_drv.o(.text.Write_IIC_Command)
-    Write_IIC_Data                           0x08005b59   Thumb Code    40  12864oled_drv.o(.text.Write_IIC_Data)
-    bcdToDec                                 0x08005c19   Thumb Code    16  ds3231_drv.o(.text.bcdToDec)
-    $Super$$main                             0x08005c29   Thumb Code   412  main.o(.text.main)
-    thread_app                               0x08005dc5   Thumb Code  2536  main.o(.text.thread_app)
-    thread_echo                              0x080067ad   Thumb Code    70  main.o(.text.thread_echo)
-    thread_key                               0x080067f5   Thumb Code  1652  main.o(.text.thread_key)
-    thread_lcdprintf                         0x08006e69   Thumb Code   128  main.o(.text.thread_lcdprintf)
-    thread_trig                              0x08006ee9   Thumb Code   232  main.o(.text.thread_trig)
-    uprintf                                  0x08006fd1   Thumb Code    44  py32f0xx_bsp_usart.o(.text.uprintf)
-    __0printf                                0x08006ffd   Thumb Code    24  printfa.o(i.__0printf)
-    __1printf                                0x08006ffd   Thumb Code     0  printfa.o(i.__0printf)
-    __2printf                                0x08006ffd   Thumb Code     0  printfa.o(i.__0printf)
-    __c89printf                              0x08006ffd   Thumb Code     0  printfa.o(i.__0printf)
-    printf                                   0x08006ffd   Thumb Code     0  printfa.o(i.__0printf)
-    __0sprintf                               0x0800701d   Thumb Code    36  printfa.o(i.__0sprintf)
-    __1sprintf                               0x0800701d   Thumb Code     0  printfa.o(i.__0sprintf)
-    __2sprintf                               0x0800701d   Thumb Code     0  printfa.o(i.__0sprintf)
-    __c89sprintf                             0x0800701d   Thumb Code     0  printfa.o(i.__0sprintf)
-    sprintf                                  0x0800701d   Thumb Code     0  printfa.o(i.__0sprintf)
-    __0vsprintf                              0x08007045   Thumb Code    30  printfa.o(i.__0vsprintf)
-    __1vsprintf                              0x08007045   Thumb Code     0  printfa.o(i.__0vsprintf)
-    __2vsprintf                              0x08007045   Thumb Code     0  printfa.o(i.__0vsprintf)
-    __c89vsprintf                            0x08007045   Thumb Code     0  printfa.o(i.__0vsprintf)
-    vsprintf                                 0x08007045   Thumb Code     0  printfa.o(i.__0vsprintf)
-    __ARM_clz                                0x08007069   Thumb Code    46  depilogue.o(i.__ARM_clz)
-    __kernel_poly                            0x08007097   Thumb Code   172  poly.o(i.__kernel_poly)
-    __mathlib_dbl_divzero                    0x08007145   Thumb Code    16  dunder.o(i.__mathlib_dbl_divzero)
-    __mathlib_dbl_infnan                     0x08007159   Thumb Code    10  dunder.o(i.__mathlib_dbl_infnan)
-    __mathlib_dbl_invalid                    0x08007163   Thumb Code    16  dunder.o(i.__mathlib_dbl_invalid)
-    __scatterload_copy                       0x08007173   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08007181   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08007183   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    __set_errno                              0x08007191   Thumb Code     6  errno.o(i.__set_errno)
-    fminf                                    0x08007a53   Thumb Code    38  fminf.o(i.fminf)
-    fputc                                    0x08007a79   Thumb Code    18  fputc.o(i.fputc)
-    log                                      0x08007a8d   Thumb Code   790  log.o(i.log)
-    __mathlib_zero                           0x08007e18   Data           8  qnan.o(.constdata)
-    AHBPrescTable                            0x08007e20   Data          64  system_py32f0xx.o(.rodata.AHBPrescTable)
-    APBPrescTable                            0x08007e60   Data          32  system_py32f0xx.o(.rodata.APBPrescTable)
-    F6x8                                     0x08007e80   Data         760  12864oled_drv.o(.rodata.F6x8)
-    F8X16                                    0x08008178   Data        1520  12864oled_drv.o(.rodata.F8X16)
-    HSIFreqTable                             0x08008768   Data          32  system_py32f0xx.o(.rodata.HSIFreqTable)
-    _FlashTimmingParam                       0x08008788   Data          32  py32f0xx_hal_flash.o(.rodata._FlashTimmingParam)
-    cfont16                                  0x080087a8   Data        2720  12864oled_drv.o(.rodata.cfont16)
-    cfont24                                  0x08009248   Data          74  12864oled_drv.o(.rodata.cfont24)
-    cfont32                                  0x08009292   Data         130  12864oled_drv.o(.rodata.cfont32)
-    Region$$Table$$Base                      0x08009af8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08009b18   Number         0  anon$$obj.o(Region$$Table)
+    SW6306_IextDirSet                        0x08004845   Thumb Code    88  sw6306.o(.text.SW6306_IextDirSet)
+    SW6306_IextEnSet                         0x0800489d   Thumb Code    88  sw6306.o(.text.SW6306_IextEnSet)
+    SW6306_IextSet                           0x080048f5   Thumb Code   104  sw6306.o(.text.SW6306_IextSet)
+    SW6306_Init                              0x0800495d   Thumb Code   944  sw6306.o(.text.SW6306_Init)
+    SW6306_IsBatteryDepleted                 0x08004d0d   Thumb Code    12  sw6306.o(.text.SW6306_IsBatteryDepleted)
+    SW6306_IsCharging                        0x08004d19   Thumb Code    12  sw6306.o(.text.SW6306_IsCharging)
+    SW6306_IsDischarging                     0x08004d25   Thumb Code    12  sw6306.o(.text.SW6306_IsDischarging)
+    SW6306_IsErrorinCharging                 0x08004d31   Thumb Code    12  sw6306.o(.text.SW6306_IsErrorinCharging)
+    SW6306_IsErrorinDischarging              0x08004d3d   Thumb Code    12  sw6306.o(.text.SW6306_IsErrorinDischarging)
+    SW6306_IsFullCharged                     0x08004d49   Thumb Code    12  sw6306.o(.text.SW6306_IsFullCharged)
+    SW6306_IsInitialized                     0x08004d55   Thumb Code    48  sw6306.o(.text.SW6306_IsInitialized)
+    SW6306_IsOverHeated                      0x08004d85   Thumb Code    24  sw6306.o(.text.SW6306_IsOverHeated)
+    SW6306_IsPortA1ON                        0x08004d9d   Thumb Code    12  sw6306.o(.text.SW6306_IsPortA1ON)
+    SW6306_IsPortA2ON                        0x08004da9   Thumb Code    12  sw6306.o(.text.SW6306_IsPortA2ON)
+    SW6306_IsPortC1ON                        0x08004db5   Thumb Code    12  sw6306.o(.text.SW6306_IsPortC1ON)
+    SW6306_IsPortC2ON                        0x08004dc1   Thumb Code    12  sw6306.o(.text.SW6306_IsPortC2ON)
+    SW6306_IsQCStatAFC                       0x08004dcd   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatAFC)
+    SW6306_IsQCStatFCP                       0x08004ddd   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatFCP)
+    SW6306_IsQCStatNONE                      0x08004ded   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatNONE)
+    SW6306_IsQCStatPDFIX                     0x08004dfd   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatPDFIX)
+    SW6306_IsQCStatPDPPS                     0x08004e0d   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatPDPPS)
+    SW6306_IsQCStatPE11                      0x08004e1d   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatPE11)
+    SW6306_IsQCStatPE20                      0x08004e2d   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatPE20)
+    SW6306_IsQCStatPQC                       0x08004e3d   Thumb Code    12  sw6306.o(.text.SW6306_IsQCStatPQC)
+    SW6306_IsQCStatQC2                       0x08004e49   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatQC2)
+    SW6306_IsQCStatQC3                       0x08004e59   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatQC3)
+    SW6306_IsQCStatQC3P                      0x08004e69   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatQC3P)
+    SW6306_IsQCStatSCP                       0x08004e79   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatSCP)
+    SW6306_IsQCStatSFCP                      0x08004e89   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatSFCP)
+    SW6306_IsQCStatSVOOC                     0x08004e99   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatSVOOC)
+    SW6306_IsQCStatUFCS                      0x08004ea9   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatUFCS)
+    SW6306_IsQCStatVOOC1                     0x08004eb9   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatVOOC1)
+    SW6306_IsQCStatVOOC4                     0x08004ec9   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatVOOC4)
+    SW6306_IsQCStatVQC                       0x08004ed9   Thumb Code    16  sw6306.o(.text.SW6306_IsQCStatVQC)
+    SW6306_LPSet                             0x08004ee9   Thumb Code    72  sw6306.o(.text.SW6306_LPSet)
+    SW6306_PDSet                             0x08004f31   Thumb Code   164  sw6306.o(.text.SW6306_PDSet)
+    SW6306_PortA1Remove                      0x08004fd5   Thumb Code    64  sw6306.o(.text.SW6306_PortA1Remove)
+    SW6306_PortA2Remove                      0x08005015   Thumb Code    64  sw6306.o(.text.SW6306_PortA2Remove)
+    SW6306_PortStatusLoad                    0x08005055   Thumb Code   164  sw6306.o(.text.SW6306_PortStatusLoad)
+    SW6306_PowerLoad                         0x080050f9   Thumb Code   244  sw6306.o(.text.SW6306_PowerLoad)
+    SW6306_ReadCapacity                      0x080051ed   Thumb Code    12  sw6306.o(.text.SW6306_ReadCapacity)
+    SW6306_ReadIBAT                          0x080051f9   Thumb Code     8  sw6306.o(.text.SW6306_ReadIBAT)
+    SW6306_ReadIBUS                          0x08005201   Thumb Code    12  sw6306.o(.text.SW6306_ReadIBUS)
+    SW6306_ReadIBattLimit                    0x0800520d   Thumb Code    16  sw6306.o(.text.SW6306_ReadIBattLimit)
+    SW6306_ReadIPortLimit                    0x0800521d   Thumb Code    16  sw6306.o(.text.SW6306_ReadIPortLimit)
+    SW6306_ReadMaxGuageCap                   0x0800522d   Thumb Code    36  sw6306.o(.text.SW6306_ReadMaxGuageCap)
+    SW6306_ReadMaxInputPower                 0x08005251   Thumb Code     8  sw6306.o(.text.SW6306_ReadMaxInputPower)
+    SW6306_ReadMaxOutputPower                0x08005259   Thumb Code    12  sw6306.o(.text.SW6306_ReadMaxOutputPower)
+    SW6306_ReadPresentGuageCap               0x08005265   Thumb Code    36  sw6306.o(.text.SW6306_ReadPresentGuageCap)
+    SW6306_ReadTCHIP                         0x08005289   Thumb Code    48  sw6306.o(.text.SW6306_ReadTCHIP)
+    SW6306_ReadTNTC                          0x080052b9   Thumb Code    20  sw6306.o(.text.SW6306_ReadTNTC)
+    SW6306_ReadVBAT                          0x080052cd   Thumb Code     8  sw6306.o(.text.SW6306_ReadVBAT)
+    SW6306_ReadVBUS                          0x080052d5   Thumb Code     8  sw6306.o(.text.SW6306_ReadVBUS)
+    SW6306_RegsetSwitch                      0x080052dd   Thumb Code   104  sw6306.o(.text.SW6306_RegsetSwitch)
+    SW6306_StatusLoad                        0x08005345   Thumb Code   260  sw6306.o(.text.SW6306_StatusLoad)
+    SW6306_Unlock                            0x08005449   Thumb Code   148  sw6306.o(.text.SW6306_Unlock)
+    SetSw6306VInIbusRatio                    0x080054dd   Thumb Code    12  sw6306.o(.text.SetSw6306VInIbusRatio)
+    SetSw6306VInputPowMax                    0x080054e9   Thumb Code    12  sw6306.o(.text.SetSw6306VInputPowMax)
+    SetTempControl                           0x080054f5   Thumb Code    68  main.o(.text.SetTempControl)
+    Shtc3Hibernate                           0x08005539   Thumb Code    28  shtc3_drv.o(.text.Shtc3Hibernate)
+    Shtc3Wakeup                              0x08005555   Thumb Code    28  shtc3_drv.o(.text.Shtc3Wakeup)
+    Shtc3_Read_Result                        0x08005571   Thumb Code   156  shtc3_drv.o(.text.Shtc3_Read_Result)
+    SysInit                                  0x0800560d   Thumb Code    40  bsp_py32f030x6.o(.text.SysInit)
+    SysTick_Handler                          0x08005635   Thumb Code    16  py32f0xx_it.o(.text.SysTick_Handler)
+    SystemInit                               0x08005645   Thumb Code    48  system_py32f0xx.o(.text.SystemInit)
+    USART1_IRQHandler                        0x08005675   Thumb Code   168  py32f0xx_bsp_usart.o(.text.USART1_IRQHandler)
+    USART_IsBusy                             0x0800571d   Thumb Code    26  py32f0xx_bsp_usart.o(.text.USART_IsBusy)
+    USART_bufread                            0x08005739   Thumb Code    76  py32f0xx_bsp_usart.o(.text.USART_bufread)
+    USART_bufsend                            0x08005785   Thumb Code   128  py32f0xx_bsp_usart.o(.text.USART_bufsend)
+    USART_getvalidnum                        0x08005805   Thumb Code    36  py32f0xx_bsp_usart.o(.text.USART_getvalidnum)
+    Write_IIC_Command                        0x08005829   Thumb Code    32  12864oled_drv.o(.text.Write_IIC_Command)
+    Write_IIC_Data                           0x08005849   Thumb Code    40  12864oled_drv.o(.text.Write_IIC_Data)
+    bcdToDec                                 0x08005909   Thumb Code    16  ds3231_drv.o(.text.bcdToDec)
+    $Super$$main                             0x08005919   Thumb Code   412  main.o(.text.main)
+    thread_app                               0x08005ab5   Thumb Code  2536  main.o(.text.thread_app)
+    thread_echo                              0x0800649d   Thumb Code    70  main.o(.text.thread_echo)
+    thread_key                               0x080064e5   Thumb Code  1652  main.o(.text.thread_key)
+    thread_lcdprintf                         0x08006b59   Thumb Code   128  main.o(.text.thread_lcdprintf)
+    thread_trig                              0x08006bd9   Thumb Code   232  main.o(.text.thread_trig)
+    uprintf                                  0x08006cc1   Thumb Code    44  py32f0xx_bsp_usart.o(.text.uprintf)
+    __0printf                                0x08006ced   Thumb Code    24  printfa.o(i.__0printf)
+    __1printf                                0x08006ced   Thumb Code     0  printfa.o(i.__0printf)
+    __2printf                                0x08006ced   Thumb Code     0  printfa.o(i.__0printf)
+    __c89printf                              0x08006ced   Thumb Code     0  printfa.o(i.__0printf)
+    printf                                   0x08006ced   Thumb Code     0  printfa.o(i.__0printf)
+    __0sprintf                               0x08006d0d   Thumb Code    36  printfa.o(i.__0sprintf)
+    __1sprintf                               0x08006d0d   Thumb Code     0  printfa.o(i.__0sprintf)
+    __2sprintf                               0x08006d0d   Thumb Code     0  printfa.o(i.__0sprintf)
+    __c89sprintf                             0x08006d0d   Thumb Code     0  printfa.o(i.__0sprintf)
+    sprintf                                  0x08006d0d   Thumb Code     0  printfa.o(i.__0sprintf)
+    __0vsprintf                              0x08006d35   Thumb Code    30  printfa.o(i.__0vsprintf)
+    __1vsprintf                              0x08006d35   Thumb Code     0  printfa.o(i.__0vsprintf)
+    __2vsprintf                              0x08006d35   Thumb Code     0  printfa.o(i.__0vsprintf)
+    __c89vsprintf                            0x08006d35   Thumb Code     0  printfa.o(i.__0vsprintf)
+    vsprintf                                 0x08006d35   Thumb Code     0  printfa.o(i.__0vsprintf)
+    __ARM_clz                                0x08006d59   Thumb Code    46  depilogue.o(i.__ARM_clz)
+    __kernel_poly                            0x08006d87   Thumb Code   172  poly.o(i.__kernel_poly)
+    __mathlib_dbl_divzero                    0x08006e35   Thumb Code    16  dunder.o(i.__mathlib_dbl_divzero)
+    __mathlib_dbl_infnan                     0x08006e49   Thumb Code    10  dunder.o(i.__mathlib_dbl_infnan)
+    __mathlib_dbl_invalid                    0x08006e53   Thumb Code    16  dunder.o(i.__mathlib_dbl_invalid)
+    __scatterload_copy                       0x08006e63   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08006e71   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08006e73   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    __set_errno                              0x08006e81   Thumb Code     6  errno.o(i.__set_errno)
+    fminf                                    0x08007743   Thumb Code    38  fminf.o(i.fminf)
+    fputc                                    0x08007769   Thumb Code    18  fputc.o(i.fputc)
+    log                                      0x0800777d   Thumb Code   790  log.o(i.log)
+    __mathlib_zero                           0x08007b08   Data           8  qnan.o(.constdata)
+    AHBPrescTable                            0x08007b10   Data          64  system_py32f0xx.o(.rodata.AHBPrescTable)
+    APBPrescTable                            0x08007b50   Data          32  system_py32f0xx.o(.rodata.APBPrescTable)
+    F6x8                                     0x08007b70   Data         760  12864oled_drv.o(.rodata.F6x8)
+    F8X16                                    0x08007e68   Data        1520  12864oled_drv.o(.rodata.F8X16)
+    HSIFreqTable                             0x08008458   Data          32  system_py32f0xx.o(.rodata.HSIFreqTable)
+    _FlashTimmingParam                       0x08008478   Data          32  py32f0xx_hal_flash.o(.rodata._FlashTimmingParam)
+    cfont16                                  0x08008498   Data        2720  12864oled_drv.o(.rodata.cfont16)
+    cfont24                                  0x08008f38   Data          74  12864oled_drv.o(.rodata.cfont24)
+    cfont32                                  0x08008f82   Data         130  12864oled_drv.o(.rodata.cfont32)
+    Region$$Table$$Base                      0x080097e8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08009808   Number         0  anon$$obj.o(Region$$Table)
     VECT_SRAM_TAB                            0x20000000   Data         192  system_py32f0xx.o(.ARM.__at_0x20000000)
     __stdout                                 0x200000c0   Data           4  stdout.o(.data)
     SystemCoreClock                          0x200000d0   Data           4  system_py32f0xx.o(.data.SystemCoreClock)
     I2C1_Status                              0x200000f0   Data          16  py32f0xx_bsp_i2c.o(.bss.I2C1_Status)
-    Tim1Ch4Pwm                               0x2000057c   Data           2  main.o(.bss.Tim1Ch4Pwm)
-    cd_sleep                                 0x200006a0   Data           2  main.o(.bss.cd_sleep)
-    i2cwdtovf                                0x200006c0   Data           4  py32f0xx_bsp_i2c.o(.bss.i2cwdtovf)
-    inttrig                                  0x200006c4   Data           1  py32f0xx_bsp_exti.o(.bss.inttrig)
-    keytrig                                  0x200006e6   Data           1  py32f0xx_bsp_exti.o(.bss.keytrig)
-    millis                                   0x200006e8   Data           4  py32f0xx_it.o(.bss.millis)
-    pFlash                                   0x200006ec   Data          24  py32f0xx_hal_flash.o(.bss.pFlash)
-    pt1                                      0x20000704   Data           2  main.o(.bss.pt1)
-    pt2                                      0x20000706   Data           2  main.o(.bss.pt2)
-    pt3                                      0x20000708   Data           2  main.o(.bss.pt3)
-    pt4                                      0x2000070a   Data           2  main.o(.bss.pt4)
-    pt5                                      0x2000070c   Data           2  main.o(.bss.pt5)
-    rx_buf_ovf                               0x2000070e   Data           1  py32f0xx_bsp_usart.o(.bss.rx_buf_ovf)
-    uwTick                                   0x20000720   Data           4  py32f0xx_hal.o(.bss.uwTick)
-    __initial_sp                             0x20000b28   Data           0  startup_py32f030xx.o(STACK)
+    Tim1Ch4Pwm                               0x20000578   Data           2  main.o(.bss.Tim1Ch4Pwm)
+    cd_sleep                                 0x2000069c   Data           2  main.o(.bss.cd_sleep)
+    i2cwdtovf                                0x200006bc   Data           4  py32f0xx_bsp_i2c.o(.bss.i2cwdtovf)
+    inttrig                                  0x200006c0   Data           1  py32f0xx_bsp_exti.o(.bss.inttrig)
+    keytrig                                  0x200006e2   Data           1  py32f0xx_bsp_exti.o(.bss.keytrig)
+    millis                                   0x200006e4   Data           4  py32f0xx_it.o(.bss.millis)
+    pFlash                                   0x200006e8   Data          24  py32f0xx_hal_flash.o(.bss.pFlash)
+    pt1                                      0x20000700   Data           2  main.o(.bss.pt1)
+    pt2                                      0x20000702   Data           2  main.o(.bss.pt2)
+    pt3                                      0x20000704   Data           2  main.o(.bss.pt3)
+    pt4                                      0x20000706   Data           2  main.o(.bss.pt4)
+    pt5                                      0x20000708   Data           2  main.o(.bss.pt5)
+    rx_buf_ovf                               0x2000070a   Data           1  py32f0xx_bsp_usart.o(.bss.rx_buf_ovf)
+    uwTick                                   0x2000071c   Data           4  py32f0xx_hal.o(.bss.uwTick)
+    __initial_sp                             0x20000b20   Data           0  startup_py32f030xx.o(STACK)
 
 
 
@@ -4598,9 +4581,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000c1
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00009bf8, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000098e8, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00009b18, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00009808, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -4929,164 +4912,158 @@ Memory Map of the image
     0x08004710   0x08004710   0x0000002c   Code   RO          959    .text.SW6306_ByteWrite  sw6306.o
     0x0800473c   0x0800473c   0x000000c4   Code   RO         1075    .text.SW6306_CapacityLoad  sw6306.o
     0x08004800   0x08004800   0x00000044   Code   RO         1083    .text.SW6306_Click  sw6306.o
-    0x08004844   0x08004844   0x00000058   Code   RO         1135    .text.SW6306_IbatForceCtrlSet  sw6306.o
-    0x0800489c   0x0800489c   0x0000004c   Code   RO         1133    .text.SW6306_IbatinChargeSet  sw6306.o
-    0x080048e8   0x080048e8   0x0000004c   Code   RO         1131    .text.SW6306_IbatinDischargeSet  sw6306.o
-    0x08004934   0x08004934   0x00000058   Code   RO         1129    .text.SW6306_IbusForceCtrlSet  sw6306.o
-    0x0800498c   0x0800498c   0x0000004c   Code   RO         1127    .text.SW6306_IbusinChargeSet  sw6306.o
-    0x080049d8   0x080049d8   0x0000004c   Code   RO         1125    .text.SW6306_IbusinDischargeSet  sw6306.o
-    0x08004a24   0x08004a24   0x00000058   Code   RO         1113    .text.SW6306_IextDirSet  sw6306.o
-    0x08004a7c   0x08004a7c   0x00000058   Code   RO         1111    .text.SW6306_IextEnSet  sw6306.o
-    0x08004ad4   0x08004ad4   0x00000068   Code   RO         1115    .text.SW6306_IextSet  sw6306.o
-    0x08004b3c   0x08004b3c   0x000003b0   Code   RO         1139    .text.SW6306_Init   sw6306.o
-    0x08004eec   0x08004eec   0x0000000c   Code   RO         1059    .text.SW6306_IsBatteryDepleted  sw6306.o
-    0x08004ef8   0x08004ef8   0x0000000c   Code   RO          975    .text.SW6306_IsCharging  sw6306.o
-    0x08004f04   0x08004f04   0x0000000c   Code   RO         1055    .text.SW6306_IsDischarging  sw6306.o
-    0x08004f10   0x08004f10   0x0000000c   Code   RO         1063    .text.SW6306_IsErrorinCharging  sw6306.o
-    0x08004f1c   0x08004f1c   0x0000000c   Code   RO         1065    .text.SW6306_IsErrorinDischarging  sw6306.o
-    0x08004f28   0x08004f28   0x0000000c   Code   RO         1057    .text.SW6306_IsFullCharged  sw6306.o
-    0x08004f34   0x08004f34   0x00000030   Code   RO         1141    .text.SW6306_IsInitialized  sw6306.o
-    0x08004f64   0x08004f64   0x00000018   Code   RO         1071    .text.SW6306_IsOverHeated  sw6306.o
-    0x08004f7c   0x08004f7c   0x0000000c   Code   RO          993    .text.SW6306_IsPortA1ON  sw6306.o
-    0x08004f88   0x08004f88   0x0000000c   Code   RO          995    .text.SW6306_IsPortA2ON  sw6306.o
-    0x08004f94   0x08004f94   0x0000000c   Code   RO          989    .text.SW6306_IsPortC1ON  sw6306.o
-    0x08004fa0   0x08004fa0   0x0000000c   Code   RO          991    .text.SW6306_IsPortC2ON  sw6306.o
-    0x08004fac   0x08004fac   0x00000010   Code   RO         1005    .text.SW6306_IsQCStatAFC  sw6306.o
-    0x08004fbc   0x08004fbc   0x00000010   Code   RO         1025    .text.SW6306_IsQCStatFCP  sw6306.o
-    0x08004fcc   0x08004fcc   0x00000010   Code   RO         1033    .text.SW6306_IsQCStatNONE  sw6306.o
-    0x08004fdc   0x08004fdc   0x00000010   Code   RO         1021    .text.SW6306_IsQCStatPDFIX  sw6306.o
-    0x08004fec   0x08004fec   0x00000010   Code   RO         1019    .text.SW6306_IsQCStatPDPPS  sw6306.o
-    0x08004ffc   0x08004ffc   0x00000010   Code   RO         1017    .text.SW6306_IsQCStatPE11  sw6306.o
-    0x0800500c   0x0800500c   0x00000010   Code   RO         1015    .text.SW6306_IsQCStatPE20  sw6306.o
-    0x0800501c   0x0800501c   0x0000000c   Code   RO         1001    .text.SW6306_IsQCStatPQC  sw6306.o
-    0x08005028   0x08005028   0x00000010   Code   RO         1031    .text.SW6306_IsQCStatQC2  sw6306.o
-    0x08005038   0x08005038   0x00000010   Code   RO         1029    .text.SW6306_IsQCStatQC3  sw6306.o
-    0x08005048   0x08005048   0x00000010   Code   RO         1027    .text.SW6306_IsQCStatQC3P  sw6306.o
-    0x08005058   0x08005058   0x00000010   Code   RO         1023    .text.SW6306_IsQCStatSCP  sw6306.o
-    0x08005068   0x08005068   0x00000010   Code   RO         1007    .text.SW6306_IsQCStatSFCP  sw6306.o
-    0x08005078   0x08005078   0x00000010   Code   RO         1009    .text.SW6306_IsQCStatSVOOC  sw6306.o
-    0x08005088   0x08005088   0x00000010   Code   RO         1003    .text.SW6306_IsQCStatUFCS  sw6306.o
-    0x08005098   0x08005098   0x00000010   Code   RO         1013    .text.SW6306_IsQCStatVOOC1  sw6306.o
-    0x080050a8   0x080050a8   0x00000010   Code   RO         1011    .text.SW6306_IsQCStatVOOC4  sw6306.o
-    0x080050b8   0x080050b8   0x00000010   Code   RO          999    .text.SW6306_IsQCStatVQC  sw6306.o
-    0x080050c8   0x080050c8   0x00000048   Code   RO         1089    .text.SW6306_LPSet  sw6306.o
-    0x08005110   0x08005110   0x000001f8   Code   RO         1137    .text.SW6306_PDSet  sw6306.o
-    0x08005308   0x08005308   0x00000040   Code   RO         1099    .text.SW6306_PortA1Remove  sw6306.o
-    0x08005348   0x08005348   0x00000040   Code   RO         1103    .text.SW6306_PortA2Remove  sw6306.o
-    0x08005388   0x08005388   0x000000a4   Code   RO          987    .text.SW6306_PortStatusLoad  sw6306.o
-    0x0800542c   0x0800542c   0x000000f4   Code   RO         1035    .text.SW6306_PowerLoad  sw6306.o
-    0x08005520   0x08005520   0x00000008   Code   RO         1077    .text.SW6306_ReadCapacity  sw6306.o
-    0x08005528   0x08005528   0x00000008   Code   RO          979    .text.SW6306_ReadIBAT  sw6306.o
-    0x08005530   0x08005530   0x00000008   Code   RO          977    .text.SW6306_ReadIBUS  sw6306.o
-    0x08005538   0x08005538   0x0000000c   Code   RO         1039    .text.SW6306_ReadIBattLimit  sw6306.o
-    0x08005544   0x08005544   0x0000000c   Code   RO         1037    .text.SW6306_ReadIPortLimit  sw6306.o
-    0x08005550   0x08005550   0x00000020   Code   RO         1079    .text.SW6306_ReadMaxGuageCap  sw6306.o
-    0x08005570   0x08005570   0x00000008   Code   RO         1043    .text.SW6306_ReadMaxInputPower  sw6306.o
-    0x08005578   0x08005578   0x00000008   Code   RO         1041    .text.SW6306_ReadMaxOutputPower  sw6306.o
-    0x08005580   0x08005580   0x00000020   Code   RO         1081    .text.SW6306_ReadPresentGuageCap  sw6306.o
-    0x080055a0   0x080055a0   0x0000002c   Code   RO          983    .text.SW6306_ReadTCHIP  sw6306.o
-    0x080055cc   0x080055cc   0x00000010   Code   RO          981    .text.SW6306_ReadTNTC  sw6306.o
-    0x080055dc   0x080055dc   0x00000008   Code   RO          971    .text.SW6306_ReadVBAT  sw6306.o
-    0x080055e4   0x080055e4   0x00000008   Code   RO          973    .text.SW6306_ReadVBUS  sw6306.o
-    0x080055ec   0x080055ec   0x00000068   Code   RO          963    .text.SW6306_RegsetSwitch  sw6306.o
-    0x08005654   0x08005654   0x00000104   Code   RO         1045    .text.SW6306_StatusLoad  sw6306.o
-    0x08005758   0x08005758   0x00000094   Code   RO         1087    .text.SW6306_Unlock  sw6306.o
-    0x080057ec   0x080057ec   0x0000000c   Code   RO         1145    .text.SetSw6306VInIbusRatio  sw6306.o
-    0x080057f8   0x080057f8   0x0000000c   Code   RO         1143    .text.SetSw6306VInputPowMax  sw6306.o
-    0x08005804   0x08005804   0x00000044   Code   RO          100    .text.SetTempControl  main.o
-    0x08005848   0x08005848   0x0000001c   Code   RO         1298    .text.Shtc3Hibernate  shtc3_drv.o
-    0x08005864   0x08005864   0x0000001c   Code   RO         1296    .text.Shtc3Wakeup   shtc3_drv.o
-    0x08005880   0x08005880   0x0000009c   Code   RO         1294    .text.Shtc3_Read_Result  shtc3_drv.o
-    0x0800591c   0x0800591c   0x00000028   Code   RO           48    .text.SysInit       bsp_py32f030x6.o
-    0x08005944   0x08005944   0x00000010   Code   RO           38    .text.SysTick_Handler  py32f0xx_it.o
-    0x08005954   0x08005954   0x00000030   Code   RO           13    .text.SystemInit    system_py32f0xx.o
-    0x08005984   0x08005984   0x000000a8   Code   RO          906    .text.USART1_IRQHandler  py32f0xx_bsp_usart.o
-    0x08005a2c   0x08005a2c   0x0000001a   Code   RO          886    .text.USART_IsBusy  py32f0xx_bsp_usart.o
-    0x08005a46   0x08005a46   0x00000002   PAD
-    0x08005a48   0x08005a48   0x0000004c   Code   RO          904    .text.USART_bufread  py32f0xx_bsp_usart.o
-    0x08005a94   0x08005a94   0x00000080   Code   RO          892    .text.USART_bufsend  py32f0xx_bsp_usart.o
-    0x08005b14   0x08005b14   0x00000024   Code   RO          900    .text.USART_getvalidnum  py32f0xx_bsp_usart.o
-    0x08005b38   0x08005b38   0x00000020   Code   RO         1196    .text.Write_IIC_Command  12864oled_drv.o
-    0x08005b58   0x08005b58   0x00000028   Code   RO         1198    .text.Write_IIC_Data  12864oled_drv.o
-    0x08005b80   0x08005b80   0x00000014   Code   RO          577    .text.__NVIC_EnableIRQ  py32f0xx_bsp_exti.o
-    0x08005b94   0x08005b94   0x0000000c   Code   RO          685    .text.__NVIC_EnableIRQ  py32f0xx_bsp_i2c.o
-    0x08005ba0   0x08005ba0   0x00000010   Code   RO          884    .text.__NVIC_EnableIRQ  py32f0xx_bsp_usart.o
-    0x08005bb0   0x08005bb0   0x0000003c   Code   RO          575    .text.__NVIC_SetPriority  py32f0xx_bsp_exti.o
-    0x08005bec   0x08005bec   0x00000014   Code   RO          683    .text.__NVIC_SetPriority  py32f0xx_bsp_i2c.o
-    0x08005c00   0x08005c00   0x00000018   Code   RO          882    .text.__NVIC_SetPriority  py32f0xx_bsp_usart.o
-    0x08005c18   0x08005c18   0x00000010   Code   RO         1321    .text.bcdToDec      ds3231_drv.o
-    0x08005c28   0x08005c28   0x0000019c   Code   RO           72    .text.main          main.o
-    0x08005dc4   0x08005dc4   0x000009e8   Code   RO           56    .text.thread_app    main.o
-    0x080067ac   0x080067ac   0x00000046   Code   RO           64    .text.thread_echo   main.o
-    0x080067f2   0x080067f2   0x00000002   PAD
-    0x080067f4   0x080067f4   0x00000674   Code   RO           66    .text.thread_key    main.o
-    0x08006e68   0x08006e68   0x00000080   Code   RO           70    .text.thread_lcdprintf  main.o
-    0x08006ee8   0x08006ee8   0x000000e8   Code   RO           68    .text.thread_trig   main.o
-    0x08006fd0   0x08006fd0   0x0000002c   Code   RO          940    .text.uprintf       py32f0xx_bsp_usart.o
-    0x08006ffc   0x08006ffc   0x00000020   Code   RO         1778    i.__0printf         mc_p.l(printfa.o)
-    0x0800701c   0x0800701c   0x00000028   Code   RO         1780    i.__0sprintf        mc_p.l(printfa.o)
-    0x08007044   0x08007044   0x00000024   Code   RO         1784    i.__0vsprintf       mc_p.l(printfa.o)
-    0x08007068   0x08007068   0x0000002e   Code   RO         1890    i.__ARM_clz         mf_p.l(depilogue.o)
-    0x08007096   0x08007096   0x000000ac   Code   RO         1850    i.__kernel_poly     m_ps.l(poly.o)
-    0x08007142   0x08007142   0x00000002   PAD
-    0x08007144   0x08007144   0x00000014   Code   RO         1836    i.__mathlib_dbl_divzero  m_ps.l(dunder.o)
-    0x08007158   0x08007158   0x0000000a   Code   RO         1837    i.__mathlib_dbl_infnan  m_ps.l(dunder.o)
-    0x08007162   0x08007162   0x00000010   Code   RO         1839    i.__mathlib_dbl_invalid  m_ps.l(dunder.o)
-    0x08007172   0x08007172   0x0000000e   Code   RO         1912    i.__scatterload_copy  mc_p.l(handlers.o)
-    0x08007180   0x08007180   0x00000002   Code   RO         1913    i.__scatterload_null  mc_p.l(handlers.o)
-    0x08007182   0x08007182   0x0000000e   Code   RO         1914    i.__scatterload_zeroinit  mc_p.l(handlers.o)
-    0x08007190   0x08007190   0x0000000c   Code   RO         1880    i.__set_errno       mc_p.l(errno.o)
-    0x0800719c   0x0800719c   0x00000174   Code   RO         1785    i._fp_digits        mc_p.l(printfa.o)
-    0x08007310   0x08007310   0x000006ec   Code   RO         1786    i._printf_core      mc_p.l(printfa.o)
-    0x080079fc   0x080079fc   0x00000020   Code   RO         1787    i._printf_post_padding  mc_p.l(printfa.o)
-    0x08007a1c   0x08007a1c   0x0000002c   Code   RO         1788    i._printf_pre_padding  mc_p.l(printfa.o)
-    0x08007a48   0x08007a48   0x0000000a   Code   RO         1790    i._sputc            mc_p.l(printfa.o)
-    0x08007a52   0x08007a52   0x00000026   Code   RO         1528    i.fminf             m_ps.l(fminf.o)
-    0x08007a78   0x08007a78   0x00000012   Code   RO         1867    i.fputc             mc_p.l(fputc.o)
-    0x08007a8a   0x08007a8a   0x00000002   PAD
-    0x08007a8c   0x08007a8c   0x00000354   Code   RO         1519    i.log               m_ps.l(log.o)
-    0x08007de0   0x08007de0   0x00000038   Data   RO         1520    .constdata          m_ps.l(log.o)
-    0x08007e18   0x08007e18   0x00000008   Data   RO         1852    .constdata          m_ps.l(qnan.o)
-    0x08007e20   0x08007e20   0x00000040   Data   RO           18    .rodata.AHBPrescTable  system_py32f0xx.o
-    0x08007e60   0x08007e60   0x00000020   Data   RO           19    .rodata.APBPrescTable  system_py32f0xx.o
-    0x08007e80   0x08007e80   0x000002f8   Data   RO         1266    .rodata.F6x8        12864oled_drv.o
-    0x08008178   0x08008178   0x000005f0   Data   RO         1267    .rodata.F8X16       12864oled_drv.o
-    0x08008768   0x08008768   0x00000020   Data   RO           20    .rodata.HSIFreqTable  system_py32f0xx.o
-    0x08008788   0x08008788   0x00000020   Data   RO         1404    .rodata._FlashTimmingParam  py32f0xx_hal_flash.o
-    0x080087a8   0x080087a8   0x00000aa0   Data   RO         1268    .rodata.cfont16     12864oled_drv.o
-    0x08009248   0x08009248   0x0000004a   Data   RO         1269    .rodata.cfont24     12864oled_drv.o
-    0x08009292   0x08009292   0x00000082   Data   RO         1270    .rodata.cfont32     12864oled_drv.o
-    0x08009314   0x08009314   0x000002f5   Data   RO          122    .rodata.str1.1      main.o
-    0x08009609   0x08009609   0x00000003   PAD
-    0x0800960c   0x0800960c   0x0000003b   Data   RO          139    .rodata.str1.4      main.o
-    0x08009647   0x08009647   0x00000001   PAD
-    0x08009648   0x08009648   0x000004b0   Data   RO          140    .rodata.table       main.o
-    0x08009af8   0x08009af8   0x00000020   Data   RO         1911    Region$$Table       anon$$obj.o
+    0x08004844   0x08004844   0x00000058   Code   RO         1113    .text.SW6306_IextDirSet  sw6306.o
+    0x0800489c   0x0800489c   0x00000058   Code   RO         1111    .text.SW6306_IextEnSet  sw6306.o
+    0x080048f4   0x080048f4   0x00000068   Code   RO         1115    .text.SW6306_IextSet  sw6306.o
+    0x0800495c   0x0800495c   0x000003b0   Code   RO         1139    .text.SW6306_Init   sw6306.o
+    0x08004d0c   0x08004d0c   0x0000000c   Code   RO         1059    .text.SW6306_IsBatteryDepleted  sw6306.o
+    0x08004d18   0x08004d18   0x0000000c   Code   RO          975    .text.SW6306_IsCharging  sw6306.o
+    0x08004d24   0x08004d24   0x0000000c   Code   RO         1055    .text.SW6306_IsDischarging  sw6306.o
+    0x08004d30   0x08004d30   0x0000000c   Code   RO         1063    .text.SW6306_IsErrorinCharging  sw6306.o
+    0x08004d3c   0x08004d3c   0x0000000c   Code   RO         1065    .text.SW6306_IsErrorinDischarging  sw6306.o
+    0x08004d48   0x08004d48   0x0000000c   Code   RO         1057    .text.SW6306_IsFullCharged  sw6306.o
+    0x08004d54   0x08004d54   0x00000030   Code   RO         1141    .text.SW6306_IsInitialized  sw6306.o
+    0x08004d84   0x08004d84   0x00000018   Code   RO         1071    .text.SW6306_IsOverHeated  sw6306.o
+    0x08004d9c   0x08004d9c   0x0000000c   Code   RO          993    .text.SW6306_IsPortA1ON  sw6306.o
+    0x08004da8   0x08004da8   0x0000000c   Code   RO          995    .text.SW6306_IsPortA2ON  sw6306.o
+    0x08004db4   0x08004db4   0x0000000c   Code   RO          989    .text.SW6306_IsPortC1ON  sw6306.o
+    0x08004dc0   0x08004dc0   0x0000000c   Code   RO          991    .text.SW6306_IsPortC2ON  sw6306.o
+    0x08004dcc   0x08004dcc   0x00000010   Code   RO         1005    .text.SW6306_IsQCStatAFC  sw6306.o
+    0x08004ddc   0x08004ddc   0x00000010   Code   RO         1025    .text.SW6306_IsQCStatFCP  sw6306.o
+    0x08004dec   0x08004dec   0x00000010   Code   RO         1033    .text.SW6306_IsQCStatNONE  sw6306.o
+    0x08004dfc   0x08004dfc   0x00000010   Code   RO         1021    .text.SW6306_IsQCStatPDFIX  sw6306.o
+    0x08004e0c   0x08004e0c   0x00000010   Code   RO         1019    .text.SW6306_IsQCStatPDPPS  sw6306.o
+    0x08004e1c   0x08004e1c   0x00000010   Code   RO         1017    .text.SW6306_IsQCStatPE11  sw6306.o
+    0x08004e2c   0x08004e2c   0x00000010   Code   RO         1015    .text.SW6306_IsQCStatPE20  sw6306.o
+    0x08004e3c   0x08004e3c   0x0000000c   Code   RO         1001    .text.SW6306_IsQCStatPQC  sw6306.o
+    0x08004e48   0x08004e48   0x00000010   Code   RO         1031    .text.SW6306_IsQCStatQC2  sw6306.o
+    0x08004e58   0x08004e58   0x00000010   Code   RO         1029    .text.SW6306_IsQCStatQC3  sw6306.o
+    0x08004e68   0x08004e68   0x00000010   Code   RO         1027    .text.SW6306_IsQCStatQC3P  sw6306.o
+    0x08004e78   0x08004e78   0x00000010   Code   RO         1023    .text.SW6306_IsQCStatSCP  sw6306.o
+    0x08004e88   0x08004e88   0x00000010   Code   RO         1007    .text.SW6306_IsQCStatSFCP  sw6306.o
+    0x08004e98   0x08004e98   0x00000010   Code   RO         1009    .text.SW6306_IsQCStatSVOOC  sw6306.o
+    0x08004ea8   0x08004ea8   0x00000010   Code   RO         1003    .text.SW6306_IsQCStatUFCS  sw6306.o
+    0x08004eb8   0x08004eb8   0x00000010   Code   RO         1013    .text.SW6306_IsQCStatVOOC1  sw6306.o
+    0x08004ec8   0x08004ec8   0x00000010   Code   RO         1011    .text.SW6306_IsQCStatVOOC4  sw6306.o
+    0x08004ed8   0x08004ed8   0x00000010   Code   RO          999    .text.SW6306_IsQCStatVQC  sw6306.o
+    0x08004ee8   0x08004ee8   0x00000048   Code   RO         1089    .text.SW6306_LPSet  sw6306.o
+    0x08004f30   0x08004f30   0x000000a4   Code   RO         1137    .text.SW6306_PDSet  sw6306.o
+    0x08004fd4   0x08004fd4   0x00000040   Code   RO         1099    .text.SW6306_PortA1Remove  sw6306.o
+    0x08005014   0x08005014   0x00000040   Code   RO         1103    .text.SW6306_PortA2Remove  sw6306.o
+    0x08005054   0x08005054   0x000000a4   Code   RO          987    .text.SW6306_PortStatusLoad  sw6306.o
+    0x080050f8   0x080050f8   0x000000f4   Code   RO         1035    .text.SW6306_PowerLoad  sw6306.o
+    0x080051ec   0x080051ec   0x0000000c   Code   RO         1077    .text.SW6306_ReadCapacity  sw6306.o
+    0x080051f8   0x080051f8   0x00000008   Code   RO          979    .text.SW6306_ReadIBAT  sw6306.o
+    0x08005200   0x08005200   0x0000000c   Code   RO          977    .text.SW6306_ReadIBUS  sw6306.o
+    0x0800520c   0x0800520c   0x00000010   Code   RO         1039    .text.SW6306_ReadIBattLimit  sw6306.o
+    0x0800521c   0x0800521c   0x00000010   Code   RO         1037    .text.SW6306_ReadIPortLimit  sw6306.o
+    0x0800522c   0x0800522c   0x00000024   Code   RO         1079    .text.SW6306_ReadMaxGuageCap  sw6306.o
+    0x08005250   0x08005250   0x00000008   Code   RO         1043    .text.SW6306_ReadMaxInputPower  sw6306.o
+    0x08005258   0x08005258   0x0000000c   Code   RO         1041    .text.SW6306_ReadMaxOutputPower  sw6306.o
+    0x08005264   0x08005264   0x00000024   Code   RO         1081    .text.SW6306_ReadPresentGuageCap  sw6306.o
+    0x08005288   0x08005288   0x00000030   Code   RO          983    .text.SW6306_ReadTCHIP  sw6306.o
+    0x080052b8   0x080052b8   0x00000014   Code   RO          981    .text.SW6306_ReadTNTC  sw6306.o
+    0x080052cc   0x080052cc   0x00000008   Code   RO          971    .text.SW6306_ReadVBAT  sw6306.o
+    0x080052d4   0x080052d4   0x00000008   Code   RO          973    .text.SW6306_ReadVBUS  sw6306.o
+    0x080052dc   0x080052dc   0x00000068   Code   RO          963    .text.SW6306_RegsetSwitch  sw6306.o
+    0x08005344   0x08005344   0x00000104   Code   RO         1045    .text.SW6306_StatusLoad  sw6306.o
+    0x08005448   0x08005448   0x00000094   Code   RO         1087    .text.SW6306_Unlock  sw6306.o
+    0x080054dc   0x080054dc   0x0000000c   Code   RO         1145    .text.SetSw6306VInIbusRatio  sw6306.o
+    0x080054e8   0x080054e8   0x0000000c   Code   RO         1143    .text.SetSw6306VInputPowMax  sw6306.o
+    0x080054f4   0x080054f4   0x00000044   Code   RO          100    .text.SetTempControl  main.o
+    0x08005538   0x08005538   0x0000001c   Code   RO         1298    .text.Shtc3Hibernate  shtc3_drv.o
+    0x08005554   0x08005554   0x0000001c   Code   RO         1296    .text.Shtc3Wakeup   shtc3_drv.o
+    0x08005570   0x08005570   0x0000009c   Code   RO         1294    .text.Shtc3_Read_Result  shtc3_drv.o
+    0x0800560c   0x0800560c   0x00000028   Code   RO           48    .text.SysInit       bsp_py32f030x6.o
+    0x08005634   0x08005634   0x00000010   Code   RO           38    .text.SysTick_Handler  py32f0xx_it.o
+    0x08005644   0x08005644   0x00000030   Code   RO           13    .text.SystemInit    system_py32f0xx.o
+    0x08005674   0x08005674   0x000000a8   Code   RO          906    .text.USART1_IRQHandler  py32f0xx_bsp_usart.o
+    0x0800571c   0x0800571c   0x0000001a   Code   RO          886    .text.USART_IsBusy  py32f0xx_bsp_usart.o
+    0x08005736   0x08005736   0x00000002   PAD
+    0x08005738   0x08005738   0x0000004c   Code   RO          904    .text.USART_bufread  py32f0xx_bsp_usart.o
+    0x08005784   0x08005784   0x00000080   Code   RO          892    .text.USART_bufsend  py32f0xx_bsp_usart.o
+    0x08005804   0x08005804   0x00000024   Code   RO          900    .text.USART_getvalidnum  py32f0xx_bsp_usart.o
+    0x08005828   0x08005828   0x00000020   Code   RO         1196    .text.Write_IIC_Command  12864oled_drv.o
+    0x08005848   0x08005848   0x00000028   Code   RO         1198    .text.Write_IIC_Data  12864oled_drv.o
+    0x08005870   0x08005870   0x00000014   Code   RO          577    .text.__NVIC_EnableIRQ  py32f0xx_bsp_exti.o
+    0x08005884   0x08005884   0x0000000c   Code   RO          685    .text.__NVIC_EnableIRQ  py32f0xx_bsp_i2c.o
+    0x08005890   0x08005890   0x00000010   Code   RO          884    .text.__NVIC_EnableIRQ  py32f0xx_bsp_usart.o
+    0x080058a0   0x080058a0   0x0000003c   Code   RO          575    .text.__NVIC_SetPriority  py32f0xx_bsp_exti.o
+    0x080058dc   0x080058dc   0x00000014   Code   RO          683    .text.__NVIC_SetPriority  py32f0xx_bsp_i2c.o
+    0x080058f0   0x080058f0   0x00000018   Code   RO          882    .text.__NVIC_SetPriority  py32f0xx_bsp_usart.o
+    0x08005908   0x08005908   0x00000010   Code   RO         1321    .text.bcdToDec      ds3231_drv.o
+    0x08005918   0x08005918   0x0000019c   Code   RO           72    .text.main          main.o
+    0x08005ab4   0x08005ab4   0x000009e8   Code   RO           56    .text.thread_app    main.o
+    0x0800649c   0x0800649c   0x00000046   Code   RO           64    .text.thread_echo   main.o
+    0x080064e2   0x080064e2   0x00000002   PAD
+    0x080064e4   0x080064e4   0x00000674   Code   RO           66    .text.thread_key    main.o
+    0x08006b58   0x08006b58   0x00000080   Code   RO           70    .text.thread_lcdprintf  main.o
+    0x08006bd8   0x08006bd8   0x000000e8   Code   RO           68    .text.thread_trig   main.o
+    0x08006cc0   0x08006cc0   0x0000002c   Code   RO          940    .text.uprintf       py32f0xx_bsp_usart.o
+    0x08006cec   0x08006cec   0x00000020   Code   RO         1778    i.__0printf         mc_p.l(printfa.o)
+    0x08006d0c   0x08006d0c   0x00000028   Code   RO         1780    i.__0sprintf        mc_p.l(printfa.o)
+    0x08006d34   0x08006d34   0x00000024   Code   RO         1784    i.__0vsprintf       mc_p.l(printfa.o)
+    0x08006d58   0x08006d58   0x0000002e   Code   RO         1890    i.__ARM_clz         mf_p.l(depilogue.o)
+    0x08006d86   0x08006d86   0x000000ac   Code   RO         1850    i.__kernel_poly     m_ps.l(poly.o)
+    0x08006e32   0x08006e32   0x00000002   PAD
+    0x08006e34   0x08006e34   0x00000014   Code   RO         1836    i.__mathlib_dbl_divzero  m_ps.l(dunder.o)
+    0x08006e48   0x08006e48   0x0000000a   Code   RO         1837    i.__mathlib_dbl_infnan  m_ps.l(dunder.o)
+    0x08006e52   0x08006e52   0x00000010   Code   RO         1839    i.__mathlib_dbl_invalid  m_ps.l(dunder.o)
+    0x08006e62   0x08006e62   0x0000000e   Code   RO         1912    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x08006e70   0x08006e70   0x00000002   Code   RO         1913    i.__scatterload_null  mc_p.l(handlers.o)
+    0x08006e72   0x08006e72   0x0000000e   Code   RO         1914    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x08006e80   0x08006e80   0x0000000c   Code   RO         1880    i.__set_errno       mc_p.l(errno.o)
+    0x08006e8c   0x08006e8c   0x00000174   Code   RO         1785    i._fp_digits        mc_p.l(printfa.o)
+    0x08007000   0x08007000   0x000006ec   Code   RO         1786    i._printf_core      mc_p.l(printfa.o)
+    0x080076ec   0x080076ec   0x00000020   Code   RO         1787    i._printf_post_padding  mc_p.l(printfa.o)
+    0x0800770c   0x0800770c   0x0000002c   Code   RO         1788    i._printf_pre_padding  mc_p.l(printfa.o)
+    0x08007738   0x08007738   0x0000000a   Code   RO         1790    i._sputc            mc_p.l(printfa.o)
+    0x08007742   0x08007742   0x00000026   Code   RO         1528    i.fminf             m_ps.l(fminf.o)
+    0x08007768   0x08007768   0x00000012   Code   RO         1867    i.fputc             mc_p.l(fputc.o)
+    0x0800777a   0x0800777a   0x00000002   PAD
+    0x0800777c   0x0800777c   0x00000354   Code   RO         1519    i.log               m_ps.l(log.o)
+    0x08007ad0   0x08007ad0   0x00000038   Data   RO         1520    .constdata          m_ps.l(log.o)
+    0x08007b08   0x08007b08   0x00000008   Data   RO         1852    .constdata          m_ps.l(qnan.o)
+    0x08007b10   0x08007b10   0x00000040   Data   RO           18    .rodata.AHBPrescTable  system_py32f0xx.o
+    0x08007b50   0x08007b50   0x00000020   Data   RO           19    .rodata.APBPrescTable  system_py32f0xx.o
+    0x08007b70   0x08007b70   0x000002f8   Data   RO         1266    .rodata.F6x8        12864oled_drv.o
+    0x08007e68   0x08007e68   0x000005f0   Data   RO         1267    .rodata.F8X16       12864oled_drv.o
+    0x08008458   0x08008458   0x00000020   Data   RO           20    .rodata.HSIFreqTable  system_py32f0xx.o
+    0x08008478   0x08008478   0x00000020   Data   RO         1404    .rodata._FlashTimmingParam  py32f0xx_hal_flash.o
+    0x08008498   0x08008498   0x00000aa0   Data   RO         1268    .rodata.cfont16     12864oled_drv.o
+    0x08008f38   0x08008f38   0x0000004a   Data   RO         1269    .rodata.cfont24     12864oled_drv.o
+    0x08008f82   0x08008f82   0x00000082   Data   RO         1270    .rodata.cfont32     12864oled_drv.o
+    0x08009004   0x08009004   0x000002f5   Data   RO          122    .rodata.str1.1      main.o
+    0x080092f9   0x080092f9   0x00000003   PAD
+    0x080092fc   0x080092fc   0x0000003b   Data   RO          139    .rodata.str1.4      main.o
+    0x08009337   0x08009337   0x00000001   PAD
+    0x08009338   0x08009338   0x000004b0   Data   RO          140    .rodata.table       main.o
+    0x080097e8   0x080097e8   0x00000020   Data   RO         1911    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08009b18, Size: 0x00000b28, Max: 0x00002000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08009808, Size: 0x00000b20, Max: 0x00002000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08009b18   0x000000c0   Data   RW           21    .ARM.__at_0x20000000  system_py32f0xx.o
-    0x200000c0   0x08009bd8   0x00000004   Data   RW         1871    .data               mc_p.l(stdout.o)
-    0x200000c4   0x08009bdc   0x00000004   Data   RW         1881    .data               mc_p.l(errno.o)
-    0x200000c8   0x08009be0   0x00000004   Data   RW         1153    .data.INT_IbusRatio  sw6306.o
-    0x200000cc   0x08009be4   0x00000001   Data   RW         1187    .data.SW6306_INPUT_POWER_MAX  sw6306.o
-    0x200000cd   0x08009be5   0x00000003   PAD
-    0x200000d0   0x08009be8   0x00000004   Data   RW           17    .data.SystemCoreClock  system_py32f0xx.o
-    0x200000d4   0x08009bec   0x00000004   Data   RW          141    .data.Temp1_pid.0   main.o
-    0x200000d8   0x08009bf0   0x00000001   Data   RW          947    .data.rx_rd_index   py32f0xx_bsp_usart.o
-    0x200000d9   0x08009bf1   0x00000001   Data   RW          112    .data.timeusart     main.o
-    0x200000da   0x08009bf2   0x00000001   Data   RW          943    .data.tx_rd_index   py32f0xx_bsp_usart.o
-    0x200000db   0x08009bf3   0x00000005   PAD
+    0x20000000   0x08009808   0x000000c0   Data   RW           21    .ARM.__at_0x20000000  system_py32f0xx.o
+    0x200000c0   0x080098c8   0x00000004   Data   RW         1871    .data               mc_p.l(stdout.o)
+    0x200000c4   0x080098cc   0x00000004   Data   RW         1881    .data               mc_p.l(errno.o)
+    0x200000c8   0x080098d0   0x00000004   Data   RW         1153    .data.INT_IbusRatio  sw6306.o
+    0x200000cc   0x080098d4   0x00000001   Data   RW         1187    .data.SW6306_INPUT_POWER_MAX  sw6306.o
+    0x200000cd   0x080098d5   0x00000003   PAD
+    0x200000d0   0x080098d8   0x00000004   Data   RW           17    .data.SystemCoreClock  system_py32f0xx.o
+    0x200000d4   0x080098dc   0x00000004   Data   RW          141    .data.Temp1_pid.0   main.o
+    0x200000d8   0x080098e0   0x00000001   Data   RW          947    .data.rx_rd_index   py32f0xx_bsp_usart.o
+    0x200000d9   0x080098e1   0x00000001   Data   RW          112    .data.timeusart     main.o
+    0x200000da   0x080098e2   0x00000001   Data   RW          943    .data.tx_rd_index   py32f0xx_bsp_usart.o
+    0x200000db   0x080098e3   0x00000005   PAD
     0x200000e0        -       0x0000000a   Zero   RW          119    .bss.Getds3231Time  main.o
-    0x200000ea   0x08009bf3   0x00000002   PAD
+    0x200000ea   0x080098e3   0x00000002   PAD
     0x200000ec        -       0x00000004   Zero   RW         1304    .bss.Humidity       shtc3_drv.o
     0x200000f0        -       0x00000010   Zero   RW          759    .bss.I2C1_Status    py32f0xx_bsp_i2c.o
     0x20000100        -       0x00000001   Zero   RW          128    .bss.Mcu1ResetSign  main.o
     0x20000101        -       0x00000001   Zero   RW          127    .bss.Mcu1SaveSign   main.o
-    0x20000102   0x08009bf3   0x00000002   PAD
+    0x20000102   0x080098e3   0x00000002   PAD
     0x20000104        -       0x00000010   Zero   RW          114    .bss.Mcu1Setdat     main.o
     0x20000114        -       0x00000400   Zero   RW         1271    .bss.OLED_buffer    12864oled_drv.o
     0x20000514        -       0x00000001   Zero   RW         1152    .bss.SW6306_ADCLoad.swld_steps  sw6306.o
@@ -5095,72 +5072,65 @@ Memory Map of the image
     0x20000517        -       0x00000001   Zero   RW         1148    .bss.SW6306_ByteRead.swrd_steps  sw6306.o
     0x20000518        -       0x00000001   Zero   RW         1157    .bss.SW6306_CapacityLoad.steps  sw6306.o
     0x20000519        -       0x00000001   Zero   RW         1158    .bss.SW6306_Click.steps  sw6306.o
-    0x2000051a        -       0x00000001   Zero   RW         1184    .bss.SW6306_IbatForceCtrlSet.steps  sw6306.o
-    0x2000051b        -       0x00000001   Zero   RW         1183    .bss.SW6306_IbatinChargeSet.steps  sw6306.o
-    0x2000051c        -       0x00000001   Zero   RW         1182    .bss.SW6306_IbatinDischargeSet.steps  sw6306.o
-    0x2000051d        -       0x00000001   Zero   RW         1181    .bss.SW6306_IbusForceCtrlSet.steps  sw6306.o
-    0x2000051e        -       0x00000001   Zero   RW         1180    .bss.SW6306_IbusinChargeSet.steps  sw6306.o
-    0x2000051f        -       0x00000001   Zero   RW         1179    .bss.SW6306_IbusinDischargeSet.steps  sw6306.o
-    0x20000520        -       0x00000001   Zero   RW         1173    .bss.SW6306_IextDirSet.steps  sw6306.o
-    0x20000521        -       0x00000001   Zero   RW         1172    .bss.SW6306_IextEnSet.steps  sw6306.o
-    0x20000522        -       0x00000001   Zero   RW         1174    .bss.SW6306_IextSet.steps  sw6306.o
-    0x20000523        -       0x00000001   Zero   RW         1186    .bss.SW6306_Init.steps  sw6306.o
-    0x20000524        -       0x00000001   Zero   RW         1161    .bss.SW6306_LPSet.steps  sw6306.o
-    0x20000525        -       0x00000001   Zero   RW         1185    .bss.SW6306_PDSet.steps  sw6306.o
-    0x20000526        -       0x00000001   Zero   RW         1166    .bss.SW6306_PortA1Remove.steps  sw6306.o
-    0x20000527        -       0x00000001   Zero   RW         1168    .bss.SW6306_PortA2Remove.steps  sw6306.o
-    0x20000528        -       0x00000001   Zero   RW         1154    .bss.SW6306_PortStatusLoad.steps  sw6306.o
-    0x20000529        -       0x00000001   Zero   RW         1155    .bss.SW6306_PowerLoad.steps  sw6306.o
-    0x2000052a        -       0x00000001   Zero   RW         1149    .bss.SW6306_RegsetSwitch.steps  sw6306.o
-    0x2000052b   0x08009bf3   0x00000001   PAD
-    0x2000052c        -       0x00000030   Zero   RW         1147    .bss.SW6306_Status  sw6306.o
-    0x2000055c        -       0x00000001   Zero   RW         1156    .bss.SW6306_StatusLoad.steps  sw6306.o
-    0x2000055d        -       0x00000001   Zero   RW         1160    .bss.SW6306_Unlock.steps  sw6306.o
-    0x2000055e   0x08009bf3   0x00000002   PAD
-    0x20000560        -       0x0000000a   Zero   RW          118    .bss.Setds3231Time  main.o
-    0x2000056a        -       0x00000001   Zero   RW         1302    .bss.Shtc3_Read_Result.state  shtc3_drv.o
-    0x2000056b        -       0x00000001   Zero   RW          124    .bss.Sw6306InputPowerMAX  main.o
-    0x2000056c        -       0x00000001   Zero   RW          120    .bss.Sw6306InputPowerMaxSign  main.o
-    0x2000056d   0x08009bf3   0x00000003   PAD
-    0x20000570        -       0x00000004   Zero   RW          142    .bss.Temp1_pid.1    main.o
-    0x20000574        -       0x00000004   Zero   RW          113    .bss.Temp2          main.o
-    0x20000578        -       0x00000004   Zero   RW         1303    .bss.Temperature    shtc3_drv.o
-    0x2000057c        -       0x00000002   Zero   RW          110    .bss.Tim1Ch4Pwm     main.o
-    0x2000057e        -       0x00000001   Zero   RW          115    .bss.TimeSaveTrig   main.o
-    0x2000057f        -       0x00000001   Zero   RW          117    .bss.TimeSaveTrig2  main.o
-    0x20000580        -       0x00000020   Zero   RW          948    .bss.USART_rx_buffer  py32f0xx_bsp_usart.o
-    0x200005a0        -       0x00000100   Zero   RW          944    .bss.USART_tx_buffer  py32f0xx_bsp_usart.o
-    0x200006a0        -       0x00000002   Zero   RW          121    .bss.cd_sleep       main.o
-    0x200006a2        -       0x00000014   Zero   RW          138    .bss.ch             main.o
-    0x200006b6   0x08009bf3   0x00000002   PAD
-    0x200006b8        -       0x00000004   Zero   RW          132    .bss.current_operation_index  main.o
-    0x200006bc        -       0x00000002   Zero   RW          123    .bss.deattach_delay  main.o
-    0x200006be        -       0x00000001   Zero   RW          116    .bss.func_index     main.o
-    0x200006bf   0x08009bf3   0x00000001   PAD
-    0x200006c0        -       0x00000004   Zero   RW          760    .bss.i2cwdtovf      py32f0xx_bsp_i2c.o
-    0x200006c4        -       0x00000001   Zero   RW          589    .bss.inttrig        py32f0xx_bsp_exti.o
-    0x200006c5        -       0x00000001   Zero   RW          126    .bss.key_data       main.o
-    0x200006c6        -       0x00000020   Zero   RW          168    .bss.keys           debounce_key.o
-    0x200006e6        -       0x00000001   Zero   RW          590    .bss.keytrig        py32f0xx_bsp_exti.o
-    0x200006e7        -       0x00000001   Zero   RW          129    .bss.keytrig1       main.o
-    0x200006e8        -       0x00000004   Zero   RW           40    .bss.millis         py32f0xx_it.o
-    0x200006ec        -       0x00000018   Zero   RW         1403    .bss.pFlash         py32f0xx_hal_flash.o
-    0x20000704        -       0x00000002   Zero   RW          133    .bss.pt1            main.o
-    0x20000706        -       0x00000002   Zero   RW          134    .bss.pt2            main.o
-    0x20000708        -       0x00000002   Zero   RW          135    .bss.pt3            main.o
-    0x2000070a        -       0x00000002   Zero   RW          136    .bss.pt4            main.o
-    0x2000070c        -       0x00000002   Zero   RW          137    .bss.pt5            main.o
-    0x2000070e        -       0x00000001   Zero   RW          945    .bss.rx_buf_ovf     py32f0xx_bsp_usart.o
-    0x2000070f        -       0x00000001   Zero   RW          946    .bss.rx_wr_index    py32f0xx_bsp_usart.o
-    0x20000710        -       0x00000004   Zero   RW          111    .bss.thread_app.endmillis  main.o
-    0x20000714        -       0x00000004   Zero   RW          125    .bss.thread_key.endmillis  main.o
-    0x20000718        -       0x00000004   Zero   RW          130    .bss.thread_lcdprintf.endmillis  main.o
-    0x2000071c        -       0x00000001   Zero   RW          131    .bss.time           main.o
-    0x2000071d        -       0x00000001   Zero   RW          942    .bss.tx_wr_index    py32f0xx_bsp_usart.o
-    0x2000071e   0x08009bf3   0x00000002   PAD
-    0x20000720        -       0x00000004   Zero   RW         1459    .bss.uwTick         py32f0xx_hal.o
-    0x20000724   0x08009bf3   0x00000004   PAD
-    0x20000728        -       0x00000400   Zero   RW            1    STACK               startup_py32f030xx.o
+    0x2000051a        -       0x00000001   Zero   RW         1173    .bss.SW6306_IextDirSet.steps  sw6306.o
+    0x2000051b        -       0x00000001   Zero   RW         1172    .bss.SW6306_IextEnSet.steps  sw6306.o
+    0x2000051c        -       0x00000001   Zero   RW         1174    .bss.SW6306_IextSet.steps  sw6306.o
+    0x2000051d        -       0x00000001   Zero   RW         1186    .bss.SW6306_Init.steps  sw6306.o
+    0x2000051e        -       0x00000001   Zero   RW         1161    .bss.SW6306_LPSet.steps  sw6306.o
+    0x2000051f        -       0x00000001   Zero   RW         1185    .bss.SW6306_PDSet.steps  sw6306.o
+    0x20000520        -       0x00000001   Zero   RW         1166    .bss.SW6306_PortA1Remove.steps  sw6306.o
+    0x20000521        -       0x00000001   Zero   RW         1168    .bss.SW6306_PortA2Remove.steps  sw6306.o
+    0x20000522        -       0x00000001   Zero   RW         1154    .bss.SW6306_PortStatusLoad.steps  sw6306.o
+    0x20000523        -       0x00000001   Zero   RW         1155    .bss.SW6306_PowerLoad.steps  sw6306.o
+    0x20000524        -       0x00000001   Zero   RW         1149    .bss.SW6306_RegsetSwitch.steps  sw6306.o
+    0x20000525   0x080098e3   0x00000003   PAD
+    0x20000528        -       0x00000030   Zero   RW         1147    .bss.SW6306_Status  sw6306.o
+    0x20000558        -       0x00000001   Zero   RW         1156    .bss.SW6306_StatusLoad.steps  sw6306.o
+    0x20000559        -       0x00000001   Zero   RW         1160    .bss.SW6306_Unlock.steps  sw6306.o
+    0x2000055a   0x080098e3   0x00000002   PAD
+    0x2000055c        -       0x0000000a   Zero   RW          118    .bss.Setds3231Time  main.o
+    0x20000566        -       0x00000001   Zero   RW         1302    .bss.Shtc3_Read_Result.state  shtc3_drv.o
+    0x20000567        -       0x00000001   Zero   RW          124    .bss.Sw6306InputPowerMAX  main.o
+    0x20000568        -       0x00000001   Zero   RW          120    .bss.Sw6306InputPowerMaxSign  main.o
+    0x20000569   0x080098e3   0x00000003   PAD
+    0x2000056c        -       0x00000004   Zero   RW          142    .bss.Temp1_pid.1    main.o
+    0x20000570        -       0x00000004   Zero   RW          113    .bss.Temp2          main.o
+    0x20000574        -       0x00000004   Zero   RW         1303    .bss.Temperature    shtc3_drv.o
+    0x20000578        -       0x00000002   Zero   RW          110    .bss.Tim1Ch4Pwm     main.o
+    0x2000057a        -       0x00000001   Zero   RW          115    .bss.TimeSaveTrig   main.o
+    0x2000057b        -       0x00000001   Zero   RW          117    .bss.TimeSaveTrig2  main.o
+    0x2000057c        -       0x00000020   Zero   RW          948    .bss.USART_rx_buffer  py32f0xx_bsp_usart.o
+    0x2000059c        -       0x00000100   Zero   RW          944    .bss.USART_tx_buffer  py32f0xx_bsp_usart.o
+    0x2000069c        -       0x00000002   Zero   RW          121    .bss.cd_sleep       main.o
+    0x2000069e        -       0x00000014   Zero   RW          138    .bss.ch             main.o
+    0x200006b2   0x080098e3   0x00000002   PAD
+    0x200006b4        -       0x00000004   Zero   RW          132    .bss.current_operation_index  main.o
+    0x200006b8        -       0x00000002   Zero   RW          123    .bss.deattach_delay  main.o
+    0x200006ba        -       0x00000001   Zero   RW          116    .bss.func_index     main.o
+    0x200006bb   0x080098e3   0x00000001   PAD
+    0x200006bc        -       0x00000004   Zero   RW          760    .bss.i2cwdtovf      py32f0xx_bsp_i2c.o
+    0x200006c0        -       0x00000001   Zero   RW          589    .bss.inttrig        py32f0xx_bsp_exti.o
+    0x200006c1        -       0x00000001   Zero   RW          126    .bss.key_data       main.o
+    0x200006c2        -       0x00000020   Zero   RW          168    .bss.keys           debounce_key.o
+    0x200006e2        -       0x00000001   Zero   RW          590    .bss.keytrig        py32f0xx_bsp_exti.o
+    0x200006e3        -       0x00000001   Zero   RW          129    .bss.keytrig1       main.o
+    0x200006e4        -       0x00000004   Zero   RW           40    .bss.millis         py32f0xx_it.o
+    0x200006e8        -       0x00000018   Zero   RW         1403    .bss.pFlash         py32f0xx_hal_flash.o
+    0x20000700        -       0x00000002   Zero   RW          133    .bss.pt1            main.o
+    0x20000702        -       0x00000002   Zero   RW          134    .bss.pt2            main.o
+    0x20000704        -       0x00000002   Zero   RW          135    .bss.pt3            main.o
+    0x20000706        -       0x00000002   Zero   RW          136    .bss.pt4            main.o
+    0x20000708        -       0x00000002   Zero   RW          137    .bss.pt5            main.o
+    0x2000070a        -       0x00000001   Zero   RW          945    .bss.rx_buf_ovf     py32f0xx_bsp_usart.o
+    0x2000070b        -       0x00000001   Zero   RW          946    .bss.rx_wr_index    py32f0xx_bsp_usart.o
+    0x2000070c        -       0x00000004   Zero   RW          111    .bss.thread_app.endmillis  main.o
+    0x20000710        -       0x00000004   Zero   RW          125    .bss.thread_key.endmillis  main.o
+    0x20000714        -       0x00000004   Zero   RW          130    .bss.thread_lcdprintf.endmillis  main.o
+    0x20000718        -       0x00000001   Zero   RW          131    .bss.time           main.o
+    0x20000719        -       0x00000001   Zero   RW          942    .bss.tx_wr_index    py32f0xx_bsp_usart.o
+    0x2000071a   0x080098e3   0x00000002   PAD
+    0x2000071c        -       0x00000004   Zero   RW         1459    .bss.uwTick         py32f0xx_hal.o
+    0x20000720        -       0x00000400   Zero   RW            1    STACK               startup_py32f030xx.o
 
 
 ==============================================================================
@@ -5195,13 +5165,13 @@ Image component sizes
         52          8          0          0          0       6706   py32f0xx_ll_utils.o
        244         36          0          0          9       1519   shtc3_drv.o
         28          8        192          0       1024        576   startup_py32f030xx.o
-      4940        326          0          5         73      18312   sw6306.o
+      4156        312          0          5         67      18037   sw6306.o
         92         24        128        196          0       2293   system_py32f0xx.o
 
     ----------------------------------------------------------------------
-     25964       3428       7608        212       2636     161451   Object Totals
+     25180       3414       7608        212       2628     161176   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        34          0          4          4         23          0   (incl. Padding)
+        34          0          4          4         21          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -5283,15 +5253,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     32032       3672       7672        220       2636     162959   Grand Totals
-     32032       3672       7672        220       2636     162959   ELF Image Totals
-     32032       3672       7672        220          0          0   ROM Totals
+     31248       3658       7672        220       2628     162684   Grand Totals
+     31248       3658       7672        220       2628     162684   ELF Image Totals
+     31248       3658       7672        220          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                39704 (  38.77kB)
-    Total RW  Size (RW Data + ZI Data)              2856 (   2.79kB)
-    Total ROM Size (Code + RO Data + RW Data)      39924 (  38.99kB)
+    Total RO  Size (Code + RO Data)                38920 (  38.01kB)
+    Total RW  Size (RW Data + ZI Data)              2848 (   2.78kB)
+    Total ROM Size (Code + RO Data + RW Data)      39140 (  38.22kB)
 
 ==============================================================================
 
